@@ -1,77 +1,39 @@
 ---
-layout: framework
-banner:
-banner_html: post-header.html
-hidden: []
-sidebar:
-  - article-menu
+layout: default
 ---
-
-<div class="post">
-  <section>
-
-    {%- assign name = 'banner' -%}
-    {%- include functions.html func='get_value' -%}
-    {%- assign banner = return -%}
-
-    {%- assign name = 'hidden' -%}
-    {%- include functions.html func='get_value' -%}
-    {%- assign hidden = return -%}
-
-    {%- assign result = hidden | where_exp: "item", "item == 'header'" -%}
-    {%- if banner == nil and result.size == 0 -%}
-    {%- include views/post-header.html -%}
-    {%- endif -%}
-
-    {%- include views/article.html -%}
-
-    {%- assign result = hidden | where_exp: "item", "item == 'navigator'" -%}
-    {%- if result.size == 0 -%}
-    <div class="post-nav">
-      {%- if page.previous -%}
-        <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
-          page.previous.title | escape }}">{{ page.previous.title | escape | truncatewords: 6 }}</a>
-      {%- else -%}
-      <span></span>
-      {%- endif -%}
-
-      {%- if page.next -%}
-        <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{ page.next.title | escape | truncatewords: 6 }}</a>
-      {%- else -%}
-      <span></span>
-      {%- endif -%}
+<article class="post">
+  <header> 
+    <div class="title">
+      <h2>{{ page.title | escape }}</h2>
+      <p><a href="//github.com/ViKapitoshka/blog/edit/master/{{ page.path }}" class="icon"><i class="fas fa-fw fa-edit"></i> Редактировать на GitHub</a></p>
     </div>
-    {%- endif -%}
-
-    {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" -%}
-    {%- if result.size == 0 -%}
-    <div class="post-related">
-      <div>Related Articles</div>
-      <ul>
-        {% assign posts = site[page.collection] | sample:4 %}
-        {%- for post in posts -%}
-        <li><a class="post-link" href="{{post.url | relative_url}}" title="{{ page.next.title | escape }}">{{ post.title | escape | truncatewords: 12 }}</a></li>
-        {%- endfor -%}
-      </ul>
+    <div class="meta">
+      <time class="published" datetime="{{ page.date }}">{{ page.date | date: "%d %b %Y %R" }}</time>
+      <a href="{{ site.author.cv }}" class="author"><span class="name">V.{{ site.author.last_name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="ViKapitoshka" /></a>
     </div>
-    {%- endif -%}
-
-    {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
-    {%- if result.size == 0 -%}
-    <div class="post-comments">
-      {%- if page.comments != false -%}
-
-      {%- if site.disqus.shortname -%}
-      {%- include extensions/comments/disqus.html -%}
-      {%- endif -%}
-
-      {%- if site.gitment.username -%}
-      {%- include extensions/comments/gitment.html -%}
-      {%- endif -%}
-
-      {%- endif -%}
-    </div>
-    {%- endif -%}
-
-  </section>
+  </header>
+  {{ content }}
+  
+  <p>Подписывайтесь на наш <a href="http://t.me/vikablog">канал</a> в телеграмме :)
+  <footer>
+    <ul class="stats">
+      <li><a class="icon" href="{{ site.url }}"><i class="fas fa-fw fa-folder"></i> Главная</a></li>
+      <li><a href="//github.com/ViKapitoshka/blog/edit/master/{{ page.path }}" class="icon"><i class="fas fa-fw fa-edit"></i> Edit</a></li>
+    </ul>
+  </footer>
+  
 </div>
+</article>
+<ul class="actions pagination">
+  {% if page.previous.url %}
+    <li><a href="{{page.previous.url}}" class="button big previous icon"><i class="fw fas fa-chevron-left"></i> Туда</a></li>
+  {% endif %}
+  {% if page.next.url %}
+    <li><a href="{{page.next.url}}" class="button big next icon">Сюда <i class="fw fas fa-chevron-right"></i></a></li>
+  {% endif %}
+</ul>
+
+
+{%include comments.html %}
+
+

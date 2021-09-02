@@ -1,58 +1,115 @@
-// Fix DOM matches function
-if (!Element.prototype.matches) {
-  Element.prototype.matches =
-    Element.prototype.matchesSelector ||
-    Element.prototype.mozMatchesSelector ||
-    Element.prototype.msMatchesSelector ||
-    Element.prototype.oMatchesSelector ||
-    Element.prototype.webkitMatchesSelector ||
-    function(s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-        i = matches.length;
-      while (--i >= 0 && matches.item(i) !== this) {}
-      return i > -1;
-    };
-}
+/*
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
-// Get Scroll position
-function getScrollPos() {
-  var supportPageOffset = window.pageXOffset !== undefined;
-  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+(function($) {
 
-  var x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
-  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+	skel.breakpoints({
+		xlarge:	'(max-width: 1680px)',
+		large:	'(max-width: 1280px)',
+		medium:	'(max-width: 980px)',
+		small:	'(max-width: 736px)',
+		xsmall:	'(max-width: 480px)'
+	});
 
-  return { x: x, y: y };
-}
+	$(function() {
 
-var _scrollTimer = [];
+		var	$window = $(window),
+			$body = $('body'),
+			$menu = $('#menu'),
+			$sidebar = $('#sidebar'),
+			$main = $('#main');
 
-// Smooth scroll
-function smoothScrollTo(y, time) {
-  time = time == undefined ? 500 : time;
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
 
-  var scrollPos = getScrollPos();
-  var count = 60;
-  var length = (y - scrollPos.y);
+			$window.on('load', function() {
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
+			});
 
-  function easeInOut(k) {
-    return .5 * (Math.sin((k - .5) * Math.PI) + 1);
-  }
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
 
-  for (var i = _scrollTimer.length - 1; i >= 0; i--) {
-    clearTimeout(_scrollTimer[i]);
-  }
+		// Prioritize "important" elements on medium.
+			skel.on('+medium -medium', function() {
+				$.prioritize(
+					'.important\\28 medium\\29',
+					skel.breakpoint('medium').active
+				);
+			});
 
-  for (var i = 0; i <= count; i++) {
-    (function() {
-      var cur = i;
-      _scrollTimer[cur] = setTimeout(function() {
-        window.scrollTo(
-          scrollPos.x,
-          scrollPos.y + length * easeInOut(cur/count)
-        );
-      }, (time / count) * cur);
-    })();
-  }
-}
+		// IE<=9: Reverse order of main and sidebar.
+			if (skel.vars.IEVersion <= 9)
+				$main.insertAfter($sidebar);
 
+		// Menu.
+			$menu
+				.appendTo($body)
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'right',
+					target: $body,
+					visibleClass: 'is-menu-visible'
+				});
+
+		// Search (header).
+			var $search = $('#search'),
+				$search_input = $search.find('input');
+
+			$body
+				.on('click', '[href="#search"]', function(event) {
+
+					event.preventDefault();
+
+					// Not visible?
+						if (!$search.hasClass('visible')) {
+
+							// Reset form.
+								$search[0].reset();
+
+							// Show.
+								$search.addClass('visible');
+
+							// Focus input.
+								$search_input.focus();
+
+						}
+
+				});
+
+			$search_input
+				.on('keydown', function(event) {
+
+					if (event.keyCode == 27)
+						$search_input.blur();
+
+				})
+				.on('blur', function() {
+					window.setTimeout(function() {
+						$search.removeClass('visible');
+					}, 100);
+				});
+
+		// Intro.
+			var $intro = $('#intro');
+
+			// Move to main on <=large, back to sidebar on >large.
+				skel
+					.on('+large', function() {
+						$intro.prependTo($main);
+					})
+					.on('-large', function() {
+						$intro.prependTo($sidebar);
+					});
+
+	});
+
+})(jQuery);
