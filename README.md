@@ -1,138 +1,194 @@
-# Future Imperfect Theme on Jekyll
->by [Kapitonenko](https://kaptn.ru)
+<div align="center">
+  <br>
 
-<https://future-imperfect.kaptn.ru> - demo  
-<https://github.com/kaptn3/future-imperfect/> - repository
+  <a href="https://github.com/jeffreytse/jekyll-theme-yat">
+    <img alt="jekyll-theme-yat →~ jekyll" src="https://user-images.githubusercontent.com/9413601/106478481-346fdf00-64e4-11eb-9385-1ab5329c3234.png" width="600">
+  </a>
 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
-![Future Imperfect Theme preview](https://cdn.rawgit.com/kaptn3/blog/4ccc6d6a/readme_files/screen.png)
+  <h1>🎨 JEKYLL YAT THEME 🎨</h1>
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Content management](#content-management)
-    - [Template](#template)
-    - [Example of post](#example-of-post)
-    - [Category page](#category-page)
-4. [Features](#features)
-    - [Categories](#categories)
-    - [Comments](#comments)
-    - [Icons](#icons)
-    - [Post Image](#post-image)
-    - [Featured image](#featured-image)
-    - [Edit link](#edit-link)
-    - [Web analytics](#web-analytics)
-5. [Upgrading Theme](#upgrading-theme)
-6. [Thanks to the following](#thanks-to-the-following)
-7. [Todo](#todo)
-8. [Donate](#donate)
-9. [Copyright and license](#copyright-and-license)
+</div>
 
-## Installation 
-1. Download, clone or fork repo `git clone git@github.com:kaptn3/blog.git`
-2. Enter the folder: `cd blog/` 
-3. Start Jekyll server: `jekyll s`
+<h4 align="center">
+  <a href="https://jekyllrb.com/" target="_blank"><code>Jekyll</code></a> theme for elegant writers.
+</h4>
 
-Access, [localhost:4000](http://localhost:4000)
+<p align="center">
+  <a href="https://jeffreytse.github.io/jekyll-theme-yat">
+    <img src="https://github.com/jeffreytse/jekyll-theme-yat/workflows/Github%20Pages/badge.svg"
+      alt="Github Pages" />
+  </a>
 
-## Usage
-If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
+  <a href="http://badge.fury.io/rb/jekyll-theme-yat">
+    <img src="https://badge.fury.io/rb/jekyll-theme-yat.svg"
+      alt="Gem Version" />
+  </a>
 
-If you have any questions please ask me at [GitHub Issues](https://github.com/kaptn3/future-imperfect/issues).
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"
+      alt="License: MIT" />
+  </a>
 
-## Content management
-### Template
-Template of posts setting is in `_drafts/template.md`. `Layout` is always named `post`. `Title` is a title of post, writing in quotation marks. `Date` written in the following format: `yyyy-mm-dd hh:mm`. In `category` specifies one category. In `icon` written the name of icon (its in the folder `images`). In `tags` is possible to write multiple tags using a comma. In `image` specify the path to image preview (can not fill). And in `preview` you can write `0` to on the main page didn't show the announcement of the post. 
+  <a href="https://liberapay.com/jeffreytse">
+    <img src="http://img.shields.io/liberapay/goal/jeffreytse.svg?logo=liberapay"
+      alt="Donate (Liberapay)" />
+  </a>
 
-More details about all features and setting can be view on [here](#features).
+  <a href="https://patreon.com/jeffreytse">
+    <img src="https://img.shields.io/badge/support-patreon-F96854.svg?style=flat-square"
+      alt="Donate (Patreon)" />
+  </a>
 
-### Example of post
+  <a href="https://ko-fi.com/jeffreytse">
+  <img height="20" src="https://www.ko-fi.com/img/githubbutton_sm.svg"
+  alt="Donate (Ko-fi)" />
+  </a>
+</p>
+
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://jeffreytse.net">jeffreytse</a> and
+  <a href="https://github.com/jeffreytse/jekyll-theme-yat/graphs/contributors">contributors </a>
+</div>
+
+<br>
+
+Hey, nice to meet you, you found this [Jekyll][jekyll] theme. Here the
+**Yet Another Theme** is a modern responsive theme, and it's quiet clear,
+clean and neat for writers and posts. **If you like the theme, give it
+a star!**
+
+
+<p align="center">
+
+  <img src="https://user-images.githubusercontent.com/9413601/91842897-6a840b00-ec87-11ea-95ca-52abcc1ac063.png" alt="demo-screenshot" width="780px"/>
+
+</p>
+
+<h3 align="center">🌌 Night Mode</h3>
+
+<p align="center">
+
+  <img src="https://user-images.githubusercontent.com/9413601/94983351-760f6e00-0574-11eb-9494-5303ad6228dc.gif" alt="demo-screenshot" width="780px"/>
+
+</p>
+
+## ✨ Features
+
+- Support beautiful __Night Mode__.
+- Modern responsive web design.
+- Full layouts `home`, `post`, `tags`, `archive` and `about`.
+- Uses font awesome 5 for icons.
+- Beautiful Syntax Highlight using [highlight.js][highlight-js].
+- RSS support using [Jekyll Feed][jekyll-feed] gem.
+- Optimized for search engines using [Jekyll Seo Tag][jekyll-seo-tag] gem.
+- Sitemap support using [Jekyll Sitemap][jekyll-sitemap] gem.
+- Complex and flexible table support using [Jekyll Spaceship][jekyll-spaceship] gem.
+- MathJAX and LaTeX optional support using [Jekyll Spaceship][jekyll-spaceship] gem.
+- Media (Youtube, Spotify, etc.) support using [Jekyll Spaceship][jekyll-spaceship] gem.
+- Diagram (PlantUML, Mermaid) support using [Jekyll Spaceship][jekyll-spaceship] gem.
+- Google Translation support.
+- New post tag support.
+
+Also, visit the [Live Demo][yat-live-demo] site for the theme.
+
+## 🛠️  Installation
+
+There are three ways to install:
+
+- As a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes).
+- As a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible).
+- Forking/directly copying all of the theme files into your project.
+
+### Gem-based Theme Method
+
+Add this line to your Jekyll site's `Gemfile`:
+
+```ruby
+gem "jekyll-theme-yat"
 ```
-layout: post
-title:  "Lorem"
-date:   2017-06-04 00:00
-category: category_name
-icon: git
-keywords: tag1, tag2
-image: 1.png
-preview: 0
+
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-theme-yat
 ```
 
-### Category page
-If you want to add a page of category you have to create folder with name of category and file `index.html`, which should contain the following:  
-```
----
-layout: default
-title: Category1
-permalink: /category1/ 
----
+And then execute:
 
-{% include category.html %}
+```bash
+$ bundle
 ```
 
-You can see example in [here](https://github.com/kaptn3/future-imperfect/blob/master/category1) or [here](https://github.com/kaptn3/blog/blob/master/category2).
+Or install it yourself as:
 
-## Features
-### Categories
-In blog page, we categorize posts into several categories by url, all category pages use same template html file - `_includes/category.html`. Links of category in menu is in `_data.links.yml`.
+```bash
+$ gem install jekyll-theme-yat
+```
 
-For example: URL is `localhost:4000/category1`. In `_data.links.yml` we define this category named category1, so in `_includes/category.html` we get this URL(/category1/) and change it to my category(category1), then this page are posts about category1.
+### Remote Theme Method with GitHub Pages
 
-### Comments
-I use [HyperComments](http://hypercomments.com) instead of other tool, Disqus, so it's slower and don't allows to anonymously send messages. Code of comment is in `_includes/comments` and it included in every post.
+Remote themes are similar to Gem-based themes, but do not require `Gemfile` changes or whitelisting making them ideal for sites hosted with GitHub Pages.
 
-### Icons
-For categories I use svg-icons in `images`. Еhe icon is automatically assigned to the post by its category. The icon name must be `category_name.svg`.
+To install:
 
-### Post Image
-All images used in posts that are in `post-image` and its are categorized. For example, images in post of category1's category is in `post-img/category1`. 
+Add this line to your Jekyll site's `Gemfile`:
 
-### Featured image
-You can specify the preview image for post in [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/). In front matter called "image" to indicate the name of the image. The picture must be located in a category folder.    
-For example, we write post of category_name's category. In folder `post-img/category_name` put the preview image with the title "1.png" and in front matter write: `image: 1.png`. [Example](https://github.com/kaptn3/future-imperfect/blob/master/_posts/2017-06-08-learn-git4.md).
+```ruby
+gem "github-pages", group: :jekyll_plugins
+```
 
-Also, in front matter you can control the announcement of record post. By default, the announcement consists of 35 words. Writing in the front matter called "preview" the number 0, the announcement will not be displayed for this entry. [Example](https://github.com/kaptn3/blog/blob/master/_posts/2017-06-08-learn-git4.md).
+And add this line to your Jekyll site's `_config.yml`:
 
-### Edit link
-All posts can be edited by users through link: `github.com/kaptn3/future-imperfect/edit/master/{{ page.path }}` or `github.com/kaptn3/blog/edit/master/{{ post.path }}`. 
+```yaml
+# theme: owner/name --> Don't forget to remove/comment the gem-based theme option
+remote_theme: "jeffreytse/jekyll-theme-yat"
+```
 
-### Web analytics
-I use [Yandex Metrika](https://metrika.yandex.ru) to do web analytics, you can choose either to realize it, just paste your code in `includes/analytics.html`.
+And then execute:
 
-## Upgrading Theme
-Blog is always being improved by its users, so sometimes one may need to upgrade.
+```bash
+$ bundle
+```
 
-Ensure there's an upstream remote
+### GitHub Pages without limitation
 
-If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
+GitHub Pages runs in `safe` mode and only allows [a set of whitelisted plugins/themes](https://pages.github.com/versions/). __In other words, the third-party gems will not work normally__.
 
-`git remote add upstream https://github.com/kaptn3/future-imperfect.git`
-Pull in the latest changes
+To use the third-party gem in GitHub Pages without limitation:
 
-`git pull upstream master`
-There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
+Here is a GitHub Action named [jekyll-deploy-action](https://github.com/jeffreytse/jekyll-deploy-action) for Jekyll site deployment conveniently. 👍
 
-## Thanks to the following
-[Jekyll](http://jekyllrb.com/)  
-[HTML5Up](https://html5up.net/)  
-[Font Awesome](http://fontawesome.io/icons/)  
-[HyperComments](http://hypercomments.com)
 
-## TODO
-- [ ] Add 404 page
-- [ ] Search system
-- [x] Add fontawesome 5
-- [ ] Add paginator
+## 📚 Usage
 
-## Donate
-In `includes/donate.html` you'll see form for donation, includes in every post.  
-Also if this project let you enjoy your blog time, you can give me a cup of coffee :)
+Add or update your available layouts, includes, sass and/or assets.
 
-[Donate =)](https://money.yandex.ru/to/410013162271067/10)
+## ✏️  Development
 
-## Copyright and license
-The theme is taken Future Imperfect Theme from [HTML5 UP](https://html5up.net).
+To set up your environment to develop this theme, run `bundle install`.
 
-It is under [the MIT license](/LICENSE).
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-Enjoy :yum:
+When your theme is released, only the files in `_data`, `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `jekyll-theme-yat.gemspec` accordingly.
+
+## 🔫 Contributing
+
+Issues and Pull Requests are greatly appreciated. If you've never contributed to an open source project before I'm more than happy to walk you through how to create a pull request.
+
+You can start by [opening an issue](https://github.com/jeffreytse/jekyll-theme-yat/issues/new) describing the problem that you're looking to resolve and we'll go from there.
+
+## 🌈 License
+
+This theme is licensed under the [MIT license](https://opensource.org/licenses/mit-license.php) © JeffreyTse.
+
+<!-- External links -->
+[jekyll]: https://jekyllrb.com/
+[yat-git-repo]: https://github.com/jeffreytse/jekyll-theme-yat/
+[yat-live-demo]: https://jeffreytse.github.io/jekyll-theme-yat/
+[jekyll-spaceship]: https://github.com/jeffreytse/jekyll-spaceship
+[jekyll-seo-tag]: https://github.com/jekyll/jekyll-seo-tag
+[jekyll-sitemap]: https://github.com/jekyll/jekyll-sitemap
+[jekyll-feed]: https://github.com/jekyll/jekyll-feed
+[highlight-js]: https://github.com/highlightjs/highlight.js
