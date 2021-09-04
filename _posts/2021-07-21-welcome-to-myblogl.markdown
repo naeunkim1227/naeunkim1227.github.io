@@ -3,10 +3,6 @@ layout: post
 title:  "Welcome to MYBLOG!"
 date:   2021-07-21 19:10:57 +0900
 categories: RECORD
-icon : git
-keywords: tag1, tag2
-image: 1.jpg
-preview: 1
 ---
 
 ## 첫 번째 github BLOG 업데이트
