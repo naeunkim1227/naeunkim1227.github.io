@@ -1,4 +1,4 @@
 home:
   heading: "슬기로운 코딩생활"
   subheading: "coding 기록일지"
-  banner: <img src="./assets/images/banner.jpg" />
+  banner: "<img src="../assets/images/banner.jpg" />"
