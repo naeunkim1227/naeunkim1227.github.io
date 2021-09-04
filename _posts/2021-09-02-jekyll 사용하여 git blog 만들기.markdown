@@ -134,15 +134,3 @@ main으로 해도 됨..
 " --- " 구분선
 
 " ``` " 박스
-
-
-### post 작성 시 가장 위에 작성해야 할  항목
-```
-layout: post 
-title:  "Lorem"
-date:   2017-06-04 00:00
-category: category_name
-icon: git
-keywords: tag1, tag2
-image: 1.png
-preview: 0
