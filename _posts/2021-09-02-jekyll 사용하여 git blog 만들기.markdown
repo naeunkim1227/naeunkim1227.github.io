@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jekyll 사용하여 git blog 만들기"
+title:  "jekyll 사용하여 github blog 만들기"
 date:   2021-09-02 23:39:01 +0900
 categories: gitblog
 ---
