@@ -29,7 +29,7 @@ JEKYLL YAT THEME로 변경하였다.
 
 ## 1. git repository 만들기
 
-<img src="../assets/images/210902-repo.png">
+![210902-repo](https://user-images.githubusercontent.com/83413364/132782267-3a0bd0e4-358e-4357-9f70-1c5e7deefc76.png)
 
 레포지토리 이름은 
 아이디.github.io로 작성했다.
@@ -38,7 +38,8 @@ naeunkim1227.github.io
 
 ## 2. git clone 하기
 
-<img src="../assets/images/210902-git.png">
+
+![210902-git](https://user-images.githubusercontent.com/83413364/132782319-aca964e5-51ec-45e8-ac88-8f6f8883b399.png)
 
 위의 주소를 복사한다. 그 다음 GIT 터미널 창에서 
 
@@ -116,7 +117,8 @@ git push origin master
 
 위의 문구를 작성해주자. 그 다음 블로그 레포지토리에서 settings로 이동 > pages 탭으로 이동한다.
 
-<img src="../assets/images/210902-branch.png">
+
+![210902-branch](https://user-images.githubusercontent.com/83413364/132782350-314ce875-58ef-46e4-94e4-67dc1aa2f549.png)
 
 그럼 위와 같이 되어 있을텐데, branch가 none으로 설정돼 있을 것이다. 클릭해서 master로 변경해준다.
 나는 push할때 master로 해서 master가 있음. 
