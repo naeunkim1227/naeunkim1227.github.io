@@ -33,6 +33,7 @@ git검색후 git repositoy를 클릭한다.
 ![gitrepo](https://user-images.githubusercontent.com/83413364/132783513-d17d34ac-a564-4659-a6e7-6716818eb5e2.png)
 
 
+### 2.이클립스에서 git repository 생성하기
 
 위의 git repository에서 clone a git repositoy를 선택한다.
 깃레포지토리가 하나도 없다면 화면에 바로 떠있을 것이고 아무것도 없다면 우측 상단에 초록색 화살표 그림이 있는 이미지 버튼이 clone a git repositoy이다. 
@@ -48,6 +49,8 @@ USer와 password에 본인의 아이디와 비번을 넣는데, 깃허브가 21.
 
 ![clone22](https://user-images.githubusercontent.com/83413364/132784089-16463094-cd85-48e2-9c1b-efc86c3307ae.png)
 
+### 3. project 생성하기
+
 위의 레포지토리 우클릭 >  import project 
 
 ![import](https://user-images.githubusercontent.com/83413364/132785069-76f0440d-623a-41f2-9780-4bfa76e10ff0.png)
@@ -55,6 +58,7 @@ USer와 password에 본인의 아이디와 비번을 넣는데, 깃허브가 21.
 finish 클릭한다. 나는 이미 import한 project라 오류가 떴다. 이제 java ee로 이동하면 프로젝트가 추가 되있을 것이다. 
 
 
+### 4. maven project로 변경하기
 
 ![configure](https://user-images.githubusercontent.com/83413364/132785308-c34ba840-4f8f-4571-9ff2-a407aa395d8f.png)
 
