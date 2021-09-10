@@ -7,14 +7,14 @@ tags: [gitblog,jekyll]
 ---
 ## 사용한 테마
 Future Imperfect
-: http://jekyllthemes.org/themes/future-imperfect/
+: <http://jekyllthemes.org/themes/future-imperfect/>
 
 
 21.09.02
 JEKYLL YAT THEME로 변경하였다.
-테마다운은 여기 > http://jekyllthemes.org/themes/jekyll-theme-yat/
+테마다운은 여기 > <http://jekyllthemes.org/themes/jekyll-theme-yat/>
 
-왜냐.. 카테고리나 태그 별로 분리하고 싶었기 때문...그냥 원래 사용한 블로그에 드롭다운 메뉴 추가하고, 나누려고 했으나..하다보니 귀찮아졌다.
+왜냐.. 카테고리나 태그 별로 분리하고 싶었기 때문...그냥 원래 사용한 블로그에 드롭다운 메뉴 추가하고, 나누려고 했으나..하다보니 귀찮아졌다.   
 무튼 jekyll테마를 적용한 gitblog 만드는 법은 아래와 같다.
 
 
@@ -34,14 +34,14 @@ JEKYLL YAT THEME로 변경하였다.
 레포지토리 이름은 
 아이디.github.io로 작성했다.
 
-naeunkim1227.github.io
+naeunkim1227.github.io   
 
 ## 2. git clone 하기
 
 
 ![210902-git](https://user-images.githubusercontent.com/83413364/132782319-aca964e5-51ec-45e8-ac88-8f6f8883b399.png)
 
-위의 주소를 복사한다. 그 다음 GIT 터미널 창에서 
+위의 주소를 복사한다. 그 다음 GIT 터미널 창에서   
 
 ```
 git clone 주소 
@@ -49,7 +49,7 @@ git clone 주소
 
 
 그럼 repository 폴더가 생성된다.
-git 터미널에서 계속 해도 상관은 없지만 나는 ccode에서 작업을 진행한다.
+git 터미널에서 계속 해도 상관은 없지만 나는 ccode에서 작업을 진행한다.   
 
 ## 3. jekyll 설치
 
@@ -59,7 +59,7 @@ gem install jekyll bundler
 ```
 로컬 터미널에서 jekyll을 설치한다. 
 이 부분만 로컬에서 진행하고 나머지는 ccode터미널에서 진행!
-gem...은 ruby를 설치해야 작성이 가능하므로 설치가 안 돼있다면 설치하자...(아마도...)
+gem...은 ruby를 설치해야 작성이 가능하므로 설치가 안 돼있다면 설치하자...(아마도...)   
 
 
 ```
@@ -76,7 +76,7 @@ ccode 터미널에서 블로그 폴더로 이동해준다.
 ```
 bundle install 
 ```
- 그 다음 위 문구를 작성한다. 
+ 그 다음 위 문구를 작성한다.   
 
 
  ```
@@ -85,7 +85,8 @@ bundle add webrick
 bundle exec jekyll serve
  ```
 
-로컬서버에서 테마가 적용이 됐는지 확인해 보려면 위 문구를 작성 후 뜨는 로컬 서버로 적용해 보면 된다. 
+로컬서버에서 테마가 적용이 됐는지 확인해 보려면 위 문구를 작성 후 뜨는 로컬 서버로 적용해 보면 된다.    
+    
 
 ## 4. jekyll theme 적용
 
