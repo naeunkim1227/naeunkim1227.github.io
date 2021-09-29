@@ -117,7 +117,6 @@ tags: [Linux, 설치]
     $ git add -A
     $ git commit -m "first commit"
     $ git brunch -M main
-
     $ git push -u origin main
     ```
 10. git 레포지토리에서 확인하기
