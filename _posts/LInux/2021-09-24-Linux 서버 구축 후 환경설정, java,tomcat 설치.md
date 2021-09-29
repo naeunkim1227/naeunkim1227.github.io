@@ -103,18 +103,18 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
 1. java8 se 리눅스 버전으로 설치한다.
 2. 연결하기
 
-*(새로운 터미널 열어서 작업해야함
-,ssh 입력 안한 터미널)
+    *(새로운 터미널 열어서 작업해야함
+    ,ssh 입력 안한 터미널)
 
     ```
     $ sftp webmaster@127.0.0.1
     ```
 
-비밀번호 입력 후,
+    비밀번호 입력 후,
 
 3. linux 서버에 파일 넣기
 
-원래 터미널에서 작업
+    원래 터미널에서 작업
 
     
     $cd /usr/local/douzone
@@ -131,8 +131,8 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
     $ ls -la
     ```
 
-압축이 풀리지 않은 파일이 ~~.tar.gz
-풀린 파일은 tar.gz이 없는 파일이름과 같다.
+    압축이 풀리지 않은 파일이 ~~.tar.gz
+    풀린 파일은 tar.gz이 없는 파일이름과 같다.
 
 5. douzone 폴더로 이동 시키기
 
@@ -145,7 +145,7 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
     ```
     $ ln -s jdk1.8.0_291/ java
     ```
-위와 같이 링크 연결 후, java를 입력하면 jdk1.8.0_291를 연결 해주는 것이다.
+    위와 같이 링크 연결 후, java를 입력하면 jdk1.8.0_291를 연결 해주는 것이다.
 
 
 7. java 명령어만 입력해도 파일이 실행 될 수 있도록 profile을 편집한다.
@@ -154,7 +154,7 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
     $ vi /etc/profile
     ```
 
-입력후 i를 눌러 수정, 가장 아래에 
+    입력후 i를 눌러 수정, 가장 아래에 
 
 
     ```
@@ -164,7 +164,7 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
     export CLASSPATH=.:/usr/local/douzone/java/lib/tools.jar
     ```
 
-겹치는 주소가 많으니 변수를 선언하여 다음과 같이 축약할 수도 있다.
+    겹치는 주소가 많으니 변수를 선언하여 다음과 같이 축약할 수도 있다.
 
     ```
     #java
@@ -174,7 +174,7 @@ ssh 127.0.0.1 혹은 open 명령어로 접속이 가능하다.
     export PATH=$PATH:$JAVA_HOME/bin
     export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
     ```
-esc + :wq 로 저장하고 나온다.
+    esc + :wq 로 저장하고 나온다.
 
 8. 소스 명령어로 업데이트 하기 
 
@@ -190,7 +190,7 @@ esc + :wq 로 저장하고 나온다.
     $ javac
     ```
 
-에디터를 열어서 class 를 생성해준다.
+    에디터를 열어서 class 를 생성해준다.
 
     ```
     $ vi Helloworld.java
@@ -210,13 +210,13 @@ esc + :wq 로 저장하고 나온다.
     $ java Helloworld
     ```
 
-입력한 내용인 Hello가 나오면 성공적인 설치 완료!
+    입력한 내용인 Hello가 나오면 성공적인 설치 완료!
 
 
 ## 02. tomcat 설치하기
 
 1. 작업위치는 /root
-wget 으로 바로 다운 받는다.
+    wget 으로 바로 다운 받는다.
 
     ```
     $ wget https://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.65/bin/apache-tomcat-8.5.65.tar.gz
@@ -253,7 +253,7 @@ wget 으로 바로 다운 받는다.
 
 ![tomcat](https://user-images.githubusercontent.com/83413364/135248423-4bb32c4f-1b18-43ff-aba3-decbe2cff7d6.png)
 
-다음과 같이 설정한다.
+    다음과 같이 설정한다.
 
 7. 포트 확인
 
@@ -263,9 +263,9 @@ wget 으로 바로 다운 받는다.
 
 ![화면 캡처 2021-09-29 190907](https://user-images.githubusercontent.com/83413364/135248966-87c9629c-f3ea-4483-91ab-13a3cb470822.png)
 
-다음과 같은 화면에서 /8080 검색후 
+    다음과 같은 화면에서 /8080 검색후 
 
-바로 아래
+    바로 아래
 
     ```
     Connector port="8088" protocol="HTTP/1.1"
@@ -275,7 +275,7 @@ wget 으로 바로 다운 받는다.
 
     ```
 
-이 부분의 포트를 8088로 수정해준다.
+    이 부분의 포트를 8088로 수정해준다.
 
 
 8. 실행
@@ -285,7 +285,7 @@ wget 으로 바로 다운 받는다.
     $ ps -ef | grep tomcat
     $ ps -ef | grep java
     ```
-실행 되고 있는 지 확인한다.
+    실행 되고 있는 지 확인한다.
 
 9. 브라우저로 접근하기
    http://127.0.0.1:8088 로 접속하여 톰캣 페이지가 뜨면 연결 완료!
@@ -303,7 +303,7 @@ wget 으로 바로 다운 받는다.
     ```
     $ /usr/lib/systemd/system/tomcat.service
     ```
-파일을 생성한 후 다음 내용을 넣는다.
+    파일을 생성한 후 다음 내용을 넣는다.
 
     ```
     [unit]
@@ -406,7 +406,7 @@ wget 으로 바로 다운 받는다.
 ![화면 캡처 2021-09-29 194233](https://user-images.githubusercontent.com/83413364/135253738-6fff825a-18fb-46b3-a5ef-a851a1f5117a.png)
 
 
-war 파일 선택하여, 배치한다.
+    war 파일 선택하여, 배치한다.
 
 2. 확인
 
@@ -415,7 +415,7 @@ war 파일 선택하여, 배치한다.
     $ ls -la
     ```
 
-위치로 이동하면 내가 올린 helloweb war 파일이 올라와 있는지 확인한다. 
+    위치로 이동하면 내가 올린 helloweb war 파일이 올라와 있는지 확인한다. 
 
-주소창에서 http://127.0.0.1:8088/helloweb/index.jsp 를 입력하면 index 페이지가 표시된다.
+    주소창에서 http://127.0.0.1:8088/helloweb/index.jsp 를 입력하면 index 페이지가 표시된다.
 
