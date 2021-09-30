@@ -6,6 +6,10 @@ categories: Linux
 tags: [Linux, 설치]
 ---
 
+
+
+**post 2021-09-28**
+
 설치할 목록은 다음과 같다. douzone 디렉터리 안에 모아 둘 것이기 때문에
 **mkdir douzone** 으로 디렉토리를 생성한다.
 
