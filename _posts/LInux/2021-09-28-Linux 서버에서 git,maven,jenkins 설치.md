@@ -128,6 +128,32 @@ tags: [Linux, 설치]
 ## 2. maven 설치
 
 
+1. 다운로드 및 압축풀기
+
+    작업 위치는 /root
+
+    ```
+    $ wget https://mirror.navercorp.com/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
+
+    $ tar xvfz apache-maven-3.8.1-bin.tar.gz
+    ```
+
+2. 파일이동 및 링크 연결
+    ```
+    $ mv apache-maven-3.8.1 /usr/local/douzone2021/maven3.8
+    $ ln -s /usr/local/douzone2021/maven3.8 /usr/local/douzone2021/maven
+    ```
+
+3. 설정
+
+    ```
+    vi /etc/profile
+
+    아래 내용 추가하기
+    # maven
+    export PATH=$PATH:/usr/local/douzone/maven/bin
+    ```
+
 
 ## 3. mariadb 설치
 
@@ -257,3 +283,26 @@ tags: [Linux, 설치]
     ```
 
 ## 4. jenkins 설치
+
+    
+    1. 파일 설치 
+        작업위치 /root
+
+        ```
+        wget https://get.jenkins.io/war-stable/2.303.1/jenkins.war
+        ```
+    
+    2. 설정
+
+    global tool Configuration 창에서
+
+
+    git , maven , java를 추가하는데 install하는 것이 아니라 linux서버안에 각 파일이 있는 곳으로 작성해주면 된다.
+
+
+    3. build
+
+    source code management 
+    git으로 설정후 , 파일이 있는 깃 주소를 넣어준다.
+
+    Build 탭에서 ~~maven이라고 적혀있는것으로 클릭..
