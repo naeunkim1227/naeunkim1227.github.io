@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2021-09-28-Linux 서버에서 git,maven,mariadb,jenkins 설치
+title: Linux 서버에서 git,maven,mariadb,jenkins 설치
 subtitle: git,maven,mariadb,jenkins 설치
 categories: Linux
 tags: [Linux, 설치]
