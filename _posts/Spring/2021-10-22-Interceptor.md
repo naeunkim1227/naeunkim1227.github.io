@@ -19,67 +19,30 @@ tags: [spring, Interceptor]
 
 ## 구조
 
-> -encoding Filter
-> 
-
-### tomcat
-
-> — dispatcher servlet |
-> 
-
-> 
-> 
-
-> 
-> 
-
-> 
-> 
-
+```
+encoding Filter
+tomcat
+dispatcher servlet 
 interceptor가  가로채는 구간
-
-### Web Application Context
-
-> -controller - handler
-> 
-
-> 
-> 
-
-> 
-> 
-
-> 
-> 
-
+Web Application Context
+controller - handler 
 interceptor가  가로채는 구간
+Root Application Context
+service
+DB
+```
 
-### Root Application Context
+![Untitled](https://user-images.githubusercontent.com/83413364/138861875-d2bbba00-8607-41ab-9900-f71d5a4c94fd.png)
 
-> -service
-> 
-
-> 
-> 
-
-> 
-> 
-
-> 
-> 
-
-### DB
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42d1de0c-a2d1-4b22-904e-0b14ce14bfa7/Untitled.png)
 
 필터와의 차이점
 
 1. 호출 시점
-    1. filter는 dispathcher servlet이 실행되기 전, interceptor는 실행 후
+    * filter는 dispathcher servlet이 실행되기 전, interceptor는 실행 후
 2. 설정위치
-    1. filter는 web.xml, interceptor는 spring-servlet
+    * filter는 web.xml, interceptor는 spring-servlet
 3. 구현 방식
-    1. interceptor는 클래스 구현이 필요하다. filter는 태그 삽입만해도 실행 가능
+    * interceptor는 클래스 구현이 필요하다. filter는 태그 삽입만해도 실행 가능
     
 
 ### interceptor클래스 구현 전, HandlerInterceptor에 대한 이해가 필요하다.
@@ -128,6 +91,8 @@ public class MyInterceptor01 implements HandlerInterceptor {
 true일 경우 실행, false면 멈춘다.
 
 Object handler는 핸들러 매핑이 찾은 컨트롤러 클래스 객체이다...
+
+
 
 # 02.구현실습
 
@@ -228,7 +193,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 ```
 
 1. 파라미터로 email, password를 가져온다. DB에서 값을 확인하는 메소드를 실행한 후, authUser로 저장하는데, 값이 없을 경우 회원이 아닌 경우이므로, login페이지로 보내준다. return false로 이후의 코드가 실행 되지 않게 한다.
-2. 세션 처리를 한다. 세션에 authUser를 저장하고 메인으로 이동한다. 
+2. 세션 처리를 한다. 세션에 authUser를 저장하고 메인으로 이동한다.    
+
 
 ## 03.AuthInterceptor 구현하기
 
