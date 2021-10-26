@@ -129,7 +129,7 @@ url에 /user/auth가 입력되면, 컨트롤러로 이동해 로직을 수행하
 
 com.douzone.mysite.security.LoginInterceptor 클래스로 가게된다.
 
-*<mvc:annotation-driven</mvc:annotation-driven>을 사용하게 되면 메서드 마다 매핑 명시 해주기.
+<mvc:annotation-driven</mvc:annotation-driven>을 사용하게 되면 메서드 마다 매핑 명시 해주기.
 
 안하면 메소드 이름으로 알아서 매핑하게 된다. 
 
@@ -139,9 +139,12 @@ com.douzone.mysite.security.LoginInterceptor 클래스로 가게된다.
 
 <mvc:exclude-mapping path=""/>를 통해 인터셉터를 수행하지 않을 url을 지정할 수 있다.
 
+
 ### 2. com.douzone.mysite.security.LoginInterceptor 클래스
 
 extends HandlerInterceptorAdapter
+
+
 
 ```java
 package com.douzone.mysite.security;
@@ -200,6 +203,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 
 ### 1.spring-servlet에 url 매핑하기
 
+
+
 ```xml
 <mvc:interceptor>
 			<mvc:mapping path="/**" />
@@ -221,6 +226,8 @@ AuthInterceptor : 모든 핸들러에 관한 인증 체크를 하는 것
 @auth 가 없으면 그냥 실행 시킨다.  있을 경우 인증이 필요하다고 처리하여 AuthInterceptor 를 실행한다.
 
 ### 2.Auth.class
+
+
 
 ```java
 package com.douzone.mysite.security;
@@ -250,6 +257,8 @@ public @interface Auth {
 ```
 
 ### 3.AuthInterceptor.class
+
+
 
 ```java
 package com.douzone.mysite.security;
@@ -344,6 +353,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	
 }
 ```
+
+
 
 1. 핸들러 종류 확인
 2. 핸들러 > 핸들러 메소드로 캐스팅
