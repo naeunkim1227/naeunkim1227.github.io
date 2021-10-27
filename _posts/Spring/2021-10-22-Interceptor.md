@@ -125,6 +125,8 @@ Object handler는 핸들러 매핑이 찾은 컨트롤러 클래스 객체이�
 	</mvc:interceptors>
 ```
 
+
+```
 url에 /user/auth가 입력되면, 컨트롤러로 이동해 로직을 수행하기 전에
 
 com.douzone.mysite.security.LoginInterceptor 클래스로 가게된다.
@@ -138,6 +140,8 @@ com.douzone.mysite.security.LoginInterceptor 클래스로 가게된다.
 <bean class="">에 지정한 인터셉터를 수행하게 된다. 
 
 <mvc:exclude-mapping path=""/>를 통해 인터셉터를 수행하지 않을 url을 지정할 수 있다.
+
+```
 
 
 ### 2. com.douzone.mysite.security.LoginInterceptor 클래스
