@@ -4,7 +4,6 @@ title:  "jekyll 사용하여 github blog 만들기"
 date:   2021-09-02 23:39:01 +0900
 categories: gitblog
 tags: [gitblog,jekyll]
-published: false
 ---
 ## 사용한 테마
 Future Imperfect

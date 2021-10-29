@@ -4,7 +4,6 @@ title: Linux 서버에서 git,maven,mariadb,jenkins 설치
 subtitle: git,maven,mariadb,jenkins 설치
 categories: Linux
 tags: [Linux, 설치]
-published: false
 ---
 
 
