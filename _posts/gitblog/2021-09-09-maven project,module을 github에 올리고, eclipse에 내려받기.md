@@ -4,6 +4,7 @@ title: github에 maven project 만들기, eclipse 내려받기
 subtitle: github
 categories: github
 tags: [java,github,maven]
+published: false
 ---
 
 github에서 공용으로 사용할 maven project를 생성하고 module을 여러개 생성했는데,
