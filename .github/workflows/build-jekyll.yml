@@ -30,4 +30,4 @@ jobs:
           jekyll_cfg: '_config.yml'  # Default is _config.yml
           jekyll_baseurl: '/jekyll-theme-yat'  # Default is empty
           cname: ''                  # Default is to not use a cname
-          actor: ''                  # Default is the GITHUB_ACTOR
+          actor: ''                  
