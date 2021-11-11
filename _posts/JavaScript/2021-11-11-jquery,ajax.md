@@ -198,17 +198,6 @@ public class JsonResult {
 ### 1.AJAX- jquery없이 구현하기
 
 ```java
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
 //DOM Load Event
 //1. load: 모두 다(DOM, CSSOM, Image) 로딩
@@ -300,6 +289,8 @@ window.addEventListener("DOMContentLoaded", function(){
 </html>
 ```
 
+
+
 1. ActiveXObject ,XMLHttpRequest 생성하기
     
     ActiveXObject는 IE8이하에서 사용가능하다.
@@ -337,19 +328,11 @@ xhr.send();
     send로 페이지에 데이터를 전달한다.
     
 
+
+
 ### 2.Jquery를 사용하여 AJAX구현
 
-```xml
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+```java
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
@@ -407,6 +390,7 @@ success: function(response){
 성공시 실행할 함수
 
 }
+
 
 ajax흐름
 
