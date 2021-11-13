@@ -25,7 +25,7 @@ tags: [javaScript]
 
 ### JSONResult.java,XMLResult.java작성하기
 
-1) **XMLResult.java**
+#### 1) XMLResult.java
 
 ```java
 package com.douzone.ch08.controller.dto;
