@@ -154,7 +154,8 @@ XMLResult파일을 만들때, 변수가 없는 기본생성자를 먼저 만들�
 
 <data>안에 다른 태그값도 있기 때문에, @XmlRootElement(name="data")도 명시해줘야함
 
-**2)JSONResult.java**
+#### 2)JSONResult.java
+
 
 ```xml
 package com.douzone.ch08.controller.dto;
@@ -276,17 +277,6 @@ window.addEventListener("DOMContentLoaded", function(){
 
 });
 </script>
-</head>
-<body>	
-	<h1>AJAX Test - JSON Format Data</h1>
-	
-	<button>데이터가져오기</button>
-	<div id="data">
-			
-	</div>
-	
-</body>
-</html>
 ```
 
 
@@ -318,7 +308,7 @@ var response= JSON.parse(this.responseText);
 
 responseText는 String 타입으로 반환하게 된다. 따라서 JSON.parse를 통해 Object타입으로 변경해준다.
 
-1. 데이터를 가져올 주소 작성하기
+4. 데이터를 가져올 주소 작성하기
 xhr.open("get",'${pageContext.request.contextPath }/api/json', true);
 xhr.send();
     
@@ -333,7 +323,6 @@ xhr.send();
 ### 2.Jquery를 사용하여 AJAX구현
 
 ```java
-<script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
 	vo = {
@@ -366,15 +355,6 @@ $(function(){
 });
 </script>
 </head>
-<body>	
-	<h1>AJAX Test - JSON Format Data</h1>
-	
-	<button>데이터보내기(post, delete, put) : json 포맷</button>
-	<div id="data">
-			
-	</div>
-	
-</body>
 </html>
 ```
 
