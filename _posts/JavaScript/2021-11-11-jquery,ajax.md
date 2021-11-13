@@ -152,7 +152,9 @@ XMLResult파일을 만들때, 변수가 없는 기본생성자를 먼저 만들�
 
 다음과 같은 형식으로 이루어져 있기 때문에, @XmlRootElement(name="response")로 명시 해준다.
 
-<data>안에 다른 태그값도 있기 때문에, @XmlRootElement(name="data")도 명시해줘야함
+data안에 다른 태그값도 있기 때문에, @XmlRootElement(name="data")도 명시해줘야함
+
+
 
 #### 2)JSONResult.java
 
@@ -195,6 +197,8 @@ public class JsonResult {
 	}
 }
 ```
+
+
 
 ### 1.AJAX- jquery없이 구현하기
 
