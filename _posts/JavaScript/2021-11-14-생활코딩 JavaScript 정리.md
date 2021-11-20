@@ -6,7 +6,7 @@ categories: javaScript
 tags: [javaScript]
 ---
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/48cfa64f-7766-46db-b397-8cfce07be1ec/Untitled.png)
+![js](https://user-images.githubusercontent.com/83413364/142727325-9cb72c16-86b5-4440-93a8-57301bd35178.png)
 
 Document 문서 전체를 의미
 
@@ -323,20 +323,80 @@ for(var name in Node){
     1. removeChild(child)
         1. 부모 노드에서, 자식 노드를 삭제해야 <l태그>데이터</태그>가 삭제된다.
 3. 노드 바꾸기
+    1. replaceChild(newChild, oldChild)
 
 ### 04)jQuery 노드 변경 API
 
+1. 추가
+    1. 관련 메소드 before, prepend, content, append, after
+2. 제거
+    1. remove - 선택 엘리먼트를 제거
+    2. empty - 선택된 엘리먼트의 텍스트 노드를 제거
+3. 바꾸기
+    1. replaceAll - 변경내용 먼저 작성 $('<a>test</a>').replaceAll('#target');
+    2. replaceWith - 제어대상 먼저 지정 $('#target').replacewith('<a>test</a>')
+4. 복사
+    1. clone() 후 replaceAll()
+5. 이동
+    1. $().append($())를 통해 이동 효과를 낼 수 있다.
+
 ### 05)문자열로 노드 제어
+
+1. **innerHTML**
+    1. 지정한 엘리먼트의 하위 엘리먼트를 알 수 있다.(태그 포함)
+    2. 자식 노드의 값을 읽어 올 수도 있고, 변경할 수도 있다.
+2. outerHTML
+    1. 지정한 엘리먼트를 포함한 엘리먼트를 알 수 있다.
+3. innerText, outerText
+    1. 태그를 제외한 , 텍스트만 알 수 있다. 텍스트만 변경 가능하다.
+4. insertAdjacentHTML()
+    1. 가질 수 있는 인자.  beforebegin, afterbegin, beforeend,afterend
 
 ---
 
 # 9.Document 객체
 
+Document 
+
+|
+
+HTMLDocument
+
+Node가 가진, 메소드 사용 가능.
+
+document.childnode로 문서 전체 읽기 가능
+
+1. 노드 생성 API
+    1. createElement()
+    2. createTextNode()
+2. 문서정보 API
+    1. title
+    2. URL
+    3. referrer
+    4. lastModified
+
 # 10.Text 객체
 
-값 API
+<p>text 객체</p> <p>는 Element, 'text객체'가 text
 
-조작 API
+DOM에서는 공백이나 줄바꿈도 텍스트 노드가 된다.
+
+1.값
+
+1. data
+2. nodeValue
+1. 조작
+    1. appendData()
+    2. deleteData()
+    3. insertData()
+    4. replaceData()
+    5. subStringData()
+2. 생성
+    1. document.createTextNode()
+
+### 01) 값 API
+
+### 02) 조작 API
 
 ---
 
