@@ -36,6 +36,8 @@ props,state의 변화에 따라 결정된다.
 
 1. componentWillUnmount : 등록했었던 이벤트를 제거한다.
 
+
+
 <aside>
 🗣 호출순서 constructor > componentWillMount  > render > **componentDidMount >** shouldComponentUpdate(조건이 성립될 경우 ex) props의 값이 5의 배수일때만 호출) >  componentWillUpdate > render > componentDidUpdate
 </aside>
