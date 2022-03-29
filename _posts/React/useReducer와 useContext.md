@@ -48,3 +48,38 @@ useReducer는 다음 두 함수를 가지게 된다.
 
 > const [state,dispatch]=useReducer(reducer,initialState); 가 기본형식, reducer는 리듀서 함수를 지칭하고 initialState는 초기상태
 >
+
+
+
+# useContext
+
+### 1)context
+
+- react는 props이용해 데이터를 전달할 수 있는 구조이다. 그러나 A,B,C 컴포넌트가 각각 부모자식 관계일때, A에서 C로 데이터를 전달하려면 중간 컴포넌트인 B를 거쳐야했다. 이러한 불편함을 개선하기 위해 사용하는것이 useContext이다.
+- context 값이 변경되면 항상 리렌더링한다.
+- 단계마다 일일이 props를 넘겨주지 않고 트리 전체에 데이터를 제공해줄 수 있다.
+- API
+    - React.createContext
+        
+        ```jsx
+        const MyContext = React.createContext(defaultValue);
+        ```
+        
+    - React.Provider
+        - context의 변화를 알리는 역할을 한다. provider의 value가 바뀔때마다 다시 렌터링한다.
+        
+        ```jsx
+        <MyContext.Provider value={/* 어떤 값 */}>
+        ```
+        
+    - Class.contextType
+    - Context.Consumer
+        - context의 변화를 감시하는 컴포넌트
+            
+            ```jsx
+            <MyContext.Consumer>
+              {value => /* context 값을 이용한 렌더링 */}
+            </MyContext.Consumer>
+            ```
+            
+    - Context.displayName
