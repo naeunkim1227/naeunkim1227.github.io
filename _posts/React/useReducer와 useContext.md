@@ -45,9 +45,8 @@ useReducer는 다음 두 함수를 가지게 된다.
     <button onClick= {() => dispatch({type: "증가"})}+ </button>
     ```
     
+ const [state,dispatch]=useReducer(reducer,initialState); 가 기본형식, reducer는 리듀서 함수를 지칭하고 initialState는 초기상태
 
-> const [state,dispatch]=useReducer(reducer,initialState); 가 기본형식, reducer는 리듀서 함수를 지칭하고 initialState는 초기상태
->
 
 
 
