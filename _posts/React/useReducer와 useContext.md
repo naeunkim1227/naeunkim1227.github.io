@@ -46,6 +46,7 @@ useReducer는 다음 두 함수를 가지게 된다.
     ```
     
  const [state,dispatch]=useReducer(reducer,initialState); 가 기본형식, reducer는 리듀서 함수를 지칭하고 initialState는 초기상태
+ 사용자가 클릭하는 버튼 > dispatch 함수 실행이라 보면 된다.
 
 
 
