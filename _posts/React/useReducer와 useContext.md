@@ -50,6 +50,75 @@ useReducer는 다음 두 함수를 가지게 된다.
 
 
 
+# useReducer
+
+useReducer를 통해 setState로 관리했던 상태를 조금 더 안정성있는 코드로 개선할 수 있다. 
+  체크가 되있는 상태면 해제하게 하는 onChange함수 로직이 있다. 
+
+ 
+
+### 1. onChange함수에 set 함수 사용
+
+```jsx
+
+function Checkbox() {
+
+	const [checked,setCheked] = useState(false);
+
+return (
+
+	<input type="checkbox" value={checked} 
+		onChange = {() => setChecked (checked => !checked)} />
+	{checked? "checked" : "not checked"}
+)
+
+}
+
+```
+
+위의 코드는 개발자가 잘못된 정보를 보냈을때 문제가 발생하는 경우가 있으므로 익명함수를 추가해서 개선할 수 있다.
+
+### 2. 익명함수 사용
+
+```jsx
+function Checkbox() {
+
+	const [checked,setCheked] = useState(false);
+
+	function toggle() {
+		setChecked(checked => !checked)
+	}
+
+return (
+
+	<input type="checkbox" value={checked} onChange={toggle} />
+	{checked? "checked" : "not checked"}
+)
+
+}
+```
+
+토글 함수는 체크 상태에서 , 언체크상태로 변경을 한다. 다음과 같이, 현재 상태를 받아서 새상태를 반환하는 것을 useState대신 useReducer를 사용하면 된다.
+
+### 3.useReducer사용
+
+```jsx
+function Checkbox() {
+
+	const [checked,setCheked] = useReducer(checked => !checked,false)
+//초기상태 false를 받음
+
+return (
+
+	<input type="checkbox" value={checked} onChange={toggle} />
+)
+
+}
+```
+
+
+
+
 
 # useContext
 
