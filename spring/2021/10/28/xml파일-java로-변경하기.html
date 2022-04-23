@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>spring xml파일 java로 변경하기 | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="spring xml파일 java로 변경하기">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="post 2021-10-29">
+<meta property="og:description" content="post 2021-10-29">
+<link rel="canonical" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html">
+<meta property="og:url" content="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-10-28T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="spring xml파일 java로 변경하기">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html"},"description":"post 2021-10-29","@type":"BlogPosting","url":"/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html","headline":"spring xml파일 java로 변경하기","dateModified":"2021-10-28T00:00:00+00:00","datePublished":"2021-10-28T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">spring xml파일 java로 변경하기</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-10-28T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Oct 28, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 15 mins</span>
+  </p>
+<div class="post-tags"><a class="post-tag" href="/tags.html#spring">#spring</a></div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p><strong>post 2021-10-29</strong></p>
+
+<p>생성 패키지</p>
+
+<p>com.douzone.config.app</p>
+
+<p>com.douzone.config.web</p>
+
+<p>리소스에 생성</p>
+
+<p>com.douzone.mysite.config.app</p>
+
+<p>com.douzone.mysite.config.app.mybatis</p>
+
+<p>com.douzone.mysite.config.app.mybatis.mappers</p>
+
+<h2 id="1applicationcontextxml--appconfigjava-로-변환하기">1.applicationContext.xml &gt; AppConfig.java 로 변환하기</h2>
+
+<p>생성할 java파일 : AppConfig.java / DBConfig.java / MyBatisConfig.java</p>
+
+<h3 id="1webxml-수정">1.web.xml 수정</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;context-param&gt;</span>
+		<span class="nt">&lt;param-name&gt;</span> contextClass<span class="nt">&lt;/param-name&gt;</span>
+		<span class="nt">&lt;param-value&gt;</span>org.springframework.web.context.support.AnnotationConfigWebApplicationContext<span class="nt">&lt;/param-value&gt;</span>
+	<span class="nt">&lt;/context-param&gt;</span>
+	<span class="nt">&lt;context-param&gt;</span>
+		<span class="nt">&lt;param-name&gt;</span> contextConfigLocation<span class="nt">&lt;/param-name&gt;</span>
+		<span class="nt">&lt;param-value&gt;</span>com.douzone.mysite.config.AppConfig<span class="nt">&lt;/param-value&gt;</span>
+	<span class="nt">&lt;/context-param&gt;</span>
+</code></pre></div></div>
+
+<p>자바 파일로 먼저 변경</p>
+
+<p>org.springframework.web.context.support.AnnotationConfigWebApplicationContext 가 appconfig클래스를 읽을 것이다..</p>
+
+<p>AppConfig는 데이터를 모으는 역할만 할것이다. 빈깡통..</p>
+
+<p>DBConfig,MyBatisConfig 설정 &gt; AppConfig가 이걸 Import &gt; web.xml에서 com.douzone.mysite.config.AppConfig 로 읽음</p>
+
+<p>자바 메소드로 변경 후</p>
+
+<h3 id="2-dbconfig">2. DBConfig</h3>
+
+<p><strong>변경전 xml</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Connection Pool DataSource--&gt;</span>
+	<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"dataSource"</span> <span class="na">class=</span><span class="s">"org.apache.commons.dbcp.BasicDataSource"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"driverClassName"</span> <span class="na">value=</span><span class="s">"org.mariadb.jdbc.Driver"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">value=</span><span class="s">"jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"webdb"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"webdb"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/bean&gt;</span>
+
+<span class="c">&lt;!--auto proxy --&gt;</span>
+	<span class="nt">&lt;aop:aspectj-autoproxy/&gt;</span>
+
+<span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">"com.douzone.mysite.repository, com.douzone.mysite.service,com.douzone.mysite.aspect"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Repository"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Service"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Component"</span> <span class="nt">/&gt;</span>			
+	<span class="nt">&lt;/context:component-scan&gt;</span>
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.app</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.commons.dbcp.BasicDataSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.PropertySource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.env.Environment</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@PropertySource</span><span class="o">(</span><span class="s">"classpath:com/douzone/mysite/config/app/jdbc.properties"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DBConfig</span> <span class="o">{</span>
+	
+	
+	<span class="c1">//jdbc.properties의 값을 가져올 수 있음</span>
+	<span class="nd">@Autowired</span>
+	<span class="kd">private</span> <span class="nc">Environment</span> <span class="n">env</span><span class="o">;</span>
+	
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+		 <span class="nc">BasicDataSource</span> <span class="n">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDataSource</span><span class="o">();</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setDriverClassName</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.driveClassName"</span><span class="o">));</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.url"</span><span class="o">));</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.username"</span><span class="o">));</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.password"</span><span class="o">));</span>
+		 <span class="c1">// int값으로 변경해서 가져 와야함</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setInitialSize</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.initialSize"</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+		 <span class="n">dataSource</span><span class="o">.</span><span class="na">setMaxActive</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"jdbc.maxActive"</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+		 
+		 <span class="k">return</span> <span class="n">dataSource</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>@PropertySource(“classpath:com/douzone/mysite/config/app/jdbc.properties”)로 jdbc.properties파일에 저장한 정보를 가져 올것이다. String 타입으로 가져오므로 integer.class로 변환을 해줄 것은 해주자. jdbc.properties는 개인적으로 다른 정보를 가지고 있으니 분리해 준 것이다.</p>
+
+<p>jdbc.properties에서</p>
+
+<p>이름을 임의로 지어준다. jdbc.url 등등</p>
+
+<p>데이터를 넣어준다</p>
+
+<p>이 파일의 데이터를 가져오기 위해서</p>
+
+<p>@Autowired
+private Environment env;</p>
+
+<p>Environment를 선언해준다.</p>
+
+<h3 id="3mybatisconfig">3.MyBatisConfig</h3>
+
+<p><strong>변경전 xml</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- MyBatis SqlSessionFactoryBean --&gt;</span> 
+	<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"sqlSessionFactory"</span> <span class="na">class=</span><span class="s">"org.mybatis.spring.SqlSessionFactoryBean"</span><span class="nt">&gt;</span> 
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span> 
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"configLocation"</span> <span class="na">value=</span><span class="s">"classpath:mybatis/configuration.xml"</span> <span class="nt">/&gt;</span> 
+	<span class="nt">&lt;/bean&gt;</span>
+		
+	<span class="c">&lt;!-- MyBatis SqlSessionTemplate --&gt;</span> 
+	<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"sqlSession"</span> <span class="na">class=</span><span class="s">"org.mybatis.spring.SqlSessionTemplate"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;constructor-arg</span> <span class="na">index=</span><span class="s">"0"</span> <span class="na">ref=</span><span class="s">"sqlSessionFactory"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/bean&gt;</span>
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.app</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.ibatis.session.SqlSession</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.ibatis.session.SqlSessionFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.mybatis.spring.SqlSessionFactoryBean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.mybatis.spring.SqlSessionTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBatisConfig</span> <span class="o">{</span>
+	
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">SqlSessionFactory</span> <span class="nf">sessionFactory</span><span class="o">(</span><span class="nc">DataSource</span> <span class="n">dataSource</span><span class="o">,</span> <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">SqlSessionFactoryBean</span> <span class="n">sqlsessionFactory</span>  <span class="o">=</span> <span class="k">new</span> <span class="nc">SqlSessionFactoryBean</span><span class="o">();</span>
+		
+		<span class="c1">//DBConfig에 있는 DataSource 주입이 필요하다. </span>
+		<span class="n">sqlsessionFactory</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
+		
+		<span class="n">sqlsessionFactory</span><span class="o">.</span><span class="na">setConfigLocation</span><span class="o">(</span><span class="n">applicationContext</span><span class="o">.</span><span class="na">getResource</span><span class="o">(</span><span class="s">"classpath:com/douzone/mysite/config/app/mybatis/configuration.xml"</span><span class="o">));</span>
+		
+		<span class="k">return</span> <span class="n">sqlsessionFactory</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">SqlSession</span> <span class="nf">sqlSession</span><span class="o">(</span><span class="nc">SqlSessionFactory</span> <span class="n">sessionFactory</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">SqlSessionTemplate</span><span class="o">(</span><span class="n">sessionFactory</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>sqlsessionFactory.setConfigLocation(applicationContext.getResource(“classpath:com/douzone/mysite/config/app/mybatis/configuration.xml”))으로 파일을 명시 해주어야 해서 ApplicationContext를 변수로 넣어주었다.</p>
+
+<p>sqlsessionFactory.getObject(); 로 꼭 object 타입으로 리턴해주자.</p>
+
+<h3 id="4appconfig">4.AppConfig</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.mysite.config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ComponentScan</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.EnableAspectJAutoProxy</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Import</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.douzone.config.app.DBConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.config.app.MyBatisConfig</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableAspectJAutoProxy</span>
+<span class="nd">@Import</span><span class="o">({</span><span class="nc">DBConfig</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">MyBatisConfig</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
+<span class="nd">@ComponentScan</span><span class="o">({</span><span class="s">"com.douzone.mysite.repository"</span><span class="o">,</span><span class="s">"com.douzone.mysite.service"</span><span class="o">,</span><span class="s">"com.douzone.mysite.aspect"</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppConfig</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>DBConfig.class, MyBatisConfig.class를 Import하는 가장 상위의 Config클래스이다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--auto proxy --&gt;</span>
+	<span class="nt">&lt;aop:aspectj-autoproxy/&gt;</span>
+</code></pre></div></div>
+
+<p>을 어노테이션 @EnableAspectAutoProxy로 설정했다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">"com.douzone.mysite.repository, com.douzone.mysite.service,com.douzone.mysite.aspect"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Repository"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Service"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;context:include-filter</span> <span class="na">type=</span><span class="s">"annotation"</span> <span class="na">expression=</span><span class="s">"org.springframework.stereotype.Component"</span> <span class="nt">/&gt;</span>			
+	<span class="nt">&lt;/context:component-scan&gt;</span>
+</code></pre></div></div>
+
+<p>를 @ComponentScan({“com.douzone.mysite.repository”,”com.douzone.mysite.service”,”com.douzone.mysite.aspect”})로 명시해 주었다.</p>
+
+<h2 id="2-spring-servletxml--webconfigjava-로-변환하기">2. spring-servlet.xml &gt; WebConfig.java 로 변환하기</h2>
+
+<p>생성할 java 파일 :</p>
+
+<h3 id="1mvcconfig">1.MvcConfig</h3>
+
+<p><strong>변경전 xml</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- ViewResolver --&gt;</span>
+	<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"viewResolver"</span>
+		<span class="na">class=</span><span class="s">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"viewClass"</span>
+			<span class="na">value=</span><span class="s">"org.springframework.web.servlet.view.JstlView"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"prefix"</span> <span class="na">value=</span><span class="s">"/WEB-INF/views/"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"suffix"</span> <span class="na">value=</span><span class="s">".jsp"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/bean&gt;</span>
+
+<span class="c">&lt;!-- validator, conversionService, messageConverter를 자동으로 등록 --&gt;</span>
+	<span class="nt">&lt;mvc:annotation-driven&gt;</span>
+		<span class="nt">&lt;mvc:message-converters&gt;</span>
+			<span class="nt">&lt;bean</span>
+				<span class="na">class=</span><span class="s">"org.springframework.http.converter.StringHttpMessageConverter"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"supportedMediaTypes"</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;list&gt;</span>
+						<span class="nt">&lt;value&gt;</span>text/html; charset=UTF-8<span class="nt">&lt;/value&gt;</span>
+					<span class="nt">&lt;/list&gt;</span>
+				<span class="nt">&lt;/property&gt;</span>
+			<span class="nt">&lt;/bean&gt;</span>
+			<span class="nt">&lt;bean</span>
+				<span class="na">class=</span><span class="s">"org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"supportedMediaTypes"</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;list&gt;</span>
+						<span class="nt">&lt;value&gt;</span>application/json; charset=UTF-8<span class="nt">&lt;/value&gt;</span>
+					<span class="nt">&lt;/list&gt;</span>
+				<span class="nt">&lt;/property&gt;</span>
+			<span class="nt">&lt;/bean&gt;</span>
+		<span class="nt">&lt;/mvc:message-converters&gt;</span>
+
+		<span class="nt">&lt;mvc:argument-resolvers&gt;</span>
+			<span class="nt">&lt;bean</span>
+				<span class="na">class=</span><span class="s">"com.douzone.mysite.security.AuthUserHandlerMethodArgumentResolver"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/mvc:argument-resolvers&gt;</span>
+	<span class="nt">&lt;/mvc:annotation-driven&gt;</span>
+
+	<span class="c">&lt;!-- 서블릿 컨테이너(tomcat)의 DefaultServlet 위임(Delegate) Handler --&gt;</span>
+	<span class="nt">&lt;mvc:default-servlet-handler</span> <span class="nt">/&gt;</span>
+
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.nio.charset.Charset</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.MediaType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.HttpMessageConverter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.StringHttpMessageConverter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.json.Jackson2ObjectMapperBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.json.MappingJackson2HttpMessageConverter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.ViewResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.view.InternalResourceViewResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.view.JstlView</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">extends</span> <span class="nc">WebMvcConfigurerAdapter</span> <span class="o">{</span>
+	
+	<span class="c1">// View Resolver</span>
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">ViewResolver</span> <span class="nf">viewResolver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">InternalResourceViewResolver</span> <span class="n">viewResolver</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InternalResourceViewResolver</span><span class="o">();</span>
+		<span class="n">viewResolver</span><span class="o">.</span><span class="na">setViewClass</span><span class="o">(</span><span class="nc">JstlView</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+		<span class="n">viewResolver</span><span class="o">.</span><span class="na">setPrefix</span><span class="o">(</span><span class="s">"/WEB-INF/views/"</span><span class="o">);</span>
+		<span class="n">viewResolver</span><span class="o">.</span><span class="na">setSuffix</span><span class="o">(</span><span class="s">".jsp"</span><span class="o">);</span>
+		
+		<span class="k">return</span> <span class="n">viewResolver</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Message Converter</span>
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">StringHttpMessageConverter</span> <span class="nf">stringHttpMessageConverter</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">StringHttpMessageConverter</span> <span class="n">messageConverter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringHttpMessageConverter</span><span class="o">();</span>
+		<span class="n">messageConverter</span><span class="o">.</span><span class="na">setSupportedMediaTypes</span><span class="o">(</span>
+			<span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+				<span class="k">new</span> <span class="nf">MediaType</span><span class="o">(</span><span class="s">"text"</span><span class="o">,</span> <span class="s">"html"</span><span class="o">,</span> <span class="nc">Charset</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"utf-8"</span><span class="o">)))</span>
+			<span class="o">);</span>
+
+		<span class="k">return</span> <span class="n">messageConverter</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">MappingJackson2HttpMessageConverter</span> <span class="nf">mappingJackson2HttpMessageConverter</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">Jackson2ObjectMapperBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Jackson2ObjectMapperBuilder</span><span class="o">()</span>
+			<span class="o">.</span><span class="na">indentOutput</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">dateFormat</span><span class="o">(</span><span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-mm-dd"</span><span class="o">));</span>
+		
+		<span class="nc">MappingJackson2HttpMessageConverter</span> <span class="n">messageConverter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">(</span><span class="n">builder</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>
+		<span class="n">messageConverter</span><span class="o">.</span><span class="na">setSupportedMediaTypes</span><span class="o">(</span>
+			<span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+				<span class="k">new</span> <span class="nf">MediaType</span><span class="o">(</span><span class="s">"application"</span><span class="o">,</span> <span class="s">"json"</span><span class="o">,</span> <span class="nc">Charset</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"utf-8"</span><span class="o">))</span>
+			<span class="o">)</span>
+		<span class="o">);</span>
+		
+		<span class="k">return</span> <span class="n">messageConverter</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">stringHttpMessageConverter</span><span class="o">());</span>
+		<span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">mappingJackson2HttpMessageConverter</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Default Servlet Handler</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureDefaultServletHandling</span><span class="o">(</span><span class="nc">DefaultServletHandlerConfigurer</span> <span class="n">configurer</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">configurer</span><span class="o">.</span><span class="na">enable</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>&lt;mvc: 태그를 사용한 것은 WebMvcConfigurerAdapter를 상속 받고 ,  @EnableWebMvc어노테이션을 작성해주자.</p>
+
+<p>Arrays.asList 로 list안의 값을 세팅할 수 있다.</p>
+
+<h3 id="2fileuploadconfig">2.FileUploadConfig</h3>
+
+<p><strong>변경 전 xml</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!--</span> <span class="n">mvc</span> <span class="n">url</span><span class="o">-</span><span class="n">resource</span> <span class="n">mapping</span> <span class="o">--&gt;</span>
+	<span class="o">&lt;</span><span class="nl">mvc:</span><span class="n">resources</span> <span class="n">mapping</span><span class="o">=</span><span class="s">"/gallery/images/**"</span>
+		<span class="n">location</span><span class="o">=</span><span class="s">"file:/upload-images/"</span> <span class="o">/&gt;</span>
+
+<span class="o">&lt;!--</span> <span class="nc">Multipart</span> <span class="nc">Resolver</span> <span class="o">--&gt;</span>
+	<span class="o">&lt;</span><span class="n">bean</span> <span class="n">id</span><span class="o">=</span><span class="s">"multipartResolver"</span>
+		<span class="kd">class</span><span class="err">="</span><span class="nc">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">multipart</span><span class="o">.</span><span class="na">commons</span><span class="o">.</span><span class="na">CommonsMultipartResolver</span><span class="s">"&gt;
+		&lt;!-- 최대업로드 가능한 바이트크기 --&gt;
+		&lt;property name="</span><span class="n">maxUploadSize</span><span class="s">" value="</span><span class="mi">52428800</span><span class="s">" /&gt;
+		&lt;!-- 디스크에 임시 파일을 생성하기 전에 메모리에 보관할수있는 최대 바이트 크기 --&gt;
+		&lt;!-- property name="</span><span class="n">maxInMemorySize</span><span class="s">" value="</span><span class="mi">52428800</span><span class="s">" / --&gt;
+		&lt;!-- defaultEncoding --&gt;
+		&lt;property name="</span><span class="n">defaultEncoding</span><span class="s">" value="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">"</span> <span class="o">/&gt;</span>
+	<span class="o">&lt;/</span><span class="n">bean</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.PropertySource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.env.Environment</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.MultipartResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.commons.CommonsMultipartResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter</span><span class="o">;</span>
+
+<span class="c1">//set정보가 PropertySource에 명시한 파일에 있음</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@PropertySource</span><span class="o">(</span><span class="s">"classpath:com/douzone/mysite/config/web/fileupload.properties"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileUploadConfig</span> <span class="kd">extends</span> <span class="nc">WebMvcConfigurerAdapter</span> <span class="o">{</span>
+	
+	<span class="nd">@Autowired</span>
+	<span class="kd">private</span> <span class="nc">Environment</span> <span class="n">env</span><span class="o">;</span>
+	
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">MultipartResolver</span> <span class="nf">multipartResolver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">CommonsMultipartResolver</span> <span class="n">multipartResolver</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CommonsMultipartResolver</span><span class="o">();</span>
+		<span class="n">multipartResolver</span><span class="o">.</span><span class="na">setMaxUploadSize</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"fileupload.maxUploadSize"</span><span class="o">,</span><span class="nc">Long</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+		<span class="n">multipartResolver</span><span class="o">.</span><span class="na">setMaxInMemorySize</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"fileupload.maxInMemorySize"</span><span class="o">,</span><span class="nc">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+		<span class="n">multipartResolver</span><span class="o">.</span><span class="na">setDefaultEncoding</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"fileupload.defaultEncoding"</span><span class="o">));</span>
+		
+		<span class="k">return</span> <span class="n">multipartResolver</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addResourceHandlers</span><span class="o">(</span><span class="nc">ResourceHandlerRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">registry</span>
+		<span class="o">.</span><span class="na">addResourceHandler</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"fileupload.resourceMapping"</span><span class="o">))</span>
+		<span class="o">.</span><span class="na">addResourceLocations</span><span class="o">(</span><span class="s">"file:"</span> <span class="o">+</span> <span class="n">env</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"fileupload.location"</span><span class="o">));</span>
+	
+	<span class="o">}</span>
+	
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>//값을 리스트로 만들어 주는 기능
+<a href="notion://arrays.askist/">//Arrays.asKist</a></p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46a3f7c6-7ce0-4c72-898e-5440ea5a04a9/Untitled.png" alt="Untitled"></p>
+
+<h3 id="3messageconfig">3.MessageConfig</h3>
+
+<p><strong>변경 전 xml</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!--</span> <span class="mi">6</span><span class="o">.</span> <span class="nc">MessageSource</span> <span class="o">--&gt;</span>
+	<span class="o">&lt;</span><span class="n">bean</span> <span class="n">id</span><span class="o">=</span><span class="s">"messageSource"</span>
+		<span class="kd">class</span><span class="err">="</span><span class="nc">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">context</span><span class="o">.</span><span class="na">support</span><span class="o">.</span><span class="na">ResourceBundleMessageSource</span><span class="s">"&gt;
+		&lt;property name="</span><span class="n">basenames</span><span class="err">"</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>
+				<span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">messages</span><span class="o">/</span><span class="n">messages_ko</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+			<span class="o">&lt;/</span><span class="n">list</span><span class="o">&gt;</span>
+		<span class="o">&lt;/</span><span class="n">property</span><span class="o">&gt;</span>
+	<span class="o">&lt;/</span><span class="n">bean</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.MessageSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ResourceBundleMessageSource</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageConfig</span> <span class="o">{</span>
+	
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">MessageSource</span> <span class="nf">messageSource</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">ResourceBundleMessageSource</span> <span class="n">messageSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ResourceBundleMessageSource</span><span class="o">();</span>
+		<span class="n">messageSource</span><span class="o">.</span><span class="na">setBasenames</span><span class="o">(</span><span class="s">"com/douzone/mysite/config/web/message_ko"</span><span class="o">);</span>
+		<span class="n">messageSource</span><span class="o">.</span><span class="na">setDefaultEncoding</span><span class="o">(</span><span class="s">"utf-8"</span><span class="o">);</span>
+		
+		
+		<span class="k">return</span> <span class="n">messageSource</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="4securityconfig">4.SecurityConfig</h3>
+
+<p><strong>변경전 xml</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nl">mvc:</span><span class="n">argument</span><span class="o">-</span><span class="n">resolvers</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="n">bean</span>
+				<span class="kd">class</span><span class="err">="</span><span class="nc">com</span><span class="o">.</span><span class="na">douzone</span><span class="o">.</span><span class="na">mysite</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">AuthUserHandlerMethodArgumentResolver</span><span class="s">" /&gt;
+		&lt;/mvc:argument-resolvers&gt;
+
+&lt;!-- Interceptors --&gt;
+	&lt;mvc:interceptors&gt;
+		&lt;mvc:interceptor&gt;
+			&lt;mvc:mapping path="</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">auth</span><span class="s">" /&gt;
+			&lt;bean class="</span><span class="n">com</span><span class="o">.</span><span class="na">douzone</span><span class="o">.</span><span class="na">mysite</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">LoginInterceptor</span><span class="s">" /&gt;
+		&lt;/mvc:interceptor&gt;
+		&lt;mvc:interceptor&gt;
+			&lt;mvc:mapping path="</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">logout</span><span class="s">" /&gt;
+			&lt;bean class="</span><span class="n">com</span><span class="o">.</span><span class="na">douzone</span><span class="o">.</span><span class="na">mysite</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">LogoutInterceptor</span><span class="s">" /&gt;
+		&lt;/mvc:interceptor&gt;
+		&lt;mvc:interceptor&gt;
+			&lt;mvc:mapping path="</span><span class="o">/**</span><span class="s">" /&gt;
+			&lt;mvc:exclude-mapping path="</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">auth</span><span class="s">" /&gt;
+			&lt;mvc:exclude-mapping path="</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">logout</span><span class="s">" /&gt;
+			&lt;mvc:exclude-mapping path="</span><span class="o">/</span><span class="n">assets</span><span class="o">/**</span><span class="s">" /&gt;
+			&lt;bean class="</span><span class="n">com</span><span class="o">.</span><span class="na">douzone</span><span class="o">.</span><span class="na">mysite</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">AuthInterceptor</span><span class="err">"</span> <span class="o">/&gt;</span>
+		<span class="o">&lt;/</span><span class="nl">mvc:</span><span class="n">interceptor</span><span class="o">&gt;</span>
+	<span class="o">&lt;/</span><span class="nl">mvc:</span><span class="n">interceptors</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>변경 후 java</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.config.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.method.support.HandlerMethodArgumentResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerInterceptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.InterceptorRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.security.AuthInterceptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.security.AuthUserHandlerMethodArgumentResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.security.LoginInterceptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.security.LogoutInterceptor</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecurityConfig</span> <span class="kd">extends</span> <span class="nc">WebMvcConfigurerAdapter</span> <span class="o">{</span>
+
+	<span class="c1">// Argument Resolver</span>
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">HandlerMethodArgumentResolver</span> <span class="nf">handlerMethodArgumentResolver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">AuthUserHandlerMethodArgumentResolver</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addArgumentResolvers</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HandlerMethodArgumentResolver</span><span class="o">&gt;</span> <span class="n">argumentResolvers</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">argumentResolvers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">handlerMethodArgumentResolver</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Interceptors</span>
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">HandlerInterceptor</span> <span class="nf">loginInterceptor</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">LoginInterceptor</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">HandlerInterceptor</span> <span class="nf">logoutInterceptor</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">LogoutInterceptor</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">HandlerInterceptor</span> <span class="nf">authInterceptor</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">AuthInterceptor</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addInterceptors</span><span class="o">(</span><span class="nc">InterceptorRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">registry</span>
+			<span class="o">.</span><span class="na">addInterceptor</span><span class="o">(</span><span class="n">loginInterceptor</span><span class="o">())</span>
+			<span class="o">.</span><span class="na">addPathPatterns</span><span class="o">(</span><span class="s">"/user/auth"</span><span class="o">);</span>
+		
+		<span class="n">registry</span>
+			<span class="o">.</span><span class="na">addInterceptor</span><span class="o">(</span><span class="n">logoutInterceptor</span><span class="o">())</span>
+			<span class="o">.</span><span class="na">addPathPatterns</span><span class="o">(</span><span class="s">"/user/logout"</span><span class="o">);</span>
+		
+		<span class="n">registry</span>
+			<span class="o">.</span><span class="na">addInterceptor</span><span class="o">(</span><span class="n">authInterceptor</span><span class="o">())</span>
+			<span class="o">.</span><span class="na">addPathPatterns</span><span class="o">(</span><span class="s">"/**"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">excludePathPatterns</span><span class="o">(</span><span class="s">"/user/auth"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">excludePathPatterns</span><span class="o">(</span><span class="s">"/user/logout"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">excludePathPatterns</span><span class="o">(</span><span class="s">"/assets/**"</span><span class="o">);</span>		
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="5webconfigjava">5.WebConfig.java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.mysite.config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ComponentScan</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.EnableAspectJAutoProxy</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Import</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerInterceptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.InterceptorRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.douzone.config.web.FileUploadConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.config.web.MessageConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.config.web.MvcConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.config.web.SecurityConfig</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableAspectJAutoProxy</span>
+<span class="nd">@ComponentScan</span><span class="o">({</span><span class="s">"com.douzone.mysite.controller"</span><span class="o">,</span> <span class="s">"com.douzone.mysite.exception"</span><span class="o">})</span>
+<span class="nd">@Import</span><span class="o">({</span><span class="nc">MvcConfig</span><span class="o">.</span><span class="na">class</span> <span class="o">,</span><span class="nc">MessageConfig</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">FileUploadConfig</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">SecurityConfig</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebConfig</span> <span class="kd">extends</span> <span class="nc">WebMvcConfigurerAdapter</span><span class="o">{</span>
+	
+	<span class="cm">/*
+	@Bean
+	public HandlerInterceptor siteInterceptor() {
+		return new SiteInterceptor();
+	}
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry
+		.addInterceptor(siteInterceptor()).addPathPatterns("/**");
+		
+	}
+	*/</span>
+	
+	
+	
+	
+<span class="o">}</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html" title="spring IoC Container">spring IoC Container</a><a class="next" href="/spring-boot/2021/11/01/spring-boot-%EA%B8%B0%EC%B4%88.html" title="spring-boot 설정">spring-boot 설정</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html" title="spring-boot 설정">java 동전교환기 문제</a></li>
+<li><a class="post-link" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html" title="spring-boot 설정">spring 이란</a></li>
+<li><a class="post-link" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html" title="spring-boot 설정">spring xml파일 java로 변경하기</a></li>
+<li><a class="post-link" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html" title="spring-boot 설정">SQLD 이론 정리</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

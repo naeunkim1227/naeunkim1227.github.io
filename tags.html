@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tags | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="Tags">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="canonical" href="/tags.html">
+<meta property="og:url" content="/tags.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Tags">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebPage","url":"/tags.html","headline":"Tags","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="page-segments">
+  <ul class="page-segments-list">
+    
+    <h2 id="Algorithm" class="segment-name">Algorithm</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2022</span>
+<span>
+  <a class="post-link" href="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+    프로그래머스 코딩테스트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="CS" class="segment-name">CS</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 03, 2022</span>
+<span>
+  <a class="post-link" href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html">
+    CS - 3. 배열
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 18, 2022</span>
+<span>
+  <a class="post-link" href="/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4.html">
+    CS - 2. C언어
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2022</span>
+<span>
+  <a class="post-link" href="/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+    CS - 1.컴퓨팅 사고
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="DB" class="segment-name">DB</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 12, 2022</span>
+<span>
+  <a class="post-link" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">
+    SQLD 이론 정리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 01, 2021</span>
+<span>
+  <a class="post-link" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html">
+    DBMS의 이해
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 30, 2021</span>
+<span>
+  <a class="post-link" href="/db/2021/09/30/DB-%EC%95%95%EC%B6%95%EB%90%9C-%ED%8C%8C%EC%9D%BC,%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%EB%84%A3%EA%B3%A0-%EC%9B%8C%ED%81%AC%EB%B2%A4%EC%B9%98%EB%A1%9C-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0.html">
+    DB 압축된 파일,리눅스에 넣고 워크벤치로 작업하기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Interceptor" class="segment-name">Interceptor</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Oct 26, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html">
+    spring IoC Container
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 22, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/22/Interceptor.html">
+    spring Interceptor
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Linux" class="segment-name">Linux</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 30, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+    Linux 내부구조
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 28, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/28/%EA%B0%9C%EB%85%90-Linux-%EA%B8%B0%EB%B3%B8%EA%B4%80%EB%A6%AC%EB%AA%85%EB%A0%B9%EC%96%B4.html">
+    Linux 기본관리 명령어
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 28, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/28/Linux-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-git,maven,jenkins-%EC%84%A4%EC%B9%98.html">
+    Linux 서버에서 git,maven,mariadb,jenkins 설치
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 24, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/24/Linux-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95,-java,tomcat-%EC%84%A4%EC%B9%98.html">
+    Linux 서버 구축 후 환경설정, java,tomcat 설치
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 23, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/23/%EA%B0%9C%EB%85%90-Linux-%EC%86%8C%EA%B0%9C.html">
+    Linux 소개
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="React" class="segment-name">React</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 04, 2022</span>
+<span>
+  <a class="post-link" href="/react/2022/01/04/webpack.html">
+    webpack basic
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 04, 2022</span>
+<span>
+  <a class="post-link" href="/react/2022/01/04/ReactDOM.html">
+    React DOM
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="api" class="segment-name">api</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 04, 2021</span>
+<span>
+  <a class="post-link" href="/project/2021/09/04/alljobgo%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html">
+    all-job-go 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="gcp" class="segment-name">gcp</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="gitblog" class="segment-name">gitblog</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 02, 2021</span>
+<span>
+  <a class="post-link" href="/gitblog/2021/09/02/jekyll-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-git-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0.html">
+    jekyll 사용하여 github blog 만들기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="github" class="segment-name">github</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html">
+    github에 maven project 만들기, eclipse 내려받기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="java" class="segment-name">java</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 14, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/14/%EA%B0%9C%EB%85%90-java-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(1).html">
+    java 네트워크 프로그래밍- 01. 네트워크와 소켓이해
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 13, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html">
+    java 동전교환기 문제
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 13, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+    java 기본 api
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+    java 생성자를 이용한 TV예제
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html">
+    github에 maven project 만들기, eclipse 내려받기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 07, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/07/%EA%B0%9C%EB%85%90-java-01.%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.html">
+    java 객체지향 프로그래밍
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="javaScript" class="segment-name">javaScript</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Nov 14, 2021</span>
+<span>
+  <a class="post-link" href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">
+    생활코딩 JavaScript 정리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Nov 11, 2021</span>
+<span>
+  <a class="post-link" href="/javascript/2021/11/11/jquery,ajax.html">
+    jquery,ajax
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="jekyll" class="segment-name">jekyll</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 02, 2021</span>
+<span>
+  <a class="post-link" href="/gitblog/2021/09/02/jekyll-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-git-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0.html">
+    jekyll 사용하여 github blog 만들기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="jsp-servlet" class="segment-name">jsp-servlet</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Oct 11, 2021</span>
+<span>
+  <a class="post-link" href="/jsp-servlet/2021/10/11/servlet%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
+    jsp-servlet 클래스 생성하기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="mariadb" class="segment-name">mariadb</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="maven" class="segment-name">maven</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html">
+    github에 maven project 만들기, eclipse 내려받기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="mybatis" class="segment-name">mybatis</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="node.js" class="segment-name">node.js</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 04, 2022</span>
+<span>
+  <a class="post-link" href="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html">
+    node.js 로 crud페이지 만들기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="react" class="segment-name">react</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="redis" class="segment-name">redis</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="spring" class="segment-name">spring</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Oct 28, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html">
+    spring xml파일 java로 변경하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 26, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html">
+    spring IoC Container
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 22, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/22/Interceptor.html">
+    spring Interceptor
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 18, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html">
+    spring 자세히 알아보기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 17, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html">
+    spring 이란
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="spring boot" class="segment-name">spring boot</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="spring framework" class="segment-name">spring framework</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 04, 2021</span>
+<span>
+  <a class="post-link" href="/project/2021/09/04/alljobgo%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html">
+    all-job-go 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="spring-boot" class="segment-name">spring-boot</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Nov 01, 2021</span>
+<span>
+  <a class="post-link" href="/spring-boot/2021/11/01/spring-boot-%EA%B8%B0%EC%B4%88.html">
+    spring-boot 설정
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="table" class="segment-name">table</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Dec 15, 2017</span>
+<span>
+  <a class="post-link" href="/example/2017/12/15/table-example.html">
+    Table example
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="websocket" class="segment-name">websocket</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 12, 2022</span>
+<span>
+  <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+    tikitaka 채팅 페이지 프로젝트
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="개념" class="segment-name">개념</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Oct 18, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html">
+    spring 자세히 알아보기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 17, 2021</span>
+<span>
+  <a class="post-link" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html">
+    spring 이란
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Oct 01, 2021</span>
+<span>
+  <a class="post-link" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html">
+    DBMS의 이해
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 30, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+    Linux 내부구조
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 28, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/28/%EA%B0%9C%EB%85%90-Linux-%EA%B8%B0%EB%B3%B8%EA%B4%80%EB%A6%AC%EB%AA%85%EB%A0%B9%EC%96%B4.html">
+    Linux 기본관리 명령어
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 23, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/23/%EA%B0%9C%EB%85%90-Linux-%EC%86%8C%EA%B0%9C.html">
+    Linux 소개
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 14, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/14/%EA%B0%9C%EB%85%90-java-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(1).html">
+    java 네트워크 프로그래밍- 01. 네트워크와 소켓이해
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 13, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+    java 기본 api
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+    java 생성자를 이용한 TV예제
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 07, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/07/%EA%B0%9C%EB%85%90-java-01.%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.html">
+    java 객체지향 프로그래밍
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="설치" class="segment-name">설치</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 28, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/28/Linux-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-git,maven,jenkins-%EC%84%A4%EC%B9%98.html">
+    Linux 서버에서 git,maven,mariadb,jenkins 설치
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Sep 24, 2021</span>
+<span>
+  <a class="post-link" href="/linux/2021/09/24/Linux-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95,-java,tomcat-%EC%84%A4%EC%B9%98.html">
+    Linux 서버 구축 후 환경설정, java,tomcat 설치
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="실습예제" class="segment-name">실습예제</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 09, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+    java 생성자를 이용한 TV예제
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="알고리즘" class="segment-name">알고리즘</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Sep 13, 2021</span>
+<span>
+  <a class="post-link" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html">
+    java 동전교환기 문제
+  </a>
+</span>
+ </li>
+        
+      
+    
+  </ul>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/index.html">
+        All<span>36</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/tags.html#h-Algorithm">
+          Algorithm <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-CS">
+          CS <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-DB">
+          DB <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-Interceptor">
+          Interceptor <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-Linux">
+          Linux <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-React">
+          React <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-api">
+          api <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-gcp">
+          gcp <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-gitblog">
+          gitblog <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-github">
+          github <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-java">
+          java <span>6</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-javaScript">
+          javaScript <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-jekyll">
+          jekyll <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-jsp-servlet">
+          jsp-servlet <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-mariadb">
+          mariadb <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-maven">
+          maven <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-mybatis">
+          mybatis <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-node.js">
+          node.js <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-react">
+          react <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-redis">
+          redis <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-spring">
+          spring <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-spring%20boot">
+          spring boot <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-spring%20framework">
+          spring framework <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-spring-boot">
+          spring-boot <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-table">
+          table <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-websocket">
+          websocket <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-%EA%B0%9C%EB%85%90">
+          개념 <span>10</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-%EC%84%A4%EC%B9%98">
+          설치 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-%EC%8B%A4%EC%8A%B5%EC%98%88%EC%A0%9C">
+          실습예제 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags.html#h-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          알고리즘 <span>1</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

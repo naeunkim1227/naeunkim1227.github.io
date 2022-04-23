@@ -1,0 +1,2324 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-04-23T13:02:01+00:00</updated><id>/feed.xml</id><title type="html">슬기로운 코딩생활</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>GitHub User</name></author><entry><title type="html">node.js 로 crud페이지 만들기</title><link href="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html" rel="alternate" type="text/html" title="node.js 로 crud페이지 만들기" /><published>2022-04-04T00:00:00+00:00</published><updated>2022-04-04T00:00:00+00:00</updated><id>/node.js/2022/04/04/node.js%20%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html">&lt;p&gt;node.js를 교육과정을 통해 일주일 간 배웠으나, 매우 빠른 진도때문에 복습을 제대로 하지 못하고 넘어갔고…
+다시 배운다는 마음으로 &lt;strong&gt;생활코딩 node.js 강의&lt;/strong&gt; 를 들으며 &lt;strong&gt;crud 페이지&lt;/strong&gt;를 만들어 보고자 한다.
+그리고 &lt;strong&gt;github action&lt;/strong&gt;을 사용하여 빌드/배포도 해볼 예정!&lt;/p&gt;</content><author><name>GitHub User</name></author><category term="node.js" /><category term="node.js" /><summary type="html">node.js를 교육과정을 통해 일주일 간 배웠으나, 매우 빠른 진도때문에 복습을 제대로 하지 못하고 넘어갔고… 다시 배운다는 마음으로 생활코딩 node.js 강의 를 들으며 crud 페이지를 만들어 보고자 한다. 그리고 github action을 사용하여 빌드/배포도 해볼 예정!</summary></entry><entry><title type="html">SQLD 이론 정리</title><link href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html" rel="alternate" type="text/html" title="SQLD 이론 정리" /><published>2022-03-12T00:00:00+00:00</published><updated>2022-03-12T00:00:00+00:00</updated><id>/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">&lt;h1 id=&quot;sqld-이론&quot;&gt;SQLD 이론&lt;/h1&gt;
+
+&lt;h1 id=&quot;과목-1---데이터-모델링의-이해&quot;&gt;과목 1 - 데이터 모델링의 이해&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-1장-데이터-모델링의-이해&quot;&gt;1. 1장 데이터 모델링의 이해&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-데이터-모델의-이해&quot;&gt;1) 데이터 모델의 이해&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터모델링
+    &lt;ul&gt;
+      &lt;li&gt;정보시스템을 구축하기 위한 데이터관점의 업무 분석 기법&lt;/li&gt;
+      &lt;li&gt;현실세계의 데이터에 대해 약속된 표기법에 의해 표현하는 과정&lt;/li&gt;
+      &lt;li&gt;데이터베이스를 구축하기 위한 &lt;strong&gt;분석/설계&lt;/strong&gt;의 과정&lt;/li&gt;
+      &lt;li&gt;추상화, 단순화, 정확화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 모델링이 필요한 이유
+    &lt;ul&gt;
+      &lt;li&gt;분석된 모델을 가지고 데이터 베이스를 생성하여 개발 및 데이터  사용하기 위한 것&lt;/li&gt;
+      &lt;li&gt;업무정보를 구성하는 기초가 되는 정보들에 대해 일정한 표기법에 의해 표현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 모델링 유의점
+    &lt;ul&gt;
+      &lt;li&gt;중복 : 데이터베이스가 여러 장소에 같은 정보를 저장하지 않는다.&lt;/li&gt;
+      &lt;li&gt;비유연성 : 데이터의 정의를 데이터의 사용 프로세스와 분리함으로써 데이터 혹은 프로세스의 작은변화가 애플리케이션과 데이터 베이스에 중대한 변화를 일으킬 가능성을 줄인다.&lt;/li&gt;
+      &lt;li&gt;비일관성: 데이터와 데이터간의 상호 연관 관계에 대해 명확하게 정의한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;종류
+    &lt;ul&gt;
+      &lt;li&gt;개념적 데이터 모델링 : 추상화 수준이 높고 업무중심적이고 포괄적인 수준의 모델링 진행,전시적 데이터 모델링, EA수립시 많이 이용&lt;/li&gt;
+      &lt;li&gt;논리적 데이터 모델링 : 시스템으로 구축하고자 하는 업무에 대해 KEY,속성,관계 등은 정확하게 표현, 재사용성이 높음&lt;/li&gt;
+      &lt;li&gt;물리적 데이터 모델링: 실제로 데이터베이스에 이식할 수 있도록 성능,저장등 물리적인 성격을 고려하여 설계&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터베이스 스키마 구조 3단계 : 외부 &amp;gt; 개념 &amp;gt; 내부
+    &lt;ul&gt;
+      &lt;li&gt;개념스키마
+        &lt;ul&gt;
+          &lt;li&gt;모든 사용자 관점을 통합한 조직 전체의 관점의 통합적 표현&lt;/li&gt;
+          &lt;li&gt;모든 응용시스템들이나 사용자들이 필요로하는 데이터를 통합한 조직 전체의 DB를 기술한 것으로 DB에 저장되는 데이터와 그들간의 관계를 표현하는 스키마&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ERD 작성순서
+    &lt;ul&gt;
+      &lt;li&gt;엔터티를 그린다.&lt;/li&gt;
+      &lt;li&gt;엔터티를 적절하게 배치한다.&lt;/li&gt;
+      &lt;li&gt;엔터티간 관계를 설정한다.&lt;/li&gt;
+      &lt;li&gt;관계명을 기술한다.&lt;/li&gt;
+      &lt;li&gt;관계의 참여도를 기술한다.&lt;/li&gt;
+      &lt;li&gt;관계의 필수여부를기술한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-엔티티&quot;&gt;2) 엔티티&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;발생시점에 따른 엔터티 분류
+    &lt;ul&gt;
+      &lt;li&gt;기본/키 엔터티 : 다른 엔터티로부터 주식별자를 상속받지 않고 자신의 고유한 주식별자를 가진다.&lt;/li&gt;
+      &lt;li&gt;중심 엔터티&lt;/li&gt;
+      &lt;li&gt;행위 엔터티&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;반드시 해당업무에서 필요하고 관리하고자하는 정보여야 한다.&lt;/li&gt;
+      &lt;li&gt;유일한 식별자에 의해 식별이 가능해야한다.&lt;/li&gt;
+      &lt;li&gt;영속적으로 존재하는 인스턴스의 집합이어야 한다.두개 이상&lt;/li&gt;
+      &lt;li&gt;업무 프로세스에 의해 이용되어야한다.&lt;/li&gt;
+      &lt;li&gt;반드시 속성이 있어야한다.&lt;/li&gt;
+      &lt;li&gt;다른 엔터티와 최소 한개이상의 관계가 있어야 한다. 단 통계성 엔터니나 코드성 엔터티의 경우 관계를 생략할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이름 부여 방법
+    &lt;ul&gt;
+      &lt;li&gt;모든 엔터티에서 유일한 이름이 부여되어야한다.&lt;/li&gt;
+      &lt;li&gt;가능하면 현업업무에서 사용하는 용어를 사용한다.&lt;/li&gt;
+      &lt;li&gt;가능하면 약어를 사용하지 않는다.&lt;/li&gt;
+      &lt;li&gt;단수명사를 사용한다.&lt;/li&gt;
+      &lt;li&gt;엔터티 생성의미대로 이름을 부여한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-속성&quot;&gt;3) 속성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;업무에서 필요로하는 인스턴스에서 관리하고자 하는 의미상 더 이상 분리되지 않는 최소의 데이터 단위&lt;/li&gt;
+  &lt;li&gt;엔터티에 대한 자세하고 구체적인 정보를 나타낸다.&lt;/li&gt;
+  &lt;li&gt;속성도 집합이다.&lt;/li&gt;
+  &lt;li&gt;엔터티, 인스턴스, 속성, 속성값의 관계
+    &lt;ul&gt;
+      &lt;li&gt;한개의 엔터티는 두개 이상의 인스턴스의 집합이어야한다.&lt;/li&gt;
+      &lt;li&gt;한개의 엔터티는 두개 이상의 속성을 갖는다.&lt;/li&gt;
+      &lt;li&gt;한개의 속성은 한 개의 속성값을 갖는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;속성의 특성에 따른 분류
+    &lt;ul&gt;
+      &lt;li&gt;기본속성&lt;/li&gt;
+      &lt;li&gt;설계속성&lt;/li&gt;
+      &lt;li&gt;파생속성 : 데이터를 조회할때 빠른 성능을 낼 수 있도록 원래 속성의 값을 계산하여 저장할 수 있도록 만든 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도메인 : 가질 수 있는 값의 범위, 엔터티 내에서 속성에 대한 데이터 타입과 크기 제약사항을 지정하는 것&lt;/li&gt;
+  &lt;li&gt;명칭부여
+    &lt;ul&gt;
+      &lt;li&gt;해당업무에서 사용하는 이름을 부여한다.&lt;/li&gt;
+      &lt;li&gt;서술식 속성명은 사용하지 않는다.&lt;/li&gt;
+      &lt;li&gt;약어사용은 가급적 제한한다.&lt;/li&gt;
+      &lt;li&gt;유일성 확보하는 것이 좋다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-관계&quot;&gt;4) 관계&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;존재에 의한 관계와 행위에 의한 관계로 구분된다.&lt;/li&gt;
+  &lt;li&gt;ERD 단일화 표기법&lt;/li&gt;
+  &lt;li&gt;UML  연관관계 실선, 의존관계 점선으로 표기&lt;/li&gt;
+  &lt;li&gt;관계의 표기법
+    &lt;ul&gt;
+      &lt;li&gt;관계명 : 관계의 이름&lt;/li&gt;
+      &lt;li&gt;관계차수 : 1:M와 같이 관계의 기수성을 나타낸다.&lt;/li&gt;
+      &lt;li&gt;관계선택사양 : 필수관계,선택관계&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;관계의 체크사항
+    &lt;ul&gt;
+      &lt;li&gt;관심있는 연관규칙이 존재하는가?&lt;/li&gt;
+      &lt;li&gt;정보의 조합이 발생하는가?&lt;/li&gt;
+      &lt;li&gt;관계연결을 가능하게 하는 동사가 있는가?&lt;/li&gt;
+      &lt;li&gt;관계연결에 대한 규칙이 서술되어 있는가.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;관계 읽기
+    &lt;ul&gt;
+      &lt;li&gt;기준 엔터티를 한개 또는 각으로 읽는다.&lt;/li&gt;
+      &lt;li&gt;대상 엔터티의 관계 참여도 즉 개수를 읽는다.&lt;/li&gt;
+      &lt;li&gt;관계 선택사양과 관계명을 읽는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-식별자&quot;&gt;5) 식별자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;식별자의 종류
+    &lt;ul&gt;
+      &lt;li&gt;대표성 여부
+        &lt;ul&gt;
+          &lt;li&gt;주식별자 : 각 어커런스를 구분할 수 있는 구분자, 타 엔터티와 참조관계를 연결할 수 있는 식별자&lt;/li&gt;
+          &lt;li&gt;보조식별자 : 엔터티 내에서각 어커런스를 구분할 수 있는 구분자이지만 대표성을 가지지 못해 참조관계 연결을 못한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;스스로 생성여부
+        &lt;ul&gt;
+          &lt;li&gt;내부식별자 : 엔터티 내부에서 스스로 만들어지는 식별자&lt;/li&gt;
+          &lt;li&gt;외부식별자: 타 엔터티와의 관계를 통해 타 엔터티로부터 받아오는 식별자&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;속성의 수
+        &lt;ul&gt;
+          &lt;li&gt;단일식별자 : 하나의 속성으로 구성&lt;/li&gt;
+          &lt;li&gt;복합식별자 : 둘 이상의 속성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;대체 여부
+        &lt;ul&gt;
+          &lt;li&gt;본질식별자 : 업무에 의해 만들어지는 식별자&lt;/li&gt;
+          &lt;li&gt;인조식별자 : 원조식별자가 복잡한 구성을 가지고 있어 인위적으로 만든 식별자&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;주식별자 지정 고려사항
+    &lt;ul&gt;
+      &lt;li&gt;엔터티내의 모든 인스턴스들이 유일하게 구분되어야 한다.&lt;/li&gt;
+      &lt;li&gt;속성의 수는 유일성을 만족하는 최소의 수가 되어야 한다.&lt;/li&gt;
+      &lt;li&gt;주식별자의 값은 자주 변하지 않는 것이어야 한다.&lt;/li&gt;
+      &lt;li&gt;지정이 되면 반드시 값이 들어와야 한다.&lt;/li&gt;
+      &lt;li&gt;명칭,내역등과 같이 이름으로 기술되는 것들은 가능하면 주식별자로 지정하지 않는다.&lt;/li&gt;
+      &lt;li&gt;자주 이용되는 속성을 주식별자로 지정한다.&lt;/li&gt;
+      &lt;li&gt;복합으로 주식별자를 구성할  경우 너무 많은 속성을 포함하지 않도록 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;주식별자의 특성
+    &lt;ul&gt;
+      &lt;li&gt;유일성&lt;/li&gt;
+      &lt;li&gt;최소성&lt;/li&gt;
+      &lt;li&gt;불변성&lt;/li&gt;
+      &lt;li&gt;존재성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;식별자관계 비식별자 관계 비교&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;항목&lt;/th&gt;
+          &lt;th&gt;식별자관계&lt;/th&gt;
+          &lt;th&gt;비식별자관계&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;목적&lt;/td&gt;
+          &lt;td&gt;강한 연결관계&lt;/td&gt;
+          &lt;td&gt;약한 연결관계&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;자식 주식별자 영향&lt;/td&gt;
+          &lt;td&gt;자식 주식별자의 구성에 포함됨&lt;/td&gt;
+          &lt;td&gt;자식 일반 속성에 포함됨&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;표기법&lt;/td&gt;
+          &lt;td&gt;실선 표현&lt;/td&gt;
+          &lt;td&gt;점선 표현&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;연결 고려사항&lt;/td&gt;
+          &lt;td&gt;- 반드시 부모엔터티 종속                    - 자식주식별자구성에 부모주식별자포함 필요                                             -상속받은 주식별자속성을 타엔터티에 이전 필요&lt;/td&gt;
+          &lt;td&gt;-약한 종속관계                                              -자식 주식별자구성은 독립적으로 구성    -자식 주식별자구성에 부모 주식별자 부분필요                                                     -상속받은 주식별자속성을 타 엔터티에 차단 필요                                                    -부모쪽의 관계참여가 선택관계&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-2장-데이터-모델과-성능&quot;&gt;2. 2장 데이터 모델과 성능&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-성능-데이터-모델링의-개요&quot;&gt;1) 성능 데이터 모델링의 개요&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;성능데이터모델링 : 데이터베이스 성능향상을 목적으로 설계단계의 데이터 모델링때부터 성능과 관련된 사항이 데이터 모델링에 반영될 수 있도록 하는 것이다.&lt;/li&gt;
+  &lt;li&gt;데이터의 증가가 빠를 수록 성능저하에 따른 성능개선비용은 증가한다.&lt;/li&gt;
+  &lt;li&gt;데이터모델은 성능을 튜닝하면서 변경이 될 수 있다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;분석/설계 단계에서 성능을 고려한 데이터모델링을 수행할 경우 성능저하에 따른 rework비용을 최소화 할 수 있는 기회를 가지게 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;성능 데이터 모델링 수행절차
+    &lt;ol&gt;
+      &lt;li&gt;데이터모델링을할 때 정규화를 정확하게 수행한다.&lt;/li&gt;
+      &lt;li&gt;데이터베이스 용량산정을 수행한다.&lt;/li&gt;
+      &lt;li&gt;데이터베이스에 발생되는 트랜잭션의 유형을 파악한다.&lt;/li&gt;
+      &lt;li&gt;용량과 트랙잭션의 유행에 따라 반정규화를 수행한다.&lt;/li&gt;
+      &lt;li&gt;이력모델의 조정,PK/FK조정, 슈퍼타입/서브타입 조정등을 수행한다.&lt;/li&gt;
+      &lt;li&gt;성능관점에서 데이터 모델을 검증한다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;고려사항
+    &lt;ul&gt;
+      &lt;li&gt;용량산정은 전체적인 데이터베이스에 발생되는 트랜잭션의 유형과 양을 분석하는 자료가 되므로 성능데이터 모델링을 할 때 중요한 작업이 될 수 있다.&lt;/li&gt;
+      &lt;li&gt;물리적인 데이터 모델링을 할때 PK/FK 의 칼럼 순서조정, FK인덱스 생성등은 성능 향상을 위한 데이터 모델링 작업에 중요한 요소가 된다.&lt;/li&gt;
+      &lt;li&gt;이력데이터는 시간에 따라 반복적으로 발생이 되기 때문에 대량데이터일 가능성이 높아 특별히 성능을 고려하여 칼럼등을 추가하도록 설계해야한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-정규화와-성능&quot;&gt;2) 정규화와 성능&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;1차 - 각 열의 데이터가 하나의 값만 가지고 있는 경우를 의미한다.&lt;/li&gt;
+  &lt;li&gt;2차 - 중복되는 데이터에 대해서 다른테이블로 분리한다.&lt;/li&gt;
+  &lt;li&gt;3차 - PK컬럼이 아닌 컬럼들이 서로 종속되지 않게 한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;3-반정규화와-성능&quot;&gt;3) 반정규화와 성능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;반정규화 고려사항
+    &lt;ul&gt;
+      &lt;li&gt;하나의 결과셋을 추출하기 위해 다량의 데이터를 탐색하는 처리가 반복적으로빈번하게 발생한다면 반정규화를 고려한다&lt;/li&gt;
+      &lt;li&gt;집계테이블 이외에도 다양한 유형에 대하여 반정규화 테이블 적용이 필요할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;하나의 테이블의 전체칼럼 중 자주 이용하는 집중화된 칼럼이 있을때 디스크 I/O를 줄이기 위해 해당 컬럼들을 별도로 모아놓는 반정규화 기법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;반정규화 절차
+    &lt;ul&gt;
+      &lt;li&gt;반정규화 대상조사
+        &lt;ul&gt;
+          &lt;li&gt;범위처리빈도수 조사&lt;/li&gt;
+          &lt;li&gt;대량의 범위 처리 조사&lt;/li&gt;
+          &lt;li&gt;통계성 프로세스 조사&lt;/li&gt;
+          &lt;li&gt;테이블 조인 개수&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;다른 방법유도 검토
+        &lt;ul&gt;
+          &lt;li&gt;뷰테이블 : 지나치게 많은 조인이 걸려 데이터를 조회하는 작업이 기술적으로 어려울때 사용&lt;/li&gt;
+          &lt;li&gt;클러스터링 적용 : 대량의 데이터처리나 부분처리에 의해 성능이 저하되는 경우&lt;/li&gt;
+          &lt;li&gt;인덱스의 조정 : 클러스터링과 동일&lt;/li&gt;
+          &lt;li&gt;응용애플리케이션 : 로직을 구사하는 방법을 변경&lt;/li&gt;
+          &lt;li&gt;PK의 성격에 따라 부분적인 테이블로 분리하는 파티셔닝 기법을 적용하여 성능저하 방지&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;반정규화 적용
+        &lt;ul&gt;
+          &lt;li&gt;테이블 반정규화&lt;/li&gt;
+          &lt;li&gt;속성의 반정규화&lt;/li&gt;
+          &lt;li&gt;관계의 반정규화&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-대량-데이터에-따른-성능&quot;&gt;4) 대량 데이터에 따른 성능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파티셔닝
+    &lt;ul&gt;
+      &lt;li&gt;논리적으로는 하나의 테이블이지만 물리적으로 여러개의 테이블로 분리한다.&lt;/li&gt;
+      &lt;li&gt;데이터 액세스 성능 향상과 관리방법을 개선할 수 있다.&lt;/li&gt;
+      &lt;li&gt;PK의 성격에 따라 분리한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-데이터베이스-구조와-성능&quot;&gt;5) 데이터베이스 구조와 성능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;슈퍼/서브 타입 데이터 모델의 변환기술
+    &lt;ul&gt;
+      &lt;li&gt;개별로 발생되는 트랜잭션에 대해서는 개별 테이블로 구성&lt;/li&gt;
+      &lt;li&gt;슈퍼타입 + 서브타입에 대해 발생되는 트랜잭션에 대해서는 슈퍼타입 + 서브타입 테이블로 구성&lt;/li&gt;
+      &lt;li&gt;전체를 하나로 묶어 트랜잭션이 발생할 때는 하나의 테이블로 구성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;PK순서 결정 기준
+    &lt;ul&gt;
+      &lt;li&gt;여러개의 속성이 하나의 인덱스로 구성되어 있을 때, 앞쪽에 위치한 속성의 값이 비교자로 있어야 좋은 효율을 나타낼 수 있다.&lt;/li&gt;
+      &lt;li&gt;‘=’로 들어온 조건에 해당하는 컬럼이 인덱스의 가장 앞쪽에 위치할 때 인덱스의 이용 효율성이 가장 높다고 할 수 있다.&lt;/li&gt;
+      &lt;li&gt;=,BETWEEN,&amp;lt;&amp;gt;가 들어와야 인덱스를 이용할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6-분산-데이터베이스와-성능&quot;&gt;6) 분산 데이터베이스와 성능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공통코드,기준정보등 마스터 데이터는 분산데이터베이스에 복제분산을 적용한다.&lt;/li&gt;
+  &lt;li&gt;실시간 업무적 특성이 있을때 분산데이터베이스를 사용한다.&lt;/li&gt;
+  &lt;li&gt;백업사이트 구성에 분산기능을 적용하여 구성한다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GSI와는 반대되는 개념&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;분산데이터베이스 장단점
+    &lt;ul&gt;
+      &lt;li&gt;장점
+        &lt;ul&gt;
+          &lt;li&gt;지역 자치성,점증적 시스템용량 확장&lt;/li&gt;
+          &lt;li&gt;신뢰성과 가용성&lt;/li&gt;
+          &lt;li&gt;효용성과 융통성&lt;/li&gt;
+          &lt;li&gt;빠른 응답 속도와 통신비용 절감&lt;/li&gt;
+          &lt;li&gt;데이터의 가용성과 신뢰성 증가&lt;/li&gt;
+          &lt;li&gt;시스템 규모의 적절한 조절&lt;/li&gt;
+          &lt;li&gt;각 지역 사용자의 요구 수용 증대&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;단점
+        &lt;ul&gt;
+          &lt;li&gt;소프트웨어 개발 비용&lt;/li&gt;
+          &lt;li&gt;오류의 잠재성 증대&lt;/li&gt;
+          &lt;li&gt;처리비용의 증대&lt;/li&gt;
+          &lt;li&gt;설계,관리의 복잡성과 비용&lt;/li&gt;
+          &lt;li&gt;불규칙한 응답 속도&lt;/li&gt;
+          &lt;li&gt;통제의 어려움&lt;/li&gt;
+          &lt;li&gt;데이터 무결성에 대한 위협&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;과목-2---sql-기본-및-활용&quot;&gt;과목 2 - SQL 기본 및 활용&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-sql-기본&quot;&gt;1. SQL 기본&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-관계형-데이터베이스-개요&quot;&gt;1) 관계형 데이터베이스 개요&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;As-Is : 비절차적 데이터 조작어는 사용자가 무슨데이터를 원하는 지만을 명세&lt;/li&gt;
+  &lt;li&gt;To-Be: 절차적 데이터 조작어는 무슨 데이터를 원하며 어떻게 접근해야하는지 명세한다. pl/sql, t-sql등이 절차적 데이터 조작어이다.&lt;/li&gt;
+  &lt;li&gt;테이블 생성의 주의사항
+    &lt;ul&gt;
+      &lt;li&gt;객체를 의미할 수 있는 적절한 이름, 가능한 단수형 사용&lt;/li&gt;
+      &lt;li&gt;다른 테이블의 이름과 중복 금지&lt;/li&gt;
+      &lt;li&gt;한 테이블 내 컬럼명 중복 지정 안 됨&lt;/li&gt;
+      &lt;li&gt;테이블 이름을 지정하고 각 컬럼들은 괄호로 묶어 지정&lt;/li&gt;
+      &lt;li&gt;각 컬럼들은 콤마로 구분, 테이블 생성문의 끝은 항상 세미콜론으로 끝남&lt;/li&gt;
+      &lt;li&gt;칼럼에 대해서는 다른 테이블까지 고려하여 데이터베이스내에서는 일관성있게 사용하는 것이 좋다.&lt;/li&gt;
+      &lt;li&gt;칼럼 뒤에 데이터 유형은 꼭 지정되어야 한다.&lt;/li&gt;
+      &lt;li&gt;테이블,칼럼명은 반드시 문자로 시작해야한다.&lt;/li&gt;
+      &lt;li&gt;사전정의예약어는 사용 할 수 없다.&lt;/li&gt;
+      &lt;li&gt;A-Z,a-z,0-9,_,$,#문자만 허용된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;테이블 불필요 컬럼 삭제 : ALTER TABLE 테이블명 DROP COLUMN 삭제할 컬럼명;&lt;/li&gt;
+  &lt;li&gt;테이블 이름 변경 : RENAME A TO A_2&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;고유키는 NULL값을 가질 수도 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Delete(/Modify) Action
+    &lt;ul&gt;
+      &lt;li&gt;Cascade : Master 삭제시  Child 같이 삭제&lt;/li&gt;
+      &lt;li&gt;Set Null : Master 삭제시 Child 해당 필드 null&lt;/li&gt;
+      &lt;li&gt;Set Default: Master 삭제시 Child 해당 필드 Default 값으로 설정&lt;/li&gt;
+      &lt;li&gt;Restrict: Child: 테이블에 PK값이 없는 경우만 Master삭제 허용&lt;/li&gt;
+      &lt;li&gt;No Action: 참조무결성을 위반하는 삭제/수정 액션을 취하지 않음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Insert Action
+    &lt;ul&gt;
+      &lt;li&gt;Automatic  Master 테이블에 PK가 없는 경우 Master PK를 생성 후 Child입력&lt;/li&gt;
+      &lt;li&gt;Set Null: Master 테이블에 PK가 없는 경우 Child 외부키를 Null값으로 처리&lt;/li&gt;
+      &lt;li&gt;Set Default : Master 테이블에 PK가 없는 경우 Child 외부키를 지정된 기본값으로 입력&lt;/li&gt;
+      &lt;li&gt;Dependent : Master 테이블에 PK가 존재할때만 Child 입력 허용&lt;/li&gt;
+      &lt;li&gt;No Action: 참조무결성을 위반하는 입력 액션을 취하지 않음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-ddl&quot;&gt;2) DDL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data Definition Language&lt;/li&gt;
+  &lt;li&gt;테이블 구조를 정의하는데 사용되는 명령어&lt;/li&gt;
+  &lt;li&gt;CREATE, ALTER, DROP,RENAME&lt;/li&gt;
+  &lt;li&gt;TRUNCATE와 DROP 테이블은 로그를 남기지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-dml&quot;&gt;3) DML&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data Manipulation Language&lt;/li&gt;
+  &lt;li&gt;데이터 조회,변형하는데 사용되는 명령어&lt;/li&gt;
+  &lt;li&gt;SELECT,INSERT,UPDATE,DELETE&lt;/li&gt;
+  &lt;li&gt;INSERT INTO 테이블명 VALUES (전체 컬럼을 명시해야함);&lt;/li&gt;
+  &lt;li&gt;UPDATE 테이블명 SET 수정칼럼명 = 수정 할 값&lt;/li&gt;
+  &lt;li&gt;SELECT [ALL DISTINCT]
+    &lt;ul&gt;
+      &lt;li&gt;ALL : DEFAULT 옵션, 중복된 데이터가 있어도 모두 출력한다.&lt;/li&gt;
+      &lt;li&gt;DISTINCT : 중복된 데이터가 있는 경우 1건으로 처리해서 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-tcl&quot;&gt;4) TCL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Transaction Control Language&lt;/li&gt;
+  &lt;li&gt;트랜잭션별로 제어하는 명령어&lt;/li&gt;
+  &lt;li&gt;COMMIT,ROLBACK&lt;/li&gt;
+  &lt;li&gt;트랜잭션 : 데이터베이스의 논리적 연산단위로서 밀접히 관련되어 분리될 수 없는 한 개 이상의 데이터베이스 조작을 가리킨다.&lt;/li&gt;
+  &lt;li&gt;트랜잭션의 특성
+    &lt;ul&gt;
+      &lt;li&gt;원자성(atomicity) : 트랜잭션에서 정의된 연산들은 모두 성공적으로 실행되던지 아니면 전혀 실행되지 않은 상태로 남아있어야 한다.&lt;/li&gt;
+      &lt;li&gt;일관성(consistency) : 트랜잭션이 실행되기 전의 데이터베이스 내용이 잘못 되어 있지 않다면 트랜잭션이 실행된 이후에도 데이터베이스의 내용에 잘못이 있으면 안 된다.&lt;/li&gt;
+      &lt;li&gt;고립성(isolation) : 트랜잭션이 실행되는 도중에 다른 트랜잭션의 영향을 받아 잘못된 결과를 만들어서는 안 된다.&lt;/li&gt;
+      &lt;li&gt;지속성(durability) : 트랜잭션이 성공적으로 수행되면 그 트랜잭션이 갱신한 데이터베이스의 내용이 영구적으로 저장된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;트랜잭션에 대한 격리성이 낮은 경우 발생할 수 있는 문제
+    &lt;ul&gt;
+      &lt;li&gt;Dirty Read:  다른 트랜잭션에 의해 수정되었지만 아직 커밋되지 않은 데이터를 읽는 것&lt;/li&gt;
+      &lt;li&gt;Non-Repeatable Read: 같은 쿼리를 두번 수행했는데, 그 사이에 다른 트랜잭션이 값을 수정 또는 삭제하는 바람에 두 쿼리 결과가 다르게 나타나는 현상&lt;/li&gt;
+      &lt;li&gt;Phantom Read: 같은 쿼리를 두번 수행했는데 첫 쿼리에서 없던 유령 레코드가 두번째 쿼리에서 나타나는 현상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;저장점(SAVE POINT) 를 정의하면 트랜잭션에 포함된 전체작업을 롤백하는 것이 아니라 현 시점에서 SAVEPOINT까지 트랜잭션의 일부만 롤백할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dcl&quot;&gt;*DCL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data Control Language&lt;/li&gt;
+  &lt;li&gt;데이터 베이스 접근권한을 주고 수거하는 명령어&lt;/li&gt;
+  &lt;li&gt;GRANT,REVOKE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DROP
+    &lt;ol&gt;
+      &lt;li&gt;DDL&lt;/li&gt;
+      &lt;li&gt;롤백 불가능&lt;/li&gt;
+      &lt;li&gt;AUTO COMMIT&lt;/li&gt;
+      &lt;li&gt;테이블 사용했는 STORAGE를 모두 RELEASE&lt;/li&gt;
+      &lt;li&gt;테이블 정의 자체를 완전히 삭제&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TRUNCATE
+    &lt;ol&gt;
+      &lt;li&gt;DDL(일부 DML성격)&lt;/li&gt;
+      &lt;li&gt;롤백 불가능&lt;/li&gt;
+      &lt;li&gt;AUTO COMMIT&lt;/li&gt;
+      &lt;li&gt;테이블이 사용했던 STORAGE 중 최초 테이블 생성시 할당된 STORAGE만 남기고 RELEASE&lt;/li&gt;
+      &lt;li&gt;테이블을 최초 생성된 초기상태로 만듬&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DELETE
+    &lt;ol&gt;
+      &lt;li&gt;DML&lt;/li&gt;
+      &lt;li&gt;COMMIT 이전 롤백가능&lt;/li&gt;
+      &lt;li&gt;사용자 COMMIT&lt;/li&gt;
+      &lt;li&gt;데이터를 모두 DELETE해도 사용했던 STORAGE는 RELEASE되지 않음&lt;/li&gt;
+      &lt;li&gt;데이터만 삭제&lt;/li&gt;
+      &lt;li&gt;로그를 남김&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ORACLE
+    &lt;ol&gt;
+      &lt;li&gt;DDL 문장 수행 후 자동으로 COMMIT&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SQL SERVER
+    &lt;ol&gt;
+      &lt;li&gt;DDL 문장 수행 후 자동 COMMIT을 수행하지 않는다.&lt;/li&gt;
+      &lt;li&gt;CREATE TABLE 문장도 트랜잭션의 범주에 포함 된다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;5-where-절&quot;&gt;5) WHERE 절&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;6-함수&quot;&gt;6) 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CASE
+    &lt;ul&gt;
+      &lt;li&gt;CASE WHEN EMP_NO = ‘100’ THEN ‘200’ ELSE ‘300’&lt;/li&gt;
+      &lt;li&gt;CASE EMP_NO WHEN ‘100’ THEN ‘200’ ELSE ‘300’은 같은 값을 출력한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;NULL 의 특성
+    &lt;ol&gt;
+      &lt;li&gt;0 또는 공백과 다르다.&lt;/li&gt;
+      &lt;li&gt;테이블 생성시 NOT NULL, PRIMARY KEY로 정의 되지 않은 모든 데이터 유형은 널값을 포함할 수 있다.&lt;/li&gt;
+      &lt;li&gt;UNIQUE, FK도 NULL값을 가질 수 있다.&lt;/li&gt;
+      &lt;li&gt;결과 값을 NULL이 아닌 다른 값을 얻고자 할 때 NVL/ISNULL을 사용한다.&lt;/li&gt;
+      &lt;li&gt;NULL 관련 함수
+        &lt;ol&gt;
+          &lt;li&gt;NVL(표현식1,표현식2),ISNULL(표현식1,표현식2) : 표현식1이 NULL이면 표현식2를 출력해라&lt;/li&gt;
+          &lt;li&gt;NULLIF(표현식1,표현식2) : 표현식1과 2가 같으면 NULL을 , 다르면 표현식1을 리턴해라.&lt;/li&gt;
+          &lt;li&gt;COALESCE(표현식1,2,….) : 임의의 N개 표현식에서 NULL이 아닌 최초의 표현식을 나타낸다,모든 표현식이 NULL이면 NULL을 리턴한다.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;NULL 포함 연산은 모두 NULL을 반환한다.&lt;/li&gt;
+      &lt;li&gt;NULL 은 AVG,SUM 연산 대상에서 제외된다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;집계함수
+    &lt;ol&gt;
+      &lt;li&gt;COUNT(*) NULL값을 포함한 행의 수를 출력&lt;/li&gt;
+      &lt;li&gt;COUNT(표현식) NULL값을 제외한 행의 수 출력&lt;/li&gt;
+      &lt;li&gt;SUM&lt;/li&gt;
+      &lt;li&gt;AVG&lt;/li&gt;
+      &lt;li&gt;MAX&lt;/li&gt;
+      &lt;li&gt;MIN&lt;/li&gt;
+      &lt;li&gt;STDDEV&lt;/li&gt;
+      &lt;li&gt;VARIAN&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;연산
+    &lt;ol&gt;
+      &lt;li&gt;분모가 0이면 에러발생&lt;/li&gt;
+      &lt;li&gt;분모가 NULL이면 값도 NULL&lt;/li&gt;
+      &lt;li&gt;분자가 0이면 0&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7-group-by-having-절&quot;&gt;7) GROUP BY, HAVING 절&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특성
+    &lt;ul&gt;
+      &lt;li&gt;GROUP BY절을 통해 소그룹별 기준을 정하고, SELECT절에 집계 함수를 사용한다.&lt;/li&gt;
+      &lt;li&gt;집계함수의 통계 정보는 NULL값을 가진 행을 제외하고 수행&lt;/li&gt;
+      &lt;li&gt;GROUP BY절에는 ALIAS 명을 사용할 수 없음&lt;/li&gt;
+      &lt;li&gt;집계함수는 WHERE절에는 올 수 없고, HAVING을 사용해야한다.(GROUP BY절보다 WHERE절이 먼저 수행되기 때문이다.)&lt;/li&gt;
+      &lt;li&gt;WHERE절은 전체 데이터를 GROUP으로 나누기 전에 행들을 먼저 제거시킨다.&lt;/li&gt;
+      &lt;li&gt;GROUP BY절에 의한 소그룹별로 만들어진 집계 데이터 중 HAVING절에서 제한 조건을 두어 조건에 만족하는 내용만 출력한다.&lt;/li&gt;
+      &lt;li&gt;GROUP BY 절 뒤에 HAVING이 위치해야한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;8-order-by-절&quot;&gt;8) ORDER BY 절&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ASC 오름차순 /  기본값&lt;/li&gt;
+  &lt;li&gt;DESC 내림차순&lt;/li&gt;
+  &lt;li&gt;ORDER BY 칼럼이나 표현식&lt;/li&gt;
+  &lt;li&gt;ORACLE은 행기반 DATABASE이기때문에 데이터를 액세스할때 행 전체 칼럼을 메모리에 로드한다. 이와 같은 특성때문에 SELECT절에 기술되지 않은 컬럼으로도 정렬이 가능하다. 단,인라인뷰로 테이블컬럼을 지정하였을 경우에는 불가능하다.&lt;/li&gt;
+  &lt;li&gt;ORACLE에서는 NULL값을 가장 큰 값으로 간주한다.&lt;/li&gt;
+  &lt;li&gt;SQL SERVER에서는 NULL값을 가장 작은 값으로 간주한다.&lt;/li&gt;
+  &lt;li&gt;원래 컬럼명 대신,ALIAS명이나 컬럼순서를 나타내는 정수를 혼용해서 사용 가능하다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GROUP BY절을 사용하는 경우 ORDER BY절에 집계함수를 사용할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SELECT 문장 실행 순서
+    &lt;ul&gt;
+      &lt;li&gt;FROM&lt;/li&gt;
+      &lt;li&gt;WHERE&lt;/li&gt;
+      &lt;li&gt;GROUP BY&lt;/li&gt;
+      &lt;li&gt;HAVING&lt;/li&gt;
+      &lt;li&gt;SELECT&lt;/li&gt;
+      &lt;li&gt;ORDER BY&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TOP(N)
+    &lt;ul&gt;
+      &lt;li&gt;높은 수를 가진 행을 N개까지 출력&lt;/li&gt;
+      &lt;li&gt;WITH TIES 구문 + ORDER BY 를 넣으면 해당하는 값이 동일한 경우 함께 출력할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;9-join&quot;&gt;9) JOIN&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;EQUI JOIN
+    &lt;ul&gt;
+      &lt;li&gt;WHERE절에 JOIN조건을 넣는다.&lt;/li&gt;
+      &lt;li&gt;ANSI/ISO SQL 표준 조인 문장은 ON절에 JOIN조건을 넣는다.&lt;/li&gt;
+      &lt;li&gt;JOIN에 관여하는 테이블 간의 컬럼 값들이 정확하게 일치하는 경우에만 사용한다.&lt;/li&gt;
+      &lt;li&gt;“=”연산자에 의해서만 수행되며, 그외의 연산자를 사용하는 경우는 모두 NON EQUI JOIN이다&lt;/li&gt;
+      &lt;li&gt;대부분 NON EQUI JOIN을 수행할 수 있지만 때로는 설걔상의 이유로 수행이 불가능한 경우도 있다.&lt;/li&gt;
+      &lt;li&gt;어떤 경우에는 PK와 FK의 관걔가 없어도 논리적인 값들의 연관만으로 JOIN성립이 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DBMS 옵티마이저는 FROM 절에 나열된 테이블 2개를 짝을 지어 JOIN을 수행한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-sql-활용&quot;&gt;2. SQL 활용&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-표준-조인&quot;&gt;1) 표준 조인&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;순수관계 연산자 :  SELECT, PROJECT, JOIN,DIVIDE&lt;/li&gt;
+  &lt;li&gt;INNER JOIN : JOIN조건에서 동일한 값이 있는 행만 반환한다.&lt;/li&gt;
+  &lt;li&gt;ANSI/ISO SQL에서 표시하는 FROM절의 JOIN 형태 : INNER JOIN, NATURAL JOIN,USING 조건절,ON 조건절,CROSS JOIN,OUTER JOIN(LEFT,RIGHT,FULL)&lt;/li&gt;
+  &lt;li&gt;USING 조건절을 이용한 EQUI JOIN/ NATURAL JOIN은 ALIAS,테이블 접두사 이름을 붙일 수 없다.&lt;/li&gt;
+  &lt;li&gt;JOIN 조건이 없으면 CATISIAN PRODUCT (카티시안곱)이 발생한다. CROSS JOIN을 사용하고 결과는 양쪽 집합의 M*N건의 데이터 조합이 발생한다.&lt;/li&gt;
+  &lt;li&gt;LEFT OUTER JOIN : 조인 수행시 먼저 표기된 좌측테이블에 해당하는 데이터를 먼저 읽은 후 나중 표기된 우측 테이블에서 JOIN 대상 데이터를 읽어온다. JOIN칼럼에서 같은 값이 없는 경우 우측 테이블에서 가져오는 칼럼들은 NULL값으로 채운다.&lt;/li&gt;
+  &lt;li&gt;FULL OUTER JOIN: RIGHT + LEFT OUTER JOIN의 합집합&lt;/li&gt;
+  &lt;li&gt;ORACLE에서는 (+) 기호를 사용하여 OUTER JOIN 구문을 처리할 수 있다. 이를 ㅇANSI문장으로 변경하려면 INNER쪽 테이블에 조건절을 ON절에 함께 위치시켜야한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-집합-연산자&quot;&gt;2) 집합 연산자&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;UNION : 합집합, 중복된 행은 하나의 행으로 만든다.&lt;/li&gt;
+  &lt;li&gt;UNION ALL : 합집합,중복된 행도 그대로 중복표시&lt;/li&gt;
+  &lt;li&gt;INTERSECT: 교집합, 중복된 행은 하나의 행으로 만든다.&lt;/li&gt;
+  &lt;li&gt;EXCEPT: 앞의 SQL문의 결과에서 뒤의 SQL문의 결과에 대한 차집합, 중복된 행은 하나의 행으로 만든다. NOT IN, NOT EXISTS로 대체 가능하다.&lt;/li&gt;
+  &lt;li&gt;PRODUCT 연산 = CROSS JOIN&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;3-계층형-질의와-셀프-조인&quot;&gt;3) 계층형 질의와 셀프 조인&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;START WITH 계층 구조 전개의 시작 위치를 지정함&lt;/li&gt;
+  &lt;li&gt;ORDER SIBLINGS BY : 형제 노드(동일 LEVEL)사이에서 정렬수행&lt;/li&gt;
+  &lt;li&gt;START WITH 부서코드=120
+    PRIOR 상위부서코드 = 부서코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;120의 상위 부서코드는 누구냐&lt;/p&gt;
+
+&lt;p&gt;START WITH 부서코드=120&lt;/p&gt;
+
+&lt;p&gt;PRIOR 부서코드 = 상위부서코드&lt;/p&gt;
+
+&lt;p&gt;120을 상위부서코드로 하는 애들은 누구냐&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SQL SERVER에서의 계층형 질의문은 CTE를 재귀 호출함으로써 계층구조를 전개한다.&lt;/li&gt;
+  &lt;li&gt;셀프조인은 식별을 위해 테이블 별칭을 사용해야한다.&lt;/li&gt;
+  &lt;li&gt;한 테이블 내에서 두 칼럼이 연관관계가 있을때 셀프조인을 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-서브쿼리&quot;&gt;4) 서브쿼리&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;서브쿼리를 괄호로 감싸서 사용한다.&lt;/li&gt;
+  &lt;li&gt;서브쿼리는 단일 행 또는 복수행 비교 연산자와 함께 사용가능하다.&lt;/li&gt;
+  &lt;li&gt;서브쿼리에서는 ORDER BY를 사용할 수 없다.&lt;/li&gt;
+  &lt;li&gt;연관 서브쿼리는 서브쿼리가 메인쿼리 컬럼을 포함하고 있는 형태이다.&lt;/li&gt;
+  &lt;li&gt;다중컬럼 서브쿼리는 SQL SERVER에서 지원하지 않는다.&lt;/li&gt;
+  &lt;li&gt;다중행 서브쿼리 비교연산자는 단일행 서브쿼리의 비교 연산자로도 사용이 가능하다.&lt;/li&gt;
+  &lt;li&gt;비연관 서브쿼리는 주로 메인쿼리에 값을 제공하기 위한 목적으로 사용된다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서브쿼리 분류
+    &lt;ul&gt;
+      &lt;li&gt;단일행 서브쿼리 (&amp;lt;,&amp;gt;등의 연산자 사용)&lt;/li&gt;
+      &lt;li&gt;다중행서브쿼리 (IN,ALL,ANY,SOME,EXISTS 비교 연산자 사용)&lt;/li&gt;
+      &lt;li&gt;다중칼럼서브쿼리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;스칼라서브쿼리 : SELECT절에 오는 서브쿼리로 결과값으로 1행만 반환한다.&lt;/li&gt;
+  &lt;li&gt;FROM절에 오는 서브쿼리는 인라인뷰,동적뷰이다.  SQL문이 실행될때만 임시적으로 생성되는 동적인 뷰이기 때문에 데이터베이스에 해당 정보가 저장되지 않는다.&lt;/li&gt;
+  &lt;li&gt;뷰
+    &lt;ul&gt;
+      &lt;li&gt;단지 정의만을 가지고 있으며, 실행 시점에 질의를 재작성하여 수행한다.&lt;/li&gt;
+      &lt;li&gt;실제 데이터를 저장하고 있는 뷰를 생성하는 기능을 지원하는 DBMS도 있다.&lt;/li&gt;
+      &lt;li&gt;뷰사용의 장점
+        &lt;ul&gt;
+          &lt;li&gt;독립성: 테이블 구조가 변경되어도 뷰를 사용하는 응용프로그램은 변경하지 않아도 된다.&lt;/li&gt;
+          &lt;li&gt;편리성: 복잡한 질의를 뷰로 생성함으로써 관련 질의를 단순하게 작성할 수 있다.&lt;/li&gt;
+          &lt;li&gt;보안성: 숨기고 싶은 정보가 존재한다면 뷰를 생성하여 처리할 수 있다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-그룹-함수&quot;&gt;5) 그룹 함수&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;GROUPING &lt;strong&gt;소계와 합계로 집계되어 출력된 행을 구분하는 함수&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;ROLLUP : 계층 구조를 가진 SUB TOTAL, 함수의 인자로 주어진 컬럼의 순서에 따라 다른 결과를 추출하게 된다.&lt;/li&gt;
+  &lt;li&gt;CUBE: 인자로 주어진 컬럼의 결합 가능한 모든 조합에 대해서 집계를 수행한다.&lt;/li&gt;
+  &lt;li&gt;GROUPING SETS:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;6-윈도우-함수&quot;&gt;6) 윈도우 함수&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;RANK :동일값은 동일순위 부여 중간순위 비어둠&lt;/li&gt;
+  &lt;li&gt;DENSE_RANK: 동일순위 부여, 중간순위를 비우지 않음&lt;/li&gt;
+  &lt;li&gt;ROW_NUMBER: 동일값에 대해서도 유일한 순위부여&lt;/li&gt;
+  &lt;li&gt;LAG : 파티션별 윈도우에서 이전의 행값을 가져올 수 있다.&lt;/li&gt;
+  &lt;li&gt;LEAD: 파티션별 윈도우에서 이후의 행값을 가져올 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;7-dcl&quot;&gt;7) DCL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GRANT DML ON 테이블 TO 유저이름&lt;/li&gt;
+  &lt;li&gt;REVOKE&lt;/li&gt;
+  &lt;li&gt;ROLE : 사용자와 권한 사이에서 중개역할을 수행한다. 다양한 권한을 그룹으로 묶어 관리한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;8-절차형-sql&quot;&gt;8) 절차형 SQL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PL/SQL의 특징
+    &lt;ul&gt;
+      &lt;li&gt;블록구조로 되어있어 각 기능별로 모듈화가가 가능하다.&lt;/li&gt;
+      &lt;li&gt;변수,상수들을 선언하여 SQL문장간 값을 교환한다 ,WHERE절의 조건등으로 대입할 수있다.&lt;/li&gt;
+      &lt;li&gt;IF,LOOP등의 절차형언어를 사용하여 절차적인 프로그램이 가능하도록 한다.&lt;/li&gt;
+      &lt;li&gt;DBMS 정의 에러나 사용자 정의 에러를 정의하여 사용할 수 있다.&lt;/li&gt;
+      &lt;li&gt;ORACLE에 내장되어 있으므로 ORACLE과 PL/SQL 을 지원하는 어떤 서버로도 프로그램을 옮길 수 있다.&lt;/li&gt;
+      &lt;li&gt;응용 프로그램의 성능을 향상시킨다.&lt;/li&gt;
+      &lt;li&gt;블록 전부를 서버로 보내기 때문에 통신량을 줄일 수 있다.&lt;/li&gt;
+      &lt;li&gt;프로시저,사용자 정의함수,트리거 객체를 작성할 수 있다.&lt;/li&gt;
+      &lt;li&gt;프로시저 내부에 작성된 절차적 코드는 PL/SQL 엔진이 처리하고 일반적인 SQL문장은 SQL실행기가 처리한다.&lt;/li&gt;
+      &lt;li&gt;동적 SQL 또는 DDL문장을 실행할 때, EXECUTE IMMEDIATE를 사용하여야한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;저장모듈(Stored Module)
+    &lt;ul&gt;
+      &lt;li&gt;SQL문장을데이터 베이스 서버에 저장하여 사용자와 애플리케이션 사이에서 공유할 수 있도록 만든 일종의 SQL 컴포넌트 프로그램&lt;/li&gt;
+      &lt;li&gt;독립적으로 실행되거나 다른 프로그램으로부터 실행될 수 있다.&lt;/li&gt;
+      &lt;li&gt;ORACLE의 저장모듈 : PROCEDURE, USER DEFINED FUNCTION,TRIGGER&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TRIGGER(트리거)
+    &lt;ul&gt;
+      &lt;li&gt;특정한 테이블에 DML문이 수행되었을 때, 데이터베이스에서 자동으로 동작하도록 작성된 저장프로그램&lt;/li&gt;
+      &lt;li&gt;프로시저와 달리 COMMIT,ROLLBACK과 같은 TCL을 사용할 수 없다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프로시저와 트리거의 차이점
+    &lt;ul&gt;
+      &lt;li&gt;CREATE PROCEDURE / TRIGGER 문법사용&lt;/li&gt;
+      &lt;li&gt;트리거는 커밋,롤백 실행&lt;/li&gt;
+      &lt;li&gt;프로시저는 EXECUTE명령어로 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-sql-최적화-기본-원리&quot;&gt;3. SQL 최적화 기본 원리&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-옵티마이저와-실행계획&quot;&gt;1) 옵티마이저와 실행계획&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;비용기반 옵티마이저 CBO(Cost Based Optimizer) : 테이블 및 인덱스등의  통계정보를 활용하여 sql문을 실행하는데 소요될 처리시간 및 cpu,i/o 자원량등을 계산하여 가장 효율적일 것으로 예상되는 실행계획을 선택하는 옵티마이저&lt;/li&gt;
+  &lt;li&gt;규칙기반 옵티마이저
+    &lt;ul&gt;
+      &lt;li&gt;rowid를 활용하여 테이블을 액세스하는 방법이 가장 높은 순위를 가지고, 전체 테이블 스캔이 제일 낮은 우선 순위를 가진다.&lt;/li&gt;
+      &lt;li&gt;적절한 인덱스가 존재하면 항상 인덱스를 사용하려고 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실행계획 : sql처리를 위한 실행 절차와 방법을 표현,성능적인 측면도 표현이 가능하다.
+    &lt;ul&gt;
+      &lt;li&gt;실행계획을 통해 알 수 있는 정보
+        &lt;ul&gt;
+          &lt;li&gt;조인기법&lt;/li&gt;
+          &lt;li&gt;액세스기법&lt;/li&gt;
+          &lt;li&gt;최적화정보&lt;/li&gt;
+          &lt;li&gt;질의처리 예상 비용&lt;/li&gt;
+          &lt;li&gt;조인 순서&lt;/li&gt;
+          &lt;li&gt;연산&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;실행순서
+        &lt;ul&gt;
+          &lt;li&gt;위에서 아래로, 안에서 밖으로 읽는다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;sql 처리흐름도 : 실행계획을 시각적으로 표현, 액세스 기법이 표현된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-인덱스-기본&quot;&gt;2) 인덱스 기본&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 인덱스(primary key)는 unique &amp;amp; not null의 제약조건을 가진다.&lt;/li&gt;
+  &lt;li&gt;대량의 데이터를 조회하는 경우 인덱스를 이용하는 것보다 테이블 전체 스캔 방식 조회가 빠를 수도 있다.&lt;/li&gt;
+  &lt;li&gt;보조인덱스는 unique 인덱스가 아니라면 중복 데이터가 입력 가능하다.&lt;/li&gt;
+  &lt;li&gt;자주 변경되는 index는 성능에 좋지 않은 영향을 끼치므로 인덱스 후보로 적절하지 않다.&lt;/li&gt;
+  &lt;li&gt;인덱스는 조회만을 위한 오브젝트이며 삽입,삭제,갱신의 경우 부하를 가중시킨다. *인덱스를 구성하는 컬럼이외의 데이터가 삽입될때는 인덱스로 인한 부하가 발생하지 않는다.&lt;/li&gt;
+  &lt;li&gt;대량의 데이터를 삽일할때는 모든 인덱스를 제거하고, 삽입이 끝난 후에 다시 인덱스를 생성하는 것이 좋다.&lt;/li&gt;
+  &lt;li&gt;Balance Tree는 관계형 데이터베이스에서 가장 많이 사용되는 인덱스구조이다.&lt;/li&gt;
+  &lt;li&gt;인덱스 범위스캔은 결과가 없으면 한건도 반환하지 않을 수 있다.&lt;/li&gt;
+  &lt;li&gt;인덱스를 구성하는 컬럼들의 순서는 데이터 조회시 성능적인 관점에서 매우 중요한 역할을 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;B-TREE 인덱스 :
+    &lt;ol&gt;
+      &lt;li&gt;브랜치,리프 블록으로 구성, 브랜치 블록은 분기를 목적으로 하고 리프블록은 인덱스를 구성하는 컬럼의 값으로 정렬된다.&lt;/li&gt;
+      &lt;li&gt;일반적으로 OLTP시스템 환경에서 가장 많이 사용된다.&lt;/li&gt;
+      &lt;li&gt;테이블 내의 데이터 중 10%이하의 데이터를 검색할때 유리하다.&lt;/li&gt;
+      &lt;li&gt;일치 및 범위검색에 적절한 구조이다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BITMAP 인덱스 : 하나의 인덱스 키 엔트리가 많은 행에 대한 포인터를 저장하고 있는 구조이며, 시스템에서 사용될 질의를 시스템 구현시에 모두 알 수 없는 경우인 DW,AD-HOC질의 환경을 위해 설계되었다.&lt;/li&gt;
+  &lt;li&gt;CLUSTERED 인덱스:
+    &lt;ol&gt;
+      &lt;li&gt;인덱스의 리프페이지가 곧 데이터 페이지이며 리프페이지의 모든 데이터는 인덱스 키 컬럼 순으로 물리적으로 정렬되어 저장된다.&lt;/li&gt;
+      &lt;li&gt;oracle의 lot와 유사하다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;3-조인-수행-원리&quot;&gt;3) 조인 수행 원리&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;NL JOIN(Nested Loop Join)
+    &lt;ol&gt;
+      &lt;li&gt;랜덤 액세스 방식으로 데이터를 읽는다.&lt;/li&gt;
+      &lt;li&gt;자연 조인이 효율적일때 유용하다.&lt;/li&gt;
+      &lt;li&gt;DRIVING TABLE의 조인 데이터양이 큰 영향을 준다.&lt;/li&gt;
+      &lt;li&gt;유니크 인덱스를 활용하여 수행시간이 적게 걸리는 소량테이블을 온라인 조회하는 경우 유용하다.&lt;/li&gt;
+      &lt;li&gt;선택도가 낮은(결과행의 수가 적은) 테이블이 선행테이블로 선택되는 것이 일반적으로 유리하다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HASH JOIN
+    &lt;ol&gt;
+      &lt;li&gt;SORT MERGE JOIN에서 데이터가 너무 커서 소트부하가 심할때 유용하다.&lt;/li&gt;
+      &lt;li&gt;해쉬함수를 이용하여 조인을 수행하기 때문에 EQUI JOIN에서만 동작한다.&lt;/li&gt;
+      &lt;li&gt;조인칼럼의 인덱스가 존재하지않아도 사용할 수 있다.&lt;/li&gt;
+      &lt;li&gt;자연조인이 비효율적일때 사용가능&lt;/li&gt;
+      &lt;li&gt;자연조인시 드라이빙 집합쪽으로 조인 액세스량이 많이 랜덤 액세스 부하가 심할때 사용&lt;/li&gt;
+      &lt;li&gt;선택도가 낮은(결과행의 수가 적은) 테이블이 선행테이블로 선택되는 것이 일반적으로 유리하다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SORT MERGE JOIN
+    &lt;ol&gt;
+      &lt;li&gt;조인 컬럼을 기준으로 데이터를 정렬하여 조인을 수행한다.&lt;/li&gt;
+      &lt;li&gt;스캔방식으로 데이터를 읽는다.&lt;/li&gt;
+      &lt;li&gt;랜덤액세스로 NLJOIN에서 부담되던 넓은 범위의 데이터를 처리할 때 사용되던 조인기법이지만 정렬할 데이터가 많아 메모리에서 모든 정렬작업으로 수행하기 어려운 경우에는 임시영역을 사용하기 때문에 성능이 떨어질 수 있다.&lt;/li&gt;
+      &lt;li&gt;NON-EQUI JOIN조건에서도 사용한다.&lt;/li&gt;
+      &lt;li&gt;DRIVING TABLE의 개념이 중요하지 않다.&lt;/li&gt;
+      &lt;li&gt;NL조인이 비효율적일때 사용할 수 있다.ㅈㅈ&lt;/li&gt;
+      &lt;li&gt;조인조건의 인덱스의 유무에 영향받지 않는다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DW등의 데이터 집계 업무에서 많이 사용되는 조인 기법은 HASH JOIN또는 SORT MERGE JOIN이다.&lt;/li&gt;
+  &lt;li&gt;EXISTS / IN 절은 SEMI JOIN으로 나타난다.  반대는 ANTI&lt;/li&gt;
+  &lt;li&gt;HASH JOIN은 SORT MERGE JOIN보다 일반적으로 더 우수한 성능을 보이지만 JOIN대상 테이블이 JOIN KEY컬럼으로 정렬되어 있을때는 SORT MERGE JOIN이 더 우수한 성능을 낼 수도 있다.&lt;/li&gt;
+  &lt;li&gt;HASH,SORT MERGE JOIN은 조인 칼럼의 인덱스가 없어도 사용가능하다, 메모리에 적재할 수 있는 크기보다 더 커지면 임시영역을 사용한다.&lt;/li&gt;
+  &lt;li&gt;세개의 조인은 모두 조인에 성공하면 결과를 추출버퍼에 넣는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HASH ANTI JOIN / HASH SEMI JOIN / NESTED LOOP SEMI JOIN  / NESTED LOOP ANTI JOIN&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hoon93.tistory.com/46&quot;&gt;오라클 NL Join, Sort Merge Join, Hash Join 특징 총정리&lt;/a&gt;&lt;/p&gt;</content><author><name>GitHub User</name></author><category term="DB" /><category term="DB" /><summary type="html">SQLD 이론</summary></entry><entry><title type="html">CS - 3. 배열</title><link href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html" rel="alternate" type="text/html" title="CS - 3. 배열" /><published>2022-03-03T00:00:00+00:00</published><updated>2022-03-03T00:00:00+00:00</updated><id>/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html">&lt;h2 id=&quot;1-컴파일링&quot;&gt;(1) 컴파일링&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어 : 컴파일링,어셈블링,링킹&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make나 clang을 사용해서 프로그램을 실행할 때 네 개의 단계를 거친다
+    &lt;ul&gt;
+      &lt;li&gt;전처리&lt;/li&gt;
+      &lt;li&gt;컴파일링&lt;/li&gt;
+      &lt;li&gt;어셈블링&lt;/li&gt;
+      &lt;li&gt;링킹&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;전처리&quot;&gt;전처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전처리기에게 실질적인 컴파일이 이루어지기 전에 무언가를 실행하라고 알려준다.&lt;/li&gt;
+  &lt;li&gt;#include는 전처리기에게 다른 파일의 내용을 포함시키라고 알려준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;컴파일&quot;&gt;컴파일&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;c코드를 어셈블리어라는 저수준 프로그래밍 언어로 컴파일한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;어셈블&quot;&gt;어셈블&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;어셈블리 코드를 오브젝트 코드로 변환 시켜준다.&lt;/li&gt;
+  &lt;li&gt;연속된 0과 1들로 바꿔주는 작업이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;링크link&quot;&gt;링크(Link)&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로그램이 라이브러리를 포함해 여러개의 파일로 이루어져 있어 하나의 오브젝트 파일로 합쳐져야 할때, 링크단계가 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-디버깅&quot;&gt;(2) 디버깅&lt;/h2&gt;
+
+&lt;h3 id=&quot;버그와-디버깅&quot;&gt;버그와 디버깅&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;버그 : 코드에 들어있는 오류
+
+디버깅 : 코드에 있는 버그를 식별하고 고치는 과정
+
+디버거를 통해 디버깅을 하게 된다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;디버깅의-기본&quot;&gt;디버깅의 기본&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;중지점 : 프로그램이 멈추는 특정지점
+
+중지점 이후부터 한줄씩 코드를 실행해볼 수 있다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;help50&quot;&gt;help50&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cs50페이지에서 컴파일시 생기는 오류를 해석해줌  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;debug50&quot;&gt;debug50&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;브레이크 포인트 지정후, 한줄식 코드를 실행해 볼 수 있음
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-코드의-디자인&quot;&gt;(3) 코드의 디자인&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;핵심단어: check50, style50,고무 오리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-배열&quot;&gt;(4) 배열&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: 배열&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;메모리&quot;&gt;메모리&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;여러 자료형에 따라 서로 다른 크기의 메모리를 차지한다.
+
+컴퓨터 안 Ram이라는 물리적 칩이 메모리 역할을 한다.
+bool 1byte
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;char 1byte&lt;/li&gt;
+  &lt;li&gt;int 4byte&lt;/li&gt;
+  &lt;li&gt;float 4byte&lt;/li&gt;
+  &lt;li&gt;long 8byte&lt;/li&gt;
+  &lt;li&gt;double 8byte&lt;/li&gt;
+  &lt;li&gt;string ?byte&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;배열&quot;&gt;배열&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+
+int main(void)
+{
+    int scores[3];
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 74;
+
+    printf(&quot;Average: %i\n&quot;, (scores[0]+ scores[1]+ scores[2])/3);
+}
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;전역-변수&quot;&gt;전역 변수&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+
+//전역변수 선언
+const int N = 3;
+
+int main(void)
+{
+    int scores[N];
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 33;
+
+    //평균 점수 출력
+    printf(&quot;Average: %i\n&quot;,(scores[0] + scores[1] + scores[2])/ N);
+
+}
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;배열의-동적-선언-및-저장&quot;&gt;배열의 동적 선언 및 저장&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+
+float average(int length,int array[]);
+
+int main(void)
+{
+    
+    
+    int n = get_int(&quot;Scores: &quot;);
+    
+    
+    int scores[n];
+    
+    for(int i=0;i&amp;lt;n;i++)
+    {
+        scores[i] = get_int(&quot;Score %i:&quot;, i+1);
+    }
+
+    //평균 점수 출력
+    printf(&quot;Average: %.1f\n&quot;,average(n,scores));
+
+}
+
+float average(int length,int array[])
+{
+    int sum = 0;
+    for(int i=0;i&amp;lt;length;i++){
+        sum += array[i];
+    }
+
+    return (float) sum / (float) length;
+}
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;6-문자열과-배열&quot;&gt;(6) 문자열과 배열&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: 문자,문자열&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;string자료형은 문자자료형의 데이터들의 배열이다.&lt;/p&gt;
+
+&lt;p&gt;2차원 배열로 하나씩 추출이 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;EMMA&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;RODRIGO&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;BRIAN&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;DAVID&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%c%c%c%c&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2차원 배열을 이용하여 한 문자씩 출력하는 것이 가능하다.&lt;/p&gt;</content><author><name>GitHub User</name></author><category term="CS" /><category term="CS" /><summary type="html">(1) 컴파일링</summary></entry><entry><title type="html">CS - 2. C언어</title><link href="/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4.html" rel="alternate" type="text/html" title="CS - 2. C언어" /><published>2022-02-18T00:00:00+00:00</published><updated>2022-02-18T00:00:00+00:00</updated><id>/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4</id><content type="html" xml:base="/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4.html">&lt;h1 id=&quot;2c언어&quot;&gt;2.C언어&lt;/h1&gt;
+
+&lt;h3 id=&quot;cs50-sandbox-사용법&quot;&gt;*CS50 sandbox 사용법&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;명령어&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clang&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-c기초&quot;&gt;(1) C기초&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: stdio.h, clang, 컴파일러&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c언어&quot;&gt;C언어&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;int main(void) 는 시작한다의 의미&lt;/li&gt;
+  &lt;li&gt;#include &lt;stdio.h&gt;는 “stdio.h”라는 이름의 파일을 찾아서“printf” 함수에 접근할 수 있도록 해준다.&lt;/stdio.h&gt;&lt;/li&gt;
+  &lt;li&gt;c로 작성한 코드는 *.c로 저장해야한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;컴파일러&quot;&gt;컴파일러&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;직접 작성한 소스코드를 2진수의 머신코드로 바꿔주는 작업을 컴파일러가 수행해준다.&lt;/li&gt;
+  &lt;li&gt;명령어는 clang ex)clang hello.c&lt;/li&gt;
+  &lt;li&gt;a.out이란 폴더에 01000 등과 같은 0과 1로 이루어진 코드로 이루어진 hello.c파일의 내용이 저장되있을 것임&lt;/li&gt;
+  &lt;li&gt;clang -o hello hello.c 로 hello라는 폴더 이름으로 지정해서 파일을 저장할 수 있다.&lt;/li&gt;
+  &lt;li&gt;ls로 파일을 조회 할 수 있다. hello* 과 같이 *이 붙은 파일은 머신코드가 된다. 소스코드는 hello.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-문자열&quot;&gt;(2) 문자열&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: stdio.h, clang, 컴파일러&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c언어-1&quot;&gt;C언어&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;int main(void) 는 시작한다의 의미&lt;/li&gt;
+  &lt;li&gt;#include &lt;stdio.h&gt;는 “stdio.h”라는 이름의 파일을 찾아서 “printf” 함수에 접근할 수 있도록 해준다.&lt;/stdio.h&gt;&lt;/li&gt;
+  &lt;li&gt;c로 작성한 코드는 *.c로 저장해야한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;컴파일러-1&quot;&gt;컴파일러&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;직접 작성한 소스코드를 2진수의 머신코드로 바꿔주는 작업을 컴파일러가 수행해준다.&lt;/li&gt;
+  &lt;li&gt;명령어는 clang ex)clang hello.c&lt;/li&gt;
+  &lt;li&gt;a.out이란 폴더에 01000 등과 같은 0과 1로 이루어진 코드로 이루어진 hello.c파일의 내용이 저장되있을 것임&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-문자열-1&quot;&gt;&lt;strong&gt;(2) 문자열&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: 형식지정자, String, make&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cs50.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;what's your name?&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, %s&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;%s - string 타입의 변수를 넣겠다. 그 변수는 answer이다.&lt;/p&gt;
+
+&lt;p&gt;여러개의 인자를 ,로 구분해서 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;컴퓨터에게 cs50을 사용하는 코드를 입력해야함&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clang&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcs50&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;-l 은 link 즉 연결을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;make 명령어를 통해, 간단하게 처리할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-조건문과-루프&quot;&gt;(3) 조건문과 루프&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: int,if,while,for&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;조건문&quot;&gt;조건문&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x is less than y&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x is not less than y&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x eqluals y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;루프&quot;&gt;루프&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;4-자료형형식-지정자연산자&quot;&gt;(4) 자료형,형식 지정자,연산자&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;**핵심단어: char.long,float,double, %, &amp;amp;&amp;amp;, |&lt;/td&gt;
+      &lt;td&gt;**&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;데이터타입&quot;&gt;데이터타입&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bool - yes/no , true/false&lt;/li&gt;
+  &lt;li&gt;char - ‘C’,’A’&lt;/li&gt;
+  &lt;li&gt;string - 문자열&lt;/li&gt;
+  &lt;li&gt;int - 정수&lt;/li&gt;
+  &lt;li&gt;long - 정수&lt;/li&gt;
+  &lt;li&gt;float - 실수(부동소수점)&lt;/li&gt;
+  &lt;li&gt;double - 실수(소수점 포함)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;형식지정자&quot;&gt;형식지정자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;%c - char&lt;/li&gt;
+  &lt;li&gt;%f -float,double&lt;/li&gt;
+  &lt;li&gt;%l - int&lt;/li&gt;
+  &lt;li&gt;%li - long&lt;/li&gt;
+  &lt;li&gt;%s - string&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;int 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;what'your age?&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;you are at least %i days old.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;365&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;float 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cs50.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;What's the price?&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Your total is %.2f. &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0625&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//.2f 소수점 뒤 2자리만 보여준다.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;기타-연산자-및-주석&quot;&gt;기타 연산자 및 주석&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;+&lt;/li&gt;
+  &lt;li&gt;-&lt;/li&gt;
+  &lt;li&gt;*&lt;/li&gt;
+  &lt;li&gt;/&lt;/li&gt;
+  &lt;li&gt;%&lt;/li&gt;
+  &lt;li&gt;&amp;amp;&amp;amp; 그리고&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;|&lt;/td&gt;
+          &lt;td&gt;또는&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;// 주석&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;n: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;even&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;odd&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;5-사용자-정의-함수중첩-루프&quot;&gt;(5) 사용자 정의 함수,중첩 루프&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어 : 사용자 정의 함수, 중첩 루프&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;루프&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;    
+ &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cough&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;중첩루프&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;    
+ &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+     &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Size: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 정의 함수&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cs50.h&amp;gt;
+&lt;/span&gt;    
+ &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cough&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+ &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;cough&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+ &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cough&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cough function&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;항상 새로운 함수를 main함수 위에다가 추가 할 수 는 없다. 그렇다고 새로운 함수를 main뒤에 두면 호출 오류가 발생한다.(라인을 차례대로 읽으면 main함수에서 모르는 함수가 뒤에 나오기 때문이다.)&lt;/li&gt;
+  &lt;li&gt;따라서 cough함수를 미리 위에서 봤던 것처럼 속인다. &amp;gt;  main함수에서 오류가 발생하지 않는다.&lt;/li&gt;
+  &lt;li&gt;맨 위에 cough함수를 먼저 입력해줘서 cough라는 함수가 정의되어 있음을 알려줘야한다.&lt;/li&gt;
+  &lt;li&gt;int main(void)에서 int 출력의 종류를 의미하고, void는입력의 종류를 뜻한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-하드웨어의-한계&quot;&gt;(6) 하드웨어의 한계&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: 메모리,오버플로우&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 부동소수점 부정확성
+    
+    :실수 x,y를 받아 나누기를 할때, 소수점 50자리까지 출력하기로 했을때 float에서 저장가능한 비트수가 유한하기 때문에 부정확한 결과를 내게 된다. 
+    
+    ex) 1/10 을 했을때 0.1이 나와야 하지만, 50자리 까지 표현하라 하여
+    
+    `0.10000000149011611938476562500000000000000000000000`와 같이 출력한다.
+    
+    ```c
+    #include &amp;lt;stdio.h&amp;gt;
+    #include &amp;lt;cs50.h&amp;gt;
+    
+    int main(void)
+    {
+        float x = get_float(&quot;x:&quot;);
+        float y = get_float(&quot;y:&quot;);
+    
+        printf(&quot;x / y = %.30f\n&quot;,x / y);
+    
+    }
+    ```
+    
+
+2. 정수 오버플로우
+    
+    :int는 32개의 비트이기 때문에 10억 이상의 정수는 저장할 수 없는 오버플로우 현상이 생긴다.
+    
+    ```c
+    #include &amp;lt;stdio.h&amp;gt;
+    #include &amp;lt;unistd.h&amp;gt;
+    
+    int main(void)
+    {
+        for(int i = 1; ;i*=2)
+        {
+            printf(&quot;%i\n&quot;,i);
+            sleep(1);
+        }
+    }
+    ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>GitHub User</name></author><category term="CS" /><category term="CS" /><summary type="html">2.C언어</summary></entry><entry><title type="html">프로그래머스 코딩테스트</title><link href="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html" rel="alternate" type="text/html" title="프로그래머스 코딩테스트" /><published>2022-02-09T00:00:00+00:00</published><updated>2022-02-09T00:00:00+00:00</updated><id>/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0</id><content type="html" xml:base="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">&lt;h2 id=&quot;풀이&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	        
+		&lt;span class=&quot;nc&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;nc&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		  
+		  
+		  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+	    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>GitHub User</name></author><category term="Algorithm" /><category term="Algorithm" /><summary type="html">풀이</summary></entry><entry><title type="html">CS - 1.컴퓨팅 사고</title><link href="/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html" rel="alternate" type="text/html" title="CS - 1.컴퓨팅 사고" /><published>2022-02-09T00:00:00+00:00</published><updated>2022-02-09T00:00:00+00:00</updated><id>/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0</id><content type="html" xml:base="/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">&lt;h2 id=&quot;1-2진법&quot;&gt;(1) 2진법&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어 : 컴퓨터과학, 2진법, 비트, 바이트&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;컴퓨터는 0과 1로만 데이터를 표현한다.&lt;/li&gt;
+  &lt;li&gt;2진법에서는 두개의 숫자만 있으므로 각 자리수가 2의 거듭제곱을 의미한다.&lt;/li&gt;
+  &lt;li&gt;2진법에서 하나의 자릿수를 표현하는 단위를 비트라고 한다&lt;/li&gt;
+  &lt;li&gt;1byte = 8bit이며 총 2의 8승 256가지의 서로 다른 바이트를 표현할 수 있다.&lt;/li&gt;
+  &lt;li&gt;비트 &amp;lt; 바이트 &amp;lt; 킬로바이트 &amp;lt; 메가바이트 &amp;lt; 기가바이트 &amp;lt; 메가바이트 &amp;lt; 테라바이트&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/153200909-a1135901-680d-4814-b0cc-dc6543d2de96.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2정보의-표현&quot;&gt;(2)정보의 표현&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어: ASCII, 유니코드, RGB&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;아스키코드 : 문자를 숫자로 표현할 수 있도록 정해놓은 약속(표준)&lt;/p&gt;
+
+&lt;p&gt;아스키코드로는 문자들을 표현하기에 충분하지 않았기 때문에 UNICODE로 사용한다. 유니코드로는 이모티콘까지 표현할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3알고리즘&quot;&gt;(3)알고리즘&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;핵심단어: 알고리즘,의사코드&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;알고리즘 : 입력에서 받은 자료를 출력형태로 만드는 처리과정 , 입력값을 출력값의 형태로 바꾸기 위해 어떤 명령들이 수행되어야 하는지에 대한 규칙들의 순서적 나열&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;의사코드 : 필요한 행동이나 조건을 잘 설정하여 컴퓨터가 수행해야 하는 일을 절차적으로 파악 할 수 있게 도와준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/153341830-0fdc067c-8445-4284-bedf-2c2b89daefcb.png&quot; alt=&quot;의사코드&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ex) 1024쪽의 전화번호부에서 mike를 찾고자 한다.
+    &lt;ol&gt;
+      &lt;li&gt;방법1: 첫페이지부터 확인하는 것은 최대 1024번의 단계를 거쳐야한다. 정확하지만 오래 걸린다.&lt;/li&gt;
+      &lt;li&gt;방법2: 2페이지씩 검사한다. 방법1에 비해 1/2단계로 줄어들지만 정확성이 떨어지고, 역시나 오래걸림&lt;/li&gt;
+      &lt;li&gt;방법3: 1024의 중간부터 찾기 시작한다. 이때 오른쪽 부분 / 왼쪽 부분으로 나뉘어 진다. 펼친 페이지의 알파벳이 m보다 앞에 있다 &amp;gt;  오른쪽 부분에 mike가 있을테니 왼쪽 부분은 버린다 &amp;gt; 다시 중간을 펼친다 이와 같은 방법을 쓰면 10단계만에 한페이지로 줄일 수 있고, mike가 있는지 없는지 결과를 도출 할 수 있게된다. 이와 같은 순차적 나열이 정확하고 효율적인 알고리즘이 된다.&lt;/li&gt;
+      &lt;li&gt;방법1,2,3을 그래프로 나타냈을때, 다음과 같이 차이가 있다.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/153341926-bd80af96-5ab5-4823-a1f2-1b837b8aaff1.png&quot; alt=&quot;알고리즘그래프&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4스크래치기초&quot;&gt;(4)스크래치:기초&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;핵심단어 : 스크래치,블록&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;스크래치
+    &lt;ol&gt;
+      &lt;li&gt;알고리즘 구성요소 : 함수,조건,불리언 표현,루프&lt;/li&gt;
+      &lt;li&gt;스크래치란 : 그래픽 프로그래밍 언어&lt;/li&gt;
+      &lt;li&gt;블록의 종류에 따라 프로그램이 수행하는 일의 종류가 달라진다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5스크래치심화&quot;&gt;(5)스크래치:심화&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;변수와 루프&lt;/li&gt;
+  &lt;li&gt;변수와 조건문&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>GitHub User</name></author><category term="CS" /><category term="CS" /><summary type="html">(1) 2진법</summary></entry><entry><title type="html">tikitaka 채팅 페이지 프로젝트</title><link href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html" rel="alternate" type="text/html" title="tikitaka 채팅 페이지 프로젝트" /><published>2022-01-12T00:00:00+00:00</published><updated>2022-01-12T00:00:00+00:00</updated><id>/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85</id><content type="html" xml:base="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">&lt;p&gt;&lt;strong&gt;포스트 작성일 2022-01-12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-tikitaka-채팅-프로젝트-개요&quot;&gt;(1) tikitaka 채팅 프로젝트 개요&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;단순 채팅만이 아닌,  업무의 효율과 고객 커뮤니케이션을  더욱 풍부하게 수행하기 위한  별도의 최적화된 업무 UX가 필요&lt;/li&gt;
+  &lt;li&gt;사내 직원,고객사와의 접촉을 최소화하는 비대면 활동 활성화&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이와 같은 이유로 사내 채팅뿐만아니라 해당 회사의 제품을 사용하는 거래처와의 채팅도 지원하는 사내 채팅 웹 페이지를 구현하고자 하였다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-개발-환경&quot;&gt;(2) 개발 환경&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/149081951-15a47b5c-e6a7-4ad8-bbca-19aa441d5e64.jpg&quot; alt=&quot;006&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-구현-파트&quot;&gt;(3) 구현 파트&lt;/h2&gt;
+&lt;p&gt;나는 1:1 채팅, 실시간 알림을 구현하였다.&lt;/p&gt;
+
+&lt;p&gt;이 파트를 구현하기 위해서는 react - spring - redis를 연결했어야 하는데, ‘전체적인 구조는 다 함께 짜야 한다’ &amp;gt; ‘redis pub/sub 패턴을 나눠서 구현하자’ 고 하다가 안 돼서, 뒤집어 엎고 내가 다시 만들었다.&lt;/p&gt;
+
+&lt;p&gt;구현한 비즈니스 로직은 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/149083314-faf4ba46-041a-49a7-ad98-0261412bf011.jpg&quot; alt=&quot;014&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;react와 spring은 websocket으로 연결,
+spring과 redis는 redisTemplate를 사용해 연결했다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;메세지 데이터의 종류를 text,image,file인지 구분하여 axios를 용해서 spring에 전달한다.&lt;/li&gt;
+  &lt;li&gt;전송된 메세지는 redis에 전달되고 해당 topic을 구독하는 subscriber에게 데이터를 전달한다.&lt;/li&gt;
+  &lt;li&gt;websocket을 통해 해당 채널을 구독하고 있을 경우, 데이터를 받아, 페이지에 띄운다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;redis를-사용한-이유&quot;&gt;*Redis를 사용한 이유&lt;/h2&gt;
+&lt;p&gt;캐시메모리 기반으로 전송 속도가 빠르고 Decoupling되어있는 Pub/Sub구조로 인해 확장성이 높고 가용성이 좋으며 이러한 구조로 인해 서비스의 수요가 늘어남에도 요구되는 실시간 대용량 데이터를 보다 정확하게 처리할 수 있어 데이터의 신뢰성을 보장할 수 있는 Message Oriented MiddleWare(MoM)이기 때문이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-새롭게-배워-적용한-기술&quot;&gt;(4) 새롭게 배워 적용한 기술&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;gcp
+ gcp 설정은 아래의 링크에서 자세히 작성하겠다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;websocket 
+ ## socket.io가 아닌 websocket를 사용한 이유?&lt;/p&gt;
+
+    &lt;p&gt;socket.io : 실시간 웹 어플리케이션 통신을 위한 자바스크립트 라이브러리&lt;/p&gt;
+
+    &lt;p&gt;websocket은 단순히 이벤트를 보내는 것만 가능하지만 속도가 빠르고 적은 데이터를 사용한다. socket.io는 방 개념을 이용해 일부 클라이언트에게만 데이터를 전송할 수 있다. 우리는 redis를 사용하여 이미 원하는 클라이언트에게 데이터를 전송할 수 있기 때문에 속도가 빠른 websocket을 사용하였다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>GitHub User</name></author><category term="PROJECT" /><category term="spring boot" /><category term="redis" /><category term="gcp" /><category term="mariadb" /><category term="react" /><category term="mybatis" /><category term="websocket" /><summary type="html">포스트 작성일 2022-01-12</summary></entry><entry><title type="html">React DOM</title><link href="/react/2022/01/04/ReactDOM.html" rel="alternate" type="text/html" title="React DOM" /><published>2022-01-04T00:00:00+00:00</published><updated>2022-01-04T00:00:00+00:00</updated><id>/react/2022/01/04/ReactDOM</id><content type="html" xml:base="/react/2022/01/04/ReactDOM.html">&lt;h2 id=&quot;01basics--ex05--reactapi-기반-애플리케이션으로-리팩토링&quot;&gt;01.basics &amp;gt; ex05 : React(API 기반) 애플리케이션으로 리팩토링&lt;/h2&gt;
+
+&lt;h3 id=&quot;1설치&quot;&gt;1.설치&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader sass-loader node-sass
+ $npm i react react-dom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-appjs-변경&quot;&gt;2. App.js 변경&lt;/h3&gt;
+
+&lt;p&gt;변경 전&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const App = function(){
+    const app = document.createElement('h1');
+    app.textContent = 'Hellooo world3 ';
+    return app;
+}
+
+export {App}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;변경 후&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from &quot;react&quot;;
+
+const App = function(){
+    //const app = document.createElement('h1');
+    //app.textContent = 'Hellooo world3 ';
+    const app = React.createElement('h1', null, 'Hello React!');
+
+    return app;
+}
+
+export {App}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-indexjs-변경&quot;&gt;3. index.js 변경&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import ReactDOM from 'react-dom';
+import {App} from './App.js'
+
+//document
+//    .getElementById('root')
+//    .appendChild(App());
+
+ReactDOM.render(App(), document.getElementById('root'));
+
+//root를 다음의 내용으로 바꾼다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>GitHub User</name></author><category term="React" /><category term="React" /><summary type="html">01.basics &amp;gt; ex05 : React(API 기반) 애플리케이션으로 리팩토링</summary></entry><entry><title type="html">webpack basic</title><link href="/react/2022/01/04/webpack.html" rel="alternate" type="text/html" title="webpack basic" /><published>2022-01-04T00:00:00+00:00</published><updated>2022-01-04T00:00:00+00:00</updated><id>/react/2022/01/04/webpack</id><content type="html" xml:base="/react/2022/01/04/webpack.html">&lt;p&gt;&lt;strong&gt;post 2022-01-04&lt;/strong&gt;
+&lt;strong&gt;post 2022-03-31 추가 수정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;01basics--ex04--애플리케이션-번들링bundling&quot;&gt;01.basics &amp;gt; ex04 : 애플리케이션 번들링(bundling)&lt;/h1&gt;
+
+&lt;h3 id=&quot;1바벨의-역할&quot;&gt;1.바벨의 역할&lt;/h3&gt;
+
+&lt;h3 id=&quot;1트랜스파일러&quot;&gt;1)트랜스파일러&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;javascript 트랜스파일러,컴파일러&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;ES6,7 » ES5 코드로 트랜스파일링함&lt;/li&gt;
+  &lt;li&gt;es6+ 버전의 javascript,typescript,jsx등  다른 언어로 분류되는 언어를 브라우저에서 동작할 수있도록 호환성을 지켜준다.&lt;/li&gt;
+  &lt;li&gt;크로스 브라우징 문제를 해결하는툴이다.
+    &lt;ul&gt;
+      &lt;li&gt;크로스 브라우징
+        &lt;ul&gt;
+          &lt;li&gt;웹페이지 제작시 모든 브라우저에서 깨지지 않고 작성한 대로 나오게 하는 것&lt;/li&gt;
+          &lt;li&gt;브라우저마다 렌더링 엔진이 다르기때문에 크로스브라우징이 필요하다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;새로운 ESNext문법을 기존의 브라우저에 사용하기 위해서 필요한 컴파일러이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2폴리필&quot;&gt;2)폴리필&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;es6에서 새로 추가된 Promise,Map,Set과 같은 es6에서 추가된 전역 객체들을  사용가능한 객체로 바꾸어 주는 것을 polyfill이라고 한다.&lt;/li&gt;
+  &lt;li&gt;babel에서는 &lt;strong&gt;**babel-polyfill&lt;/strong&gt;** 을 통해 폴리필을 사용할 수있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-정리&quot;&gt;3) 정리&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;webpack은 작게 분리된 많은 모듈(js,css,images …등)들의 의존성을 분석해서 하나의 js파일로 묶은 도구이다.(번들링도구)&lt;/li&gt;
+  &lt;li&gt;하나의 js파일을 번들(bundle)이라하고 묶는 작업을 번들링(bundling)이라고 한다.&lt;/li&gt;
+  &lt;li&gt;번들링은 단순히 모듈들을 하나의 파일로 묶는 작업만을 의미하지 않는다. &amp;gt; 빌드작업도 한다.&lt;/li&gt;
+  &lt;li&gt;빌드작업
+ 1) linting(ESLint,문법체크 - es6에 맞는지) 작업
+ 2) document작업(JDoc,문서화)
+ 3) test(Mocha, Jest)
+ 4) 난독화/압축(Uglyfy) 작업 (난독화(코드를 치환,변수치환),압축(개행, 탭등 제거))
+ 5) 번들링&lt;/li&gt;
+  &lt;li&gt;자바스크립트 뿐만 아니라 다양한 에셋(images, css, font)들도 모듈로 취급한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;2설치&quot;&gt;2.설치&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$npm init -y
+$npm i -D express
+$npm i -D webpack webpack-cli
+$npx weppack --version 으로 버전 확인
+$npx webpack ./src/index.js &amp;gt; dist 폴더에 번들링 된다.
+
+
+webpack은 es6모듈을 지원하지 않는다. 그러므로 package.json에 type을 module로 지정하면 안된다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>GitHub User</name></author><category term="React" /><category term="React" /><summary type="html">post 2022-01-04 post 2022-03-31 추가 수정</summary></entry><entry><title type="html">생활코딩 JavaScript 정리</title><link href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html" rel="alternate" type="text/html" title="생활코딩 JavaScript 정리" /><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><id>/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9%20JavaScript%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83413364/142727325-9cb72c16-86b5-4440-93a8-57301bd35178.png&quot; alt=&quot;js&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Document 문서 전체를 의미&lt;/p&gt;
+
+&lt;p&gt;HTMLDocument&lt;/p&gt;
+
+&lt;p&gt;Text 태그안의 텍스트&lt;/p&gt;
+
+&lt;p&gt;Comment 주석&lt;/p&gt;
+
+&lt;p&gt;Attr 속성&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;1html에서-javascript-로드하기&quot;&gt;1.HTML에서 javaScript 로드하기&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;inline 방식&lt;/p&gt;
+
+    &lt;h1&gt;&lt;/h1&gt;
+    &lt;p&gt;과 같은 태그 안에 자바스크립트를 기술하는 방식&lt;/p&gt;
+
+    &lt;p&gt;정보와 제어가 섞여 있음, 비추천&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;script 방식&lt;/p&gt;
+
+    &lt;script&gt;태그를 넣어 작성하는 방식, html태그와 js코드를 분리할 수 있다.
+    
+
+&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;외부파일로 분리&lt;/p&gt;
+
+    &lt;p&gt;js를 별도의 파일로 분리한다. 재활용성 높음, 전송량의 경량화&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;script 태그의 위치&lt;/p&gt;
+
+    &lt;p&gt;head위에 위치시킬 수 있으나, window.onload = function(){}안에 작성해야한다.&lt;/p&gt;
+
+    &lt;p&gt;웹브라우저의 모든 구성요소에 대한 로드가 끝났을 때, 브라우저에 의해 호출되는 함수임&lt;/p&gt;
+
+    &lt;p&gt;script 파일은 head 태그 보다 페이지의 하단에 위치시키는 것이 더 좋은 방법이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;2object-model&quot;&gt;2.Object Model&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JSC&lt;/td&gt;
+      &lt;td&gt;DOM&lt;/td&gt;
+      &lt;td&gt;BOM&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;자바스크립트로 제어하기 위해서, 객체를 만든다.&lt;/p&gt;
+
+&lt;p&gt;브라우저에서 html문서의 각각의 태그를 객체로 만들어 놓는다.&lt;/p&gt;
+
+&lt;p&gt;객체를 자바스크립트로 제어할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;document.getElementsByTagName(‘img’)&lt;/p&gt;
+
+&lt;p&gt;img태그를 배열 형태로 모두 가져옴&lt;/p&gt;
+
+&lt;p&gt;리턴 형태는 배열이 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;01window&quot;&gt;01)window&lt;/h3&gt;
+
+&lt;p&gt;전역객체, window, frame을 제어하기 위한 객체&lt;/p&gt;
+
+&lt;p&gt;document property에 접근 가능하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;02javascript-core&quot;&gt;02)JavaScript Core&lt;/h3&gt;
+
+&lt;p&gt;브라우저, 노드 js와 같은 스크립트를 제어할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;자바스크립트 자체 객체인 Object, Array, Function 을 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;03domdocument-object-model&quot;&gt;03)DOM(Document Object Model)&lt;/h3&gt;
+
+&lt;p&gt;document가 하는일 - html태그를 제어하는 역할을 한다.&lt;/p&gt;
+
+&lt;p&gt;문서를 제어한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;3bom&quot;&gt;3.BOM&lt;/h1&gt;
+
+&lt;h3 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h3&gt;
+
+&lt;p&gt;window객체의 property에 저장되어 있다.&lt;/p&gt;
+
+&lt;p&gt;현재 웹브라우저의 페이지 리로드, 경고창 등을 담당한다.&lt;/p&gt;
+
+&lt;p&gt;브라우저를 제어함&lt;/p&gt;
+
+&lt;p&gt;BOM(Browser Object Model)이란 웹브라우저의 창이나 프래임을 추상화해서 프로그래밍적으로 제어할 수 있도록 제공하는 수단이다. BOM은 전역객체인 Window의 프로퍼티와 메소드들을 통해서 제어할 수 있다. 따라서 BOM에 대한 수업은 Window 객체의 프로퍼티와 메소드의 사용법을 배우는 것이라고 해도 과언이 아닐 것이다. 본 토픽의 하위 수업에서는 Window 객체의 사용법을 알아볼 것이다.&lt;/p&gt;
+
+&lt;p&gt;window. ** 로 접근한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;4document-객체&quot;&gt;4.Document 객체&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;5text-객체&quot;&gt;5.Text 객체&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document.getElementById : 리턴 데이터 타입은 HTMLLIELement&lt;/li&gt;
+  &lt;li&gt;document.getElementsByTagName : 리턴 데이터 타입은 HTMLCollection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;즉 실행결과가 하나인 경우 HTMLLIELement, 복수인 경우 HTMLCollection을 리턴하고 있다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;6jquery&quot;&gt;6.Jquery&lt;/h1&gt;
+
+&lt;p&gt;유사배열로 리턴한다.&lt;/p&gt;
+
+&lt;p&gt;for(var i=0; i&amp;lt;li.length; i++){&lt;/p&gt;
+
+&lt;p&gt;console.log(li[i]);&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;li는 object&lt;/p&gt;
+
+&lt;p&gt;li[i] HTMLLIElement이다. &amp;gt; 제이쿼리 객체가 아니라 DOM 객체임&lt;/p&gt;
+
+&lt;p&gt;따라서 제이쿼리 메소드 .css를 사용할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;사용하려면 $() 제이쿼리 함수에 감싸서 사용하면 된다.&lt;/p&gt;
+
+&lt;p&gt;$(‘‘li”)&lt;/p&gt;
+
+&lt;p&gt;map을 통한 조회&lt;/p&gt;
+
+&lt;p&gt;map을 통해 모든 엘리먼트 실행가능하다.&lt;/p&gt;
+
+&lt;p&gt;li,map(function(index,elem){&lt;/p&gt;
+
+&lt;p&gt;console.log(index,elem);&lt;/p&gt;
+
+&lt;p&gt;$(elem).css(‘color’, ‘red’);&lt;/p&gt;
+
+&lt;p&gt;})&lt;/p&gt;
+
+&lt;p&gt;index가 몇번째값&lt;/p&gt;
+
+&lt;p&gt;elem가 모든 엘리먼트값을 호출한다.&lt;/p&gt;
+
+&lt;p&gt;elem는 DOM객체이기 때문에 $()감싸서 사용해준다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;7element-객체&quot;&gt;7.Element 객체&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모든HTML태그는 HTMLElement에 속한다. style과 같은 속성을 제어 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;html, xml,svg와 같은 다양한 언어 형식들이 존재하기 때문에 html은 HTMLElement로 구별한다.&lt;/p&gt;
+
+    &lt;p&gt;style같은 property사용 가능하다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;식별자, 조회, 속성 기능이 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;식별자&quot;&gt;&lt;strong&gt;식별자&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;문서내에서 특정한 엘리먼트를 식별하기 위한 용도로 사용되는 API&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Element.classList&lt;/li&gt;
+  &lt;li&gt;Element.className&lt;/li&gt;
+  &lt;li&gt;Element.id&lt;/li&gt;
+  &lt;li&gt;Element.tagName&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조회&quot;&gt;&lt;strong&gt;조회&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;엘리먼트의 하위 엘리먼트를 조회하는 API&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Element.getElementsByClassName&lt;/li&gt;
+  &lt;li&gt;Element.getElementsByTagName&lt;/li&gt;
+  &lt;li&gt;Element.querySelector&lt;/li&gt;
+  &lt;li&gt;Element.querySelectorAll&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;속성&quot;&gt;&lt;strong&gt;속성&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;엘리먼트의 속성을 알아내고 변경하는 API&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Element.getAttribute(name)&lt;/li&gt;
+  &lt;li&gt;Element.setAttribute(name, value)&lt;/li&gt;
+  &lt;li&gt;Element.hasAttribute(name);&lt;/li&gt;
+  &lt;li&gt;Element.removeAttribute(name);&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;식별자-api&quot;&gt;식별자 API&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;document.getElementById(‘id’).tagName : 값 변경 불가&lt;/li&gt;
+  &lt;li&gt;document.getElementById(‘id’).id :값 변경 가능&lt;/li&gt;
+  &lt;li&gt;document.getElementById(‘id’).className :값 변경가능&lt;/li&gt;
+  &lt;li&gt;document.getElementById(‘id’).classList
+    &lt;ul&gt;
+      &lt;li&gt;유사배열 형태를 리턴하는데 class= “a b”이면 길이 두개, classList[0] 은 a , classList[1]은 b가 나오게 된다.&lt;/li&gt;
+      &lt;li&gt;classList.add를 통해 추가 가능하다.&lt;/li&gt;
+      &lt;li&gt;classList.toggle로 값을 추가했다가, 없앴다가가 가능함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;조회-api&quot;&gt;조회 API&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Element도 getElementBy 메소드를 가지고 있다., 조회의 범위를 좁히고자 한다면 getElementBy*로 조회한다.&lt;/li&gt;
+  &lt;li&gt;document.getElementsBy* 는 문서전체를 대상으로 조회해서 적용한다.  Element의 하위 메소드  getElementById*를 하면,  Element 가 가지고 있는 하위 메소드만 찾아 적용한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;속성-api&quot;&gt;속성 API&lt;/h2&gt;
+
+&lt;p&gt;-&lt;a class=&quot;&quot; href=&quot;&quot;&gt;&lt;/a&gt; 의 태그 안에 있는 id, class 등등 속성을 조회하고, 추가, 삭제등의 변경이 가능한 api이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Element.getAttribute(name)&lt;/li&gt;
+  &lt;li&gt;Element.setAttribute(name, value)&lt;/li&gt;
+  &lt;li&gt;Element.hasAttribute(name);&lt;/li&gt;
+  &lt;li&gt;Element.removeAttribute(name);&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;속성과 프로퍼티&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;속성방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;target.setAttribute(‘class’, ‘’)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로퍼티 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;target.ClassName = ‘’&lt;/p&gt;
+
+&lt;h2 id=&quot;jquery-속성-제어-api&quot;&gt;jQuery 속성 제어 API&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jquery에서는 attr을 통해 속성을 제어할 수 있다.&lt;/li&gt;
+  &lt;li&gt;attr&lt;/li&gt;
+  &lt;li&gt;removeAttr&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;attribute 와 property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;jquery에서는 attribute를 attr, property는 prop로 사용한다.&lt;/p&gt;
+
+&lt;p&gt;각각 href를 조회 했을 때,&lt;/p&gt;
+
+&lt;p&gt;attr은 ex) ./demo.html&lt;/p&gt;
+
+&lt;p&gt;prop은 전체주소를 리턴한다. ex) &lt;a href=&quot;http://localhost/jQuery_attribute_api/demo.html&quot;&gt;http://localhost/jQuery_attribute_api/demo.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;제이쿼리를 통해, prop의 값으로 property의 제약을 보완해준다.&lt;/p&gt;
+
+&lt;h2 id=&quot;jquery-조회-범위-제한&quot;&gt;JQuery 조회 범위 제한&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;selector context&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$(“선택 인자1”, “선택인자2”).css 로 명시하면 선택인자2하위의 선택인자1만 속성 적용&lt;/li&gt;
+      &lt;li&gt;$(“선택인자1 선택인자2”) 도 사용가능&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.find()&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$(“선택인자1.”).find(“선택인자2”).css 로도 적용이 가능하다. 체인이 가능하기 때문이다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;8node-객체&quot;&gt;8.Node 객체&lt;/h1&gt;
+
+&lt;p&gt;가장 상위의 객체이다. Node 객체를 통해 모든 객체에서 사용 가능하다. 각각의 관계들을 유추할 수 있어 프로그래밍적으로 유용하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;관계
+    &lt;ul&gt;
+      &lt;li&gt;Node.childNodes&lt;/li&gt;
+      &lt;li&gt;Node.firstChild&lt;/li&gt;
+      &lt;li&gt;Node.lastChild&lt;/li&gt;
+      &lt;li&gt;Node.nextSibling&lt;/li&gt;
+      &lt;li&gt;Node.previousSibling 현재 li Element의 이전 형제&lt;/li&gt;
+      &lt;li&gt;Node.contains()&lt;/li&gt;
+      &lt;li&gt;Node.hasChildNodes()&lt;/li&gt;
+      &lt;li&gt;Node.parentNode&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;노드의 종류
+    &lt;ul&gt;
+      &lt;li&gt;Node.nodeType : 값이 Text인지 document인지 등의 타입을 알려줌&lt;/li&gt;
+      &lt;li&gt;Node.nodeName:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;값
+    &lt;ul&gt;
+      &lt;li&gt;Node.nodeValue&lt;/li&gt;
+      &lt;li&gt;Node.textContent&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자식관리
+    &lt;ul&gt;
+      &lt;li&gt;Node.appendChild()&lt;/li&gt;
+      &lt;li&gt;Node.removeChild()&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;01node-관계-api&quot;&gt;01)Node 관계 API&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;공백,줄바꿈 문자도 child로 취급함 (*text객체도 포함하기 때문이다.)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Node.childNodes
+    &lt;ol&gt;
+      &lt;li&gt;childNodes로 자식들을 조회가능하다.&lt;/li&gt;
+      &lt;li&gt;유사배열로 반환한다.&lt;/li&gt;
+      &lt;li&gt;전체적으로 속성을 지정하고자 할때, text엘리먼트가 있으면 전체 지정이 되지 않는다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.firstChild&lt;/li&gt;
+  &lt;li&gt;Node.lastChild&lt;/li&gt;
+  &lt;li&gt;Node.nextSibling
+    &lt;ol&gt;
+      &lt;li&gt;지정한 Element의 다음 형제&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.previousSibling
+    &lt;ol&gt;
+      &lt;li&gt;지정한 Element의 이전 형제&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.contains()&lt;/li&gt;
+  &lt;li&gt;Node.hasChildNodes()&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;02노드-종류-api&quot;&gt;02)노드 종류 API&lt;/h3&gt;
+
+&lt;p&gt;노드 작업을 하게 되면 현재 선택된 노드가 어떤 타입인지를 판단해야 하는 경우가 있다. 이런 경우에 사용할 수 있는 API가 nodeType, nodeName이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for(var name in Node){
+   console.log(name, Node[name]);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위를 통해 노드 종류를 조회할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Node.nodeType
+    &lt;ol&gt;
+      &lt;li&gt;노드 타입을 의미한다. 번호로 출력된다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.nodeName
+    &lt;ol&gt;
+      &lt;li&gt;노드의 이름 (태그명을 의미한다.)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;03노드-변경-api&quot;&gt;03)노드 변경 API&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;노드 추가
+    &lt;ol&gt;
+      &lt;li&gt;appendChild(child) - 노드의 마지막 자식으로 주어진 엘리먼트 추가&lt;/li&gt;
+      &lt;li&gt;insertBefore(new Element, referenceElement) -두번째 인자 앞에 엘리먼트 추가&lt;/li&gt;
+      &lt;li&gt;노드를 추가하기 위해서 추가 엘리먼트를 생성해야 한다. document객체의 기능을 사용하여 추가해야한다.
+        &lt;ol&gt;
+          &lt;li&gt;document.createElement(tagname) - &amp;lt;li&amp;gt;와 같은 태그&lt;/li&gt;
+          &lt;li&gt;document.createTextNode(data) - 텍스트 데이터&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;순서 createElement로 태그 생성 &amp;gt; .createTextNode로 텍스트 데이터 추가 &amp;gt; appendChild로 태그 안에 텍스트데이터 넣기 &amp;gt; appendChild로 html에 추가 해주기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;노드 제거
+    &lt;ol&gt;
+      &lt;li&gt;removeChild(child)
+        &lt;ol&gt;
+          &lt;li&gt;부모 노드에서, 자식 노드를 삭제해야 &lt;l태그&gt;데이터&amp;lt;/태그&amp;gt;가 삭제된다.&lt;/l태그&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;노드 바꾸기
+    &lt;ol&gt;
+      &lt;li&gt;replaceChild(newChild, oldChild)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;04jquery-노드-변경-api&quot;&gt;04)jQuery 노드 변경 API&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;추가
+    &lt;ol&gt;
+      &lt;li&gt;관련 메소드 before, prepend, content, append, after&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제거
+    &lt;ol&gt;
+      &lt;li&gt;remove - 선택 엘리먼트를 제거&lt;/li&gt;
+      &lt;li&gt;empty - 선택된 엘리먼트의 텍스트 노드를 제거&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;바꾸기
+    &lt;ol&gt;
+      &lt;li&gt;replaceAll - 변경내용 먼저 작성 $(‘&lt;a&gt;test&lt;/a&gt;’).replaceAll(‘#target’);&lt;/li&gt;
+      &lt;li&gt;replaceWith - 제어대상 먼저 지정 $(‘#target’).replacewith(‘&lt;a&gt;test&lt;/a&gt;’)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;복사
+    &lt;ol&gt;
+      &lt;li&gt;clone() 후 replaceAll()&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이동
+    &lt;ol&gt;
+      &lt;li&gt;$().append($())를 통해 이동 효과를 낼 수 있다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;05문자열로-노드-제어&quot;&gt;05)문자열로 노드 제어&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;innerHTML&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;지정한 엘리먼트의 하위 엘리먼트를 알 수 있다.(태그 포함)&lt;/li&gt;
+      &lt;li&gt;자식 노드의 값을 읽어 올 수도 있고, 변경할 수도 있다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;outerHTML
+    &lt;ol&gt;
+      &lt;li&gt;지정한 엘리먼트를 포함한 엘리먼트를 알 수 있다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;innerText, outerText
+    &lt;ol&gt;
+      &lt;li&gt;태그를 제외한 , 텍스트만 알 수 있다. 텍스트만 변경 가능하다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;insertAdjacentHTML()
+    &lt;ol&gt;
+      &lt;li&gt;가질 수 있는 인자.  beforebegin, afterbegin, beforeend,afterend&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;9document-객체&quot;&gt;9.Document 객체&lt;/h1&gt;
+
+&lt;p&gt;Document&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;HTMLDocument&lt;/p&gt;
+
+&lt;p&gt;Node가 가진, 메소드 사용 가능.&lt;/p&gt;
+
+&lt;p&gt;document.childnode로 문서 전체 읽기 가능&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;노드 생성 API
+    &lt;ol&gt;
+      &lt;li&gt;createElement()&lt;/li&gt;
+      &lt;li&gt;createTextNode()&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문서정보 API
+    &lt;ol&gt;
+      &lt;li&gt;title&lt;/li&gt;
+      &lt;li&gt;URL&lt;/li&gt;
+      &lt;li&gt;referrer&lt;/li&gt;
+      &lt;li&gt;lastModified&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;10text-객체&quot;&gt;10.Text 객체&lt;/h1&gt;
+
+&lt;p&gt;text 객체&lt;/p&gt;
+&lt;p&gt;는 Element, 'text객체'가 text
+
+DOM에서는 공백이나 줄바꿈도 텍스트 노드가 된다.
+
+1.값
+
+1. data
+2. nodeValue
+1. 조작
+    1. appendData()
+    2. deleteData()
+    3. insertData()
+    4. replaceData()
+    5. subStringData()
+2. 생성
+    1. document.createTextNode()
+
+### 01) 값 API
+
+### 02) 조작 API
+
+---
+
+# 11.문서의 기하학적 특성
+
+---
+
+# 12.이벤트
+
+### 등록방법
+
+### inline
+
+### 프로퍼티 리스터
+
+### addEventListener()
+
+### 이벤트 전파(버블링과 캡처링)
+
+### 기본동작의 취소
+
+### 이벤트타입
+
+1. 폼
+2. 문서로딩
+3. 마우스
+
+### JQuery 이벤트
+
+on API 사용법
+
+---
+
+# 13.네트워크 통신
+
+### AJAX
+
+- 웹브라우저와 웹서버가 내부적으로 데이터 통신을 하여, 로딩없이 데이터를 전달 받는다.
+- 사용 API : XMLHttpRequest
+- XMLHttpRequest:
+    
+    ```java
+    open(''GET/POST', '페이지주소');
+    send():
+    ```
+    
+
+```java
+&lt;p&gt;time : &lt;span id=&quot;time&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;input type=&quot;button&quot; id=&quot;execute&quot; value=&quot;execute&quot; /&gt;
+&lt;script&gt;
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './time.php');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 &amp;&amp; xhr.status === 200){
+            document.querySelector('#time').innerHTML = xhr.responseText;
+        }
+    }
+    xhr.send(); 
+}); 
+&lt;/script&gt;
+```
+
+ readystate =4 모든 통신이 끝난 상태
+
+status =200 통신이 성공한 상태
+
+status 404 500이면 오류페이지
+
+- POST방식
+    
+    정보를 post로 전달해서 알맞은 데이터를 가져온다.
+    
+&lt;/p&gt;</content><author><name>GitHub User</name></author><category term="javaScript" /><category term="javaScript" /><summary type="html"></summary></entry></feed>

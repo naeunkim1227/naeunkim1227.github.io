@@ -1,0 +1,4537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>슬기로운 코딩생활 | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="슬기로운 코딩생활">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="canonical" href="/">
+<meta property="og:url" content="/">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="슬기로운 코딩생활">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","url":"/","headline":"슬기로운 코딩생활","name":"슬기로운 코딩생활","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(https://images.unsplash.com/photo-1531347334762-59780ece5c76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1968&q=80)"></div>
+        <img class="img-placeholder" src="https://images.unsplash.com/photo-1531347334762-59780ece5c76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1968&q=80">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner"><div class="page-banner-default">
+            <h1 class="page-banner-heading">
+              슬기로운 코딩생활
+            </h1>
+            <h2 class="page-banner-subheading">
+              coding 기록일지
+            </h2>
+          </div></div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="articles">
+  
+
+  
+
+
+
+  <div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html">
+          node.js 로 crud페이지 만들기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html">
+        <p>
+        node.js를 교육과정을 통해 일주일 간 배웠으나, 매우 빠른 진도때문에 복습을 제대로 하지 못하고 넘어갔고…
+다시 배운다는 마음으로 생활코딩 node.js 강의 를 들으며 crud 페이지를 만들어 보고자 한다.
+그리고 github action을 사용하여 빌드/배포도 해볼 예정!
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#node.js">#node.js</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">
+          SQLD 이론 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 12, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 22 mins</span>
+      </div>
+      <a class="post-excerpt" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">
+        <p>
+        SQLD 이론
+
+과목 1 - 데이터 모델링의 이해
+
+1. 1장 데이터 모델링의 이해
+
+1) 데이터 모델의 이해
+
+
+  데이터모델링
+    
+      정보시스템을 구축하기 위한 데이터관점의 업무 분석 기법
+      현실세계의 데이터에 대해 약속된 표기법에 의해 표현하는 과정
+      데이터베이스를 구축하기 위한 분석/설계의 과정
+      추상화, 단순화, 정확화
+    
+  
+  데이터 모델링이 필요한 이유
+    
+      분석된 모델을 가지고 데이터 베이스를 생성하여 개발 및 데이터  사용하기 위한 것
+      업무정보를 구성하는 기초가 되는 정보들에 대해 일정한 표기법에 의해 표현
+    
+  
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#DB">#DB</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html">
+          CS - 3. 배열
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 03, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html">
+        <p>
+        (1) 컴파일링
+
+핵심단어 : 컴파일링,어셈블링,링킹
+
+
+  make나 clang을 사용해서 프로그램을 실행할 때 네 개의 단계를 거친다
+    
+      전처리
+      컴파일링
+      어셈블링
+      링킹
+    
+  
+
+
+전처리
+
+
+  전처리기에게 실질적인 컴파일이 이루어지기 전에 무언가를 실행하라고 알려준다.
+  #include는 전처리기에게 다른 파일의 내용을 포함시키라고 알려준다.
+
+
+컴파일
+
+
+  c코드를 어셈블리어라는 저수준 프로그래밍 언어로 컴파일한다.
+
+
+어셈블
+
+
+  어셈블리 코드를 오브젝트 코드로 변환 시켜준다.
+  연속된 0과 1들로 바꿔주는 작업이다.
+
+
+링크(Link)
+
+
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#CS">#CS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4.html">
+          CS - 2. C언어
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 18, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/cs/2022/02/18/2.C%EC%96%B8%EC%96%B4.html">
+        <p>
+        2.C언어
+
+*CS50 sandbox 사용법
+
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("hello world\n");
+}
+
+
+명령어
+
+$ clang hello.c
+$ ./a.out
+
+
+(1) C기초
+
+핵심단어: stdio.h, clang, 컴파일러
+
+C언어
+
+
+  int main(void) 는 시작한다의 의미
+  #include 는 “stdio.h”라는 이름의 파일을 찾아서“printf” 함수에 접근할 수 있도록 해준다.
+  c로 작성한 코드는 *.c로 저장해야한다.
+
+
+컴파일러
+
+
+  직접 작성한 소스코드를 2진수의 머신코드로 바꿔주는 작업을 컴파일러가 수... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#CS">#CS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+          CS - 1.컴퓨팅 사고
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/cs/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+        <p>
+        (1) 2진법
+
+핵심단어 : 컴퓨터과학, 2진법, 비트, 바이트
+
+
+  컴퓨터는 0과 1로만 데이터를 표현한다.
+  2진법에서는 두개의 숫자만 있으므로 각 자리수가 2의 거듭제곱을 의미한다.
+  2진법에서 하나의 자릿수를 표현하는 단위를 비트라고 한다
+  1byte = 8bit이며 총 2의 8승 256가지의 서로 다른 바이트를 표현할 수 있다.
+  비트 &lt; 바이트 &lt; 킬로바이트 &lt; 메가바이트 &lt; 기가바이트 &lt; 메가바이트 &lt; 테라바이트
+
+
+
+
+(2)정보의 표현
+
+핵심단어: ASCII, 유니코드, RGB
+
+아스키코드 : 문자를 숫자로 표현할 수 있도록 정해놓은 약속(표준)
+
+아스키코드로... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#CS">#CS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+          프로그래머스 코딩테스트
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html">
+        <p>
+        풀이
+
+import java.util.Arrays;
+
+public class Solution {
+	  public String solution(String[] participant, String[] completion) {
+	        
+		Arrays.sort(participant);
+		Arrays.sort(completion);
+		
+		int i;
+		for(i=0;i&lt;completion.length ;i++) {
+			if(!participant[i].equals(completion[i])) return participant[i];
+		}
+		  
+		  
+		  return participant... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+          tikitaka 채팅 페이지 프로젝트
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 12, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html">
+        <p>
+        포스트 작성일 2022-01-12
+
+(1) tikitaka 채팅 프로젝트 개요
+
+  단순 채팅만이 아닌,  업무의 효율과 고객 커뮤니케이션을  더욱 풍부하게 수행하기 위한  별도의 최적화된 업무 UX가 필요
+  사내 직원,고객사와의 접촉을 최소화하는 비대면 활동 활성화
+
+
+이와 같은 이유로 사내 채팅뿐만아니라 해당 회사의 제품을 사용하는 거래처와의 채팅도 지원하는 사내 채팅 웹 페이지를 구현하고자 하였다.
+
+(2) 개발 환경
+
+
+(3) 구현 파트
+나는 1:1 채팅, 실시간 알림을 구현하였다.
+
+이 파트를 구현하기 위해서는 react - spring - redis를 연결했어야 하는데, ‘전체적인 구조는 다 함께 짜야... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring%20boot">#spring boot</a><a class="post-tag" href="/tags.html#redis">#redis</a><a class="post-tag" href="/tags.html#gcp">#gcp</a><a class="post-tag" href="/tags.html#mariadb">#mariadb</a><a class="post-tag" href="/tags.html#react">#react</a><a class="post-tag" href="/tags.html#mybatis">#mybatis</a><a class="post-tag" href="/tags.html#websocket">#websocket</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/01/04/webpack.html">
+          webpack basic
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/01/04/webpack.html">
+        <p>
+        post 2022-01-04
+post 2022-03-31 추가 수정
+
+01.basics &gt; ex04 : 애플리케이션 번들링(bundling)
+
+1.바벨의 역할
+
+1)트랜스파일러
+
+
+  javascript 트랜스파일러,컴파일러
+  ES6,7 » ES5 코드로 트랜스파일링함
+  es6+ 버전의 javascript,typescript,jsx등  다른 언어로 분류되는 언어를 브라우저에서 동작할 수있도록 호환성을 지켜준다.
+  크로스 브라우징 문제를 해결하는툴이다.
+    
+      크로스 브라우징
+        
+          웹페이지 제작시 모든 브라우저에서 깨지지 않고 작성한 대로 나오게 하는 것
+     ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#React">#React</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/01/04/ReactDOM.html">
+          React DOM
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/01/04/ReactDOM.html">
+        <p>
+        01.basics &gt; ex05 : React(API 기반) 애플리케이션으로 리팩토링
+
+1.설치
+
+ $npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader sass-loader node-sass
+ $npm i react react-dom
+
+
+2. App.js 변경
+
+변경 전
+const App = function(){
+    const app = document.createElement('h1');
+    app.textContent = 'Hellooo world3 ';
+    return app;
+}
+
+export {App}
+
+
+변경 후... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#React">#React</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">
+          생활코딩 JavaScript 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 14, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">
+        <p>
+        
+
+Document 문서 전체를 의미
+
+HTMLDocument
+
+Text 태그안의 텍스트
+
+Comment 주석
+
+Attr 속성
+
+
+
+1.HTML에서 javaScript 로드하기
+
+
+  
+    inline 방식
+
+    
+    과 같은 태그 안에 자바스크립트를 기술하는 방식
+
+    정보와 제어가 섞여 있음, 비추천
+  
+  
+    script 방식
+
+    
+  
+  
+    외부파일로 분리
+
+    js를 별도의 파일로 분리한다. 재활용성 높음, 전송량의 경량화
+  
+  
+    script 태그의 위치
+
+    head위에 위치시킬 수 있으나, window.onload = function(){}안에 작성해... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#javaScript">#javaScript</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/javascript/2021/11/11/jquery,ajax.html">
+          jquery,ajax
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 11, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 10 mins</span>
+      </div>
+      <a class="post-excerpt" href="/javascript/2021/11/11/jquery,ajax.html">
+        <p>
+        post 2021-11-11
+
+
+  
+    
+      Marshalling
+      데이터(Object)를 xml로 만드는것
+    
+  
+  
+    
+      Unmarshalling
+      xml데이터를 특정 데이터 형태(Object)로 만드는 것
+    
+  
+  
+    
+      하는 방법
+      1) OXM(Object Xml Mapping)
+      XML데이터와 객체를 매핑
+      MarshallingHttpMessageConverter
+2) JAXB(Java Architecture for XML Binding)
+      OXM를 쉽게 도와주는 Tool
+      마살링/언마... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#javaScript">#javaScript</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring-boot/2021/11/01/spring-boot-%EA%B8%B0%EC%B4%88.html">
+          spring-boot 설정
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 01, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/spring-boot/2021/11/01/spring-boot-%EA%B8%B0%EC%B4%88.html">
+        <p>
+        post 2021-11-01
+
+스프링 부트와 스프링 프레임 워크의 차이점
+
+단독 스프링 부트 애플리케이션 :(spring-boot-start-parent 를 부모로 사용해서 의존성 버전관리) : 일반적
+
+Maven Project의 모듈로 스프링 부트 애플리케이션 : spring-boot-start-parent를 부모로 사용X, 버젼관리, 레포지토리 따로 지정하는 방식
+
+&lt;!-- jar로 빌드하기 위함 --&gt;
+	&lt;build&gt;
+		&lt;plugins&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#spring-boot">#spring-boot</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html">
+          spring xml파일 java로 변경하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 28, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 15 mins</span>
+      </div>
+      <a class="post-excerpt" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html">
+        <p>
+        post 2021-10-29
+
+생성 패키지
+
+com.douzone.config.app
+
+com.douzone.config.web
+
+리소스에 생성
+
+com.douzone.mysite.config.app
+
+com.douzone.mysite.config.app.mybatis
+
+com.douzone.mysite.config.app.mybatis.mappers
+
+1.applicationContext.xml &gt; AppConfig.java 로 변환하기
+
+생성할 java파일 : AppConfig.java / DBConfig.java / MyBatisConfig.java
+
+1.web.xml 수정
+
+&lt;context-par... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#spring">#spring</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html">
+          spring IoC Container
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 26, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html">
+        <p>
+        01.IoC 와 DI
+
+Inversion of Control( 제어역전 ) 이란 프로그램 코드 내에서 참조하려는 객체를 직접 생성 하지 않고 외부의 다른 존재가 생성하여 제공한다는 개념
+
+종류
+
+
+  org.springframework.beans.factory.BeanFactory 빈(Bean) 팩토리 인터페이스
+
+
+2.org.springframework.context.ApplicationContext 애플리케이션 컨텍스트 인터페이스’
+
+2 개의 인터페이스를 구현한 다수의 Container 클래스가 존재한다.
+
+XmlBeanFactory, ClassPathXmlApplicationContext, FileSystem... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring">#spring</a><a class="post-tag" href="/tags.html#Interceptor">#Interceptor</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring/2021/10/22/Interceptor.html">
+          spring Interceptor
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 22, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 9 mins</span>
+      </div>
+      <a class="post-excerpt" href="/spring/2021/10/22/Interceptor.html">
+        <p>
+        01.인터셉터란
+
+
+  Spring에서 HTTP Request와  HTTP Response를  Controller 앞과 뒤에서 가로채는역할을 한다.
+  Servlet의 앞과 뒤에서 HTTP Request와  HTTP Response를 가로채는 필터와 유사하다.
+  Interceptor를 구현하기 위해서는 HandlerInterceptor 인터페이스를 구현하여야 한다
+  인증과 관련된 부분을 인터셉터가 수행한다.
+  보안관련 처리
+  인증 관련이디 prehandler메소드를 자주 사용하게 된다.
+
+
+구조
+
+encoding Filter
+tomcat
+dispatcher servlet 
+interceptor가  가로채는 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring">#spring</a><a class="post-tag" href="/tags.html#Interceptor">#Interceptor</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html">
+          spring 자세히 알아보기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 18, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html">
+        <p>
+        post 2021-10-24
+
+01.DispatcherServlet과 MVC
+
+
+  
+    사용자의 요청을 DispatcherServlet이 받는다.
+  
+  
+    요청을 처리해야 하는 컨트롤을  찾기 위해HandlerMapping에게 질의를 하고 HandlerMapping은 컨트롤 객체에 매핑되어 있는 URL를 찾아낸다.
+  
+  
+    DispatcherServlet은 찾은 컨트롤에게 요청을 전달하고 Controller는 서비스 계층의 인터페이스를 호출하여 적절한 비지니스를 수행한다.
+  
+  
+    컨트롤러는 비지니스 로직의 수행결과로 받아낸 도메인 모델 객체와 함께 뷰이름을 ModelAndView ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring">#spring</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html">
+          spring 이란
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 17, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html">
+        <p>
+        post 2021-10-20
+
+01.스프링이란?
+
+
+  자바 엔터프라이즈 개발을 편하게 해주는 오픈소스 경량급 애플리케이션 프레임 워크
+  pojo를 이용한 가볍고 비침투적인 개발
+  DI와 인터페이스 지향을 통한 느슨한 결합도
+  Aspect와 공통 규약을 통한 선언적 프로그래밍
+  Aspect와 템플릿을 통한 반복적이고 상투적인 코드 제거
+
+
+
+
+AOP : 관심/관점 지향 프로그래밍,
+
+02.POJO프로그래밍
+
+
+  Plain Old Java Object
+  자바 언어와 꼭 필요한 API외에는 특정 규약에 종속되지 않는다.
+  특정 환경에 종속되지 않는다.
+  스프링에서는 스프링에 특화된 인터페이스 구현을 요구... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring">#spring</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jsp-servlet/2021/10/11/servlet%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
+          jsp-servlet 클래스 생성하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 11, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jsp-servlet/2021/10/11/servlet%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
+        <p>
+        post 21.10.11
+
+1. 서블릿 생성
+
+
+
+
+
+2. web.xml에서 servlet 태그생성
+
+&lt;servlet&gt;
+		&lt;servlet-name&gt;EmaillistController&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;com.douzone.emaillist.controller.EmaillistController&lt;/servlet-class&gt;
+	&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;EmaillistController&lt;/servlet-name&gt;
+		&lt;u... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#jsp-servlet">#jsp-servlet</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html">
+          DBMS의 이해
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 01, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html">
+        <p>
+        1. Fundamental
+
+1) 데이터 베이스 &amp; 데이터 베이스 관리 시스템
+
+
+  데이터 베이스
+    
+      데이터의 집합, 여러 프로그램들의 통합 정보들을 저장하여 운영할 수 있는 공용데이터의 집합
+      효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화 되어야 한다.
+      특성
+        
+          실시간 접근성
+          계속적인 변화
+          동시 공유성
+          내용참조
+        
+      
+    
+  
+  데이터 베이스 관리 시스템
+    
+      데이터 베이스를 관리하는 소프트웨어
+      정의기... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#DB">#DB</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+          Linux 내부구조
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 30, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+        <p>
+        Linux 내부구조
+
+1.리눅스 파일시스템
+
+1)파일시스템
+
+
+  운영체제에서는 커널이미지, 시스템 실행과 관련된 시스템 파일 그리고 유틸리티 파일들을 제공한다.
+  사용자의 데이터의 저장을 위해 사용됨
+  디렉터리 안에 디렉터리를 저장할 수 있는 구조
+  루트 디렉터리 : 장치의 메인 디렉토리
+    
+      여러장치를 사용하면 루트 디렉터리 구분에 문제가 생긴다.
+      유닉스 계열에서는 통합형 파일시스템을 사용한다.
+    
+  
+
+
+2)가상파일시스템(VFS)
+
+
+  유닉스는 디스크,터미널, 네트워크 카드등 모든 주변 장치들을 파일로 취급한다. 디스크상의 파일 시스템 외에도 다양한 기능의 특수 파일 시... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/db/2021/09/30/DB-%EC%95%95%EC%B6%95%EB%90%9C-%ED%8C%8C%EC%9D%BC,%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%EB%84%A3%EA%B3%A0-%EC%9B%8C%ED%81%AC%EB%B2%A4%EC%B9%98%EB%A1%9C-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0.html">
+          DB 압축된 파일,리눅스에 넣고 워크벤치로 작업하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 30, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/db/2021/09/30/DB-%EC%95%95%EC%B6%95%EB%90%9C-%ED%8C%8C%EC%9D%BC,%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%EB%84%A3%EA%B3%A0-%EC%9B%8C%ED%81%AC%EB%B2%A4%EC%B9%98%EB%A1%9C-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0.html">
+        <p>
+        압축된 파일 , 리눅스에 넣고 워크밴치로 작업하기
+
+1. 윈도우에 있는 파일 옮기기
+
+``` 
+    cd c:\
+
+sftp webmaster@127.0.0.1
+
+put employees_db.zip
+``` 
+
+sftp 를 이용해 윈도우에 있는 파일을 리눅스 서버로 옮겨준다.
+webmaster 계정에 employees_db.zip 파일을 옮겨 주었다.
+
+
+2. 리눅스에서 파일 옮긴 뒤 압축 풀기
+
+root 로 파일 옮기고, unzip으로 파일을 압축 해제한다.
+unzip이 없어 먼저 다운 받았다.
+
+```
+mv  employees_db.zip .
+
+yum -y install unzip
+
+unzip employees... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#DB">#DB</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/2021/09/29/%EA%B0%9C%EB%85%90-Linux-vi-%EC%97%90%EB%94%94%ED%84%B0.html">
+          [개념] linux vi 에디터
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 29, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/2021/09/29/%EA%B0%9C%EB%85%90-Linux-vi-%EC%97%90%EB%94%94%ED%84%B0.html">
+        <p>
+        아직 미작성…^^
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/linux/2021/09/28/%EA%B0%9C%EB%85%90-Linux-%EA%B8%B0%EB%B3%B8%EA%B4%80%EB%A6%AC%EB%AA%85%EB%A0%B9%EC%96%B4.html">
+          Linux 기본관리 명령어
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 28, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/linux/2021/09/28/%EA%B0%9C%EB%85%90-Linux-%EA%B8%B0%EB%B3%B8%EA%B4%80%EB%A6%AC%EB%AA%85%EB%A0%B9%EC%96%B4.html">
+        <p>
+        post 2021-09-28
+
+사용자관리 명령어
+
+
+  사용자 추가
+    
+      useradd [옵션] 계정이름
+    
+  
+  사용자 삭제
+    
+      userdel [옵션] 계정이름
+      옵션명령어
+        
+          -r 사용자의 홈 디렉터리를 제거
+        
+      
+    
+  
+  그룹 추가
+    
+      groupadd [옵션] 그룹명
+      옵션명령어
+        
+          -g 특정 gid 번호로 설정한다.
+          -r 0~1000번대 사이로 gid를 자동으로 설정
+        
+      
+    
+  
+  그룹삭제
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/linux/2021/09/28/Linux-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-git,maven,jenkins-%EC%84%A4%EC%B9%98.html">
+          Linux 서버에서 git,maven,mariadb,jenkins 설치
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 28, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/linux/2021/09/28/Linux-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-git,maven,jenkins-%EC%84%A4%EC%B9%98.html">
+        <p>
+        post 2021-09-28
+
+설치할 목록은 다음과 같다. douzone 디렉터리 안에 모아 둘 것이기 때문에
+mkdir douzone 으로 디렉토리를 생성한다.
+
+설치 목록
+
+/usr/local/douzone
+
+— java
+
+— tomcat
+
+— git
+
+- maven
+
+— mariadb
+
+— node
+
+— python3
+
+
+
+** .tar.gz 형식의 파일로 설치했다. **
+
+대부분의 파일은 방식이 비슷하다.
+
+  링크를 복사해 wget으로 파일 다운로드
+  tar xvfz 로 압축 풀기
+  mv 로 douzone 폴더에 옮기기
+  ln -s 로 링크작업 - 좀 더 쉽게 명령어를 입력하여 파일을 실행 할 수 있... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EC%84%A4%EC%B9%98">#설치</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/linux/2021/09/24/Linux-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95,-java,tomcat-%EC%84%A4%EC%B9%98.html">
+          Linux 서버 구축 후 환경설정, java,tomcat 설치
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 24, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/linux/2021/09/24/Linux-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95,-java,tomcat-%EC%84%A4%EC%B9%98.html">
+        <p>
+        post 2021-09-24
+
+Linux 서버 구축 및 환경설정
+
+사용한 툴
+xshell, virtual box, tomcat
+
+사용 환경
+centos 7
+
+매우 초반의 리눅스 환경설정은, 생략하고 xshell연동과정, java와 tomcat 설치를 정리하였다.
+
+## 1.  centos 7 기본작업
+
+  mount -t iso9660 /dev /sr0 /mnt /cdrompw 로 마운트 후 umout /dev/cdrom 으로 마운트 해제 작업하기
+    
+      마운트 : 디바이스를 사용하기 위해 하드웨어와 디렉토리를 연결하는 작업
+    
+  
+  
+    계정 만들기
+
+    작업위치 /root (pwd ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EC%84%A4%EC%B9%98">#설치</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/linux/2021/09/23/%EA%B0%9C%EB%85%90-Linux-%EC%86%8C%EA%B0%9C.html">
+          Linux 소개
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 23, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/linux/2021/09/23/%EA%B0%9C%EB%85%90-Linux-%EC%86%8C%EA%B0%9C.html">
+        <p>
+        post 2021-09-23
+
+1.리눅스 소개
+
+
+  소개
+    
+      유닉스와 윈도우 서버를 대체하는 서버 운영체제
+      멀티유저, 멀티 프로세스, 멀티 프로세서, 멀티 스레드 가능
+      레드햇, 데비안, 슬랙웨어, 수세
+    
+  
+  
+    구조
+
+    
+  
+
+
+커널과 사용자 계층(모드)로 나뉜다.
+
+
+  커널
+    
+      운영체제를 구성하는 핵심
+      응용프로그램이 다양한 하드웨어를 공통된 명령어들을 통해 제어 할 수 있게한다.
+      응용프로그램이 커널을 이용할 수 있도록 시스템 호출과 같은 API를 제공한다.
+    
+  
+  사용자 모드
+    
+      시스... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/java/2021/09/14/%EA%B0%9C%EB%85%90-java-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(1).html">
+          java 네트워크 프로그래밍- 01. 네트워크와 소켓이해
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 14, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/java/2021/09/14/%EA%B0%9C%EB%85%90-java-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(1).html">
+        <p>
+        post 2021-09-14
+
+네트워크와 프로그래밍 - 01. 네트워크와 소켓이해
+
+1.네트워크와 네트워킹
+
+
+  네트워크 :  유무선으로 연결되어 있는 Device들의 집합
+  디바이스 : 네트워크에 연결되어 있는 것들을 총칭한 것
+  네트워킹 :  네트워크에 연결된 디바이스들 간에 미리 약속된 프로토콜을 사용하여 데이터를 교환 하는 것
+  프로토콜 : 통신규약, 디바이스 상호간 데이터 통신을 위해 필요한 규약
+  데이터 통신 방법
+    
+      유/무선을 통해 네트워크에 연결
+      두 디바이스가 데이터 통신을 하기 위해서는 서로의 위치를 알아야 하는데, 이 위치를 node라고 부른다. node마다 고... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html">
+          java 동전교환기 문제
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 13, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html">
+        <p>
+        post 2021-09-13
+
+1.문제
+
+금액을 입력하면, 
+50000, 10000, 5000, 1000, 500, 100, 50, 10, 5, 1 원의 갯수가 몇개인지 결과를 출력하는 문제이다.
+
+import java.util.Scanner;
+
+public class Prob01 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner( System.in  );
+		
+		final int[] MONEYS = { 50000, 10000, 5000, 1000, 500, 100, 50, 10, 5, 1 };
+
+		/* 코드 작성 */
+		S... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+          java 기본 api
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 13, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+        <p>
+        post 2021-09-13
+
+01.언어와 시스템 API
+
+
+  
+    개요
+
+    :자바 프로그램에서 가장 많이 사용되는 패키지
+
+    import를 사용하지 않아도 자동으로 포함
+  
+
+
+Object
+
+
+  String
+  StringBuffer : 자기 자신을 먼저 리턴한다. 체인 방식으로 추가하기에 좋다.
+  Boolean
+  Character
+  Number » short,Integer,Long,Float,Double,Byte
+
+
+
+
+
+  Object 클래스
+    
+      모든 클래스의 최상위 클래스
+      getclass() : reflection 객체가 만들어 졌을때 참조했던 클래스 정보... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+          java 생성자를 이용한 TV예제
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 09, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+        <p>
+        post 2021-09-09
+
+생성자에 대한 활용 기술이 조금 부족하다고 생각하여 실습예제를 분석해 보았다.
+
+
+package tv;
+
+public  class WatchTV {
+    public static void main( String[] args ) {
+       TV tv = new TV( 7, 20, false);  	
+        
+        tv.status();	
+        
+        tv.power( true );
+        tv.volume( 120 );
+        tv.status();		          
+        
+        tv.volume( false ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a><a class="post-tag" href="/tags.html#%EC%8B%A4%EC%8A%B5%EC%98%88%EC%A0%9C">#실습예제</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html">
+          github에 maven project 만들기, eclipse 내려받기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 09, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html">
+        <p>
+        github에서 공용으로 사용할 maven project를 생성하고 module을 여러개 생성했는데,
+이 프로젝트를 github에 올리고 다시 내려받으니 mavenproject와 module로 받아지지 않고, 이것 저것 오류가 나타났다.
+그래서 차례대로 기록해 놓으려 한다.
+
+구글에 검색해도 mavenproject 깃허브 관련글이 많이 없어 나중에 저처럼 삽질할 분들이 있을까 싶어 적어 놓는 글이며, 더 좋은 방법이 있을 수도 있습니다.
+
+1.github에서 repository 생성하기
+
+깃허브에서 레포지토리를 먼저 생성한 뒤 주소를 복사한다.
+그 다음 이클립스 탭에서
+
+
+  window &gt; show view... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#github">#github</a><a class="post-tag" href="/tags.html#maven">#maven</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/java/2021/09/07/%EA%B0%9C%EB%85%90-java-01.%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.html">
+          java 객체지향 프로그래밍
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 07, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/java/2021/09/07/%EA%B0%9C%EB%85%90-java-01.%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.html">
+        <p>
+        post 2021-09-07
+
+01.클래스와 다형성
+클래스의 정의
+
+클래스의 구조: 클래스 헤더, 필드, 메소드, 생성자 » 클래스 멤버
+
+
+  필드
+    
+      객체의 데이터 상태를 저장하는 변수
+      멤버변수
+    
+  
+  접근자
+    
+      객체에대한 정보의 접근을 제한하기 위하 사용한다
+      public : 모든 패키지, 클래스 가능
+      protected: 같은 패키지내 클래스, 자식클래스
+      defalut: 같은 패키지내 클래스만 사용가능
+      private : 모든 외부 클래스 접근 제한
+    
+  
+  클래스 변수, 인스턴스 변수
+    
+      인... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/project/2021/09/04/alljobgo%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html">
+          all-job-go 프로젝트
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 04, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/project/2021/09/04/alljobgo%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html">
+        <p>
+        1. alljobgo 프로젝트를 시작한 계기
+
+hrd-net이라는 사이트를 실제 이용할 당시, 관심있는 교육과정의 일정을 비교할 수 없어서 불편했고, 전 차수 수강후기도 보고 싶었는데 접근하기가 불편했다. 그래서 스터디원들과 함께, hrd-net api를 사용하여 사이트를 구현해보기로 했다.
+
+1. 과정검색
+2. 수강후기 보기
+3. 관심있는 과정 캘린더로 보기
+
+
+내가 맡은 파트는 3번이다.
+
+2. 개발환경
+STS4 , MYSQL , JSP servlet
+
+service 코드
+
+
+@Service
+public class CalendarServiceImpl implements CalendarService {
+	
+
+	@... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#spring%20framework">#spring framework</a><a class="post-tag" href="/tags.html#api">#api</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/gitblog/2021/09/02/jekyll-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-git-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0.html">
+          jekyll 사용하여 github blog 만들기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 02, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/gitblog/2021/09/02/jekyll-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-git-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0.html">
+        <p>
+        사용한 테마
+
+  Future Imperfect
+  http://jekyllthemes.org/themes/future-imperfect/
+
+
+21.09.02
+JEKYLL YAT THEME로 변경하였다.
+테마다운은 여기 &gt; http://jekyllthemes.org/themes/jekyll-theme-yat/
+
+왜냐.. 카테고리나 태그 별로 분리하고 싶었기 때문…그냥 원래 사용한 블로그에 드롭다운 메뉴 추가하고, 나누려고 했으나..하다보니 귀찮아졌다. 
+무튼 jekyll테마를 적용한 gitblog 만드는 법은 아래와 같다.
+
+준비
+
+
+  ruby gem
+  git
+  Ccode
+  본인의 github
+  je... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#gitblog">#gitblog</a><a class="post-tag" href="/tags.html#jekyll">#jekyll</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/record/2021/07/21/welcome-to-myblogl.html">
+          Welcome to MYBLOG!
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 21, 2021</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/record/2021/07/21/welcome-to-myblogl.html">
+        <p>
+        첫 번째 github BLOG 업데이트
+
+
+BLOG를 만든 이유
+
+  프로젝트, 공부하며 얻은 지식들을 체계적으로 정리할 필요가 있다고 생각했다.
+  NOTION에 정리 하였었지만 페이지마다 공유를 해야한다는 점이 조금 불편하다고 느껴졌다.
+  블로그 형식의 페이지가 있었으면 좋겠다는 생각해서 포트폴리오를 만들면서 같이 생성하게 되었다.
+  비전공생은…무엇이든 하나라도 더 해봤다는 것을 어필하는 것이 좋다고 생각해서 일주일 삽질하면서 만들었다.
+
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/example/2017/12/15/table-example.html">
+          Table example
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 15, 2017</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/example/2017/12/15/table-example.html">
+        <p>
+        Table example as below
+
+For now, these extended features are provided:
+
+
+  Cells spanning multiple columns
+  Cells spanning multiple rows
+  Cells text align separately
+  Table header not required
+  Grouped table header rows or data rows
+
+
+Rowspan and Colspan
+^^ in a cell indicates it should be merged with the cell above.
+This feature is contribu... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#table">#table</a></div>
+    </li>
+</ul>
+
+  <!-- Pagination links -->
+</div>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/index.html">
+        All<span>36</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/categories.html#h-Algorithm">
+          Algorithm <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-CS">
+          CS <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-DB">
+          DB <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-Linux">
+          Linux <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-PROJECT">
+          PROJECT <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-RECORD">
+          RECORD <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-React">
+          React <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-example">
+          example <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-gitblog">
+          gitblog <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-github">
+          github <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-java">
+          java <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-javaScript">
+          javaScript <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-jsp-servlet">
+          jsp-servlet <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-node.js">
+          node.js <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-spring">
+          spring <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-spring-boot">
+          spring-boot <span>1</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>SQLD 이론 정리 | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="SQLD 이론 정리">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="SQLD 이론">
+<meta property="og:description" content="SQLD 이론">
+<link rel="canonical" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">
+<meta property="og:url" content="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-03-12T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="SQLD 이론 정리">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html"},"description":"SQLD 이론","@type":"BlogPosting","url":"/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html","headline":"SQLD 이론 정리","dateModified":"2022-03-12T00:00:00+00:00","datePublished":"2022-03-12T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">SQLD 이론 정리</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-03-12T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Mar 12, 2022
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 22 mins</span>
+  </p>
+<div class="post-tags"><a class="post-tag" href="/tags.html#DB">#DB</a></div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h1 id="sqld-이론">SQLD 이론</h1>
+
+<h1 id="과목-1---데이터-모델링의-이해">과목 1 - 데이터 모델링의 이해</h1>
+
+<h2 id="1-1장-데이터-모델링의-이해">1. 1장 데이터 모델링의 이해</h2>
+
+<h3 id="1-데이터-모델의-이해">1) 데이터 모델의 이해</h3>
+
+<ul>
+  <li>데이터모델링
+    <ul>
+      <li>정보시스템을 구축하기 위한 데이터관점의 업무 분석 기법</li>
+      <li>현실세계의 데이터에 대해 약속된 표기법에 의해 표현하는 과정</li>
+      <li>데이터베이스를 구축하기 위한 <strong>분석/설계</strong>의 과정</li>
+      <li>추상화, 단순화, 정확화</li>
+    </ul>
+  </li>
+  <li>데이터 모델링이 필요한 이유
+    <ul>
+      <li>분석된 모델을 가지고 데이터 베이스를 생성하여 개발 및 데이터  사용하기 위한 것</li>
+      <li>업무정보를 구성하는 기초가 되는 정보들에 대해 일정한 표기법에 의해 표현</li>
+    </ul>
+  </li>
+  <li>데이터 모델링 유의점
+    <ul>
+      <li>중복 : 데이터베이스가 여러 장소에 같은 정보를 저장하지 않는다.</li>
+      <li>비유연성 : 데이터의 정의를 데이터의 사용 프로세스와 분리함으로써 데이터 혹은 프로세스의 작은변화가 애플리케이션과 데이터 베이스에 중대한 변화를 일으킬 가능성을 줄인다.</li>
+      <li>비일관성: 데이터와 데이터간의 상호 연관 관계에 대해 명확하게 정의한다.</li>
+    </ul>
+  </li>
+  <li>종류
+    <ul>
+      <li>개념적 데이터 모델링 : 추상화 수준이 높고 업무중심적이고 포괄적인 수준의 모델링 진행,전시적 데이터 모델링, EA수립시 많이 이용</li>
+      <li>논리적 데이터 모델링 : 시스템으로 구축하고자 하는 업무에 대해 KEY,속성,관계 등은 정확하게 표현, 재사용성이 높음</li>
+      <li>물리적 데이터 모델링: 실제로 데이터베이스에 이식할 수 있도록 성능,저장등 물리적인 성격을 고려하여 설계</li>
+    </ul>
+  </li>
+  <li>데이터베이스 스키마 구조 3단계 : 외부 &gt; 개념 &gt; 내부
+    <ul>
+      <li>개념스키마
+        <ul>
+          <li>모든 사용자 관점을 통합한 조직 전체의 관점의 통합적 표현</li>
+          <li>모든 응용시스템들이나 사용자들이 필요로하는 데이터를 통합한 조직 전체의 DB를 기술한 것으로 DB에 저장되는 데이터와 그들간의 관계를 표현하는 스키마</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ERD 작성순서
+    <ul>
+      <li>엔터티를 그린다.</li>
+      <li>엔터티를 적절하게 배치한다.</li>
+      <li>엔터티간 관계를 설정한다.</li>
+      <li>관계명을 기술한다.</li>
+      <li>관계의 참여도를 기술한다.</li>
+      <li>관계의 필수여부를기술한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-엔티티">2) 엔티티</h3>
+
+<ul>
+  <li>발생시점에 따른 엔터티 분류
+    <ul>
+      <li>기본/키 엔터티 : 다른 엔터티로부터 주식별자를 상속받지 않고 자신의 고유한 주식별자를 가진다.</li>
+      <li>중심 엔터티</li>
+      <li>행위 엔터티</li>
+    </ul>
+  </li>
+  <li>특징
+    <ul>
+      <li>반드시 해당업무에서 필요하고 관리하고자하는 정보여야 한다.</li>
+      <li>유일한 식별자에 의해 식별이 가능해야한다.</li>
+      <li>영속적으로 존재하는 인스턴스의 집합이어야 한다.두개 이상</li>
+      <li>업무 프로세스에 의해 이용되어야한다.</li>
+      <li>반드시 속성이 있어야한다.</li>
+      <li>다른 엔터티와 최소 한개이상의 관계가 있어야 한다. 단 통계성 엔터니나 코드성 엔터티의 경우 관계를 생략할 수 있다.</li>
+    </ul>
+  </li>
+  <li>이름 부여 방법
+    <ul>
+      <li>모든 엔터티에서 유일한 이름이 부여되어야한다.</li>
+      <li>가능하면 현업업무에서 사용하는 용어를 사용한다.</li>
+      <li>가능하면 약어를 사용하지 않는다.</li>
+      <li>단수명사를 사용한다.</li>
+      <li>엔터티 생성의미대로 이름을 부여한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-속성">3) 속성</h3>
+
+<ul>
+  <li>업무에서 필요로하는 인스턴스에서 관리하고자 하는 의미상 더 이상 분리되지 않는 최소의 데이터 단위</li>
+  <li>엔터티에 대한 자세하고 구체적인 정보를 나타낸다.</li>
+  <li>속성도 집합이다.</li>
+  <li>엔터티, 인스턴스, 속성, 속성값의 관계
+    <ul>
+      <li>한개의 엔터티는 두개 이상의 인스턴스의 집합이어야한다.</li>
+      <li>한개의 엔터티는 두개 이상의 속성을 갖는다.</li>
+      <li>한개의 속성은 한 개의 속성값을 갖는다.</li>
+    </ul>
+  </li>
+  <li>속성의 특성에 따른 분류
+    <ul>
+      <li>기본속성</li>
+      <li>설계속성</li>
+      <li>파생속성 : 데이터를 조회할때 빠른 성능을 낼 수 있도록 원래 속성의 값을 계산하여 저장할 수 있도록 만든 속성</li>
+    </ul>
+  </li>
+  <li>도메인 : 가질 수 있는 값의 범위, 엔터티 내에서 속성에 대한 데이터 타입과 크기 제약사항을 지정하는 것</li>
+  <li>명칭부여
+    <ul>
+      <li>해당업무에서 사용하는 이름을 부여한다.</li>
+      <li>서술식 속성명은 사용하지 않는다.</li>
+      <li>약어사용은 가급적 제한한다.</li>
+      <li>유일성 확보하는 것이 좋다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-관계">4) 관계</h3>
+
+<ul>
+  <li>존재에 의한 관계와 행위에 의한 관계로 구분된다.</li>
+  <li>ERD 단일화 표기법</li>
+  <li>UML  연관관계 실선, 의존관계 점선으로 표기</li>
+  <li>관계의 표기법
+    <ul>
+      <li>관계명 : 관계의 이름</li>
+      <li>관계차수 : 1:M와 같이 관계의 기수성을 나타낸다.</li>
+      <li>관계선택사양 : 필수관계,선택관계</li>
+    </ul>
+  </li>
+  <li>관계의 체크사항
+    <ul>
+      <li>관심있는 연관규칙이 존재하는가?</li>
+      <li>정보의 조합이 발생하는가?</li>
+      <li>관계연결을 가능하게 하는 동사가 있는가?</li>
+      <li>관계연결에 대한 규칙이 서술되어 있는가.</li>
+    </ul>
+  </li>
+  <li>관계 읽기
+    <ul>
+      <li>기준 엔터티를 한개 또는 각으로 읽는다.</li>
+      <li>대상 엔터티의 관계 참여도 즉 개수를 읽는다.</li>
+      <li>관계 선택사양과 관계명을 읽는다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-식별자">5) 식별자</h3>
+
+<ul>
+  <li>식별자의 종류
+    <ul>
+      <li>대표성 여부
+        <ul>
+          <li>주식별자 : 각 어커런스를 구분할 수 있는 구분자, 타 엔터티와 참조관계를 연결할 수 있는 식별자</li>
+          <li>보조식별자 : 엔터티 내에서각 어커런스를 구분할 수 있는 구분자이지만 대표성을 가지지 못해 참조관계 연결을 못한다.</li>
+        </ul>
+      </li>
+      <li>스스로 생성여부
+        <ul>
+          <li>내부식별자 : 엔터티 내부에서 스스로 만들어지는 식별자</li>
+          <li>외부식별자: 타 엔터티와의 관계를 통해 타 엔터티로부터 받아오는 식별자</li>
+        </ul>
+      </li>
+      <li>속성의 수
+        <ul>
+          <li>단일식별자 : 하나의 속성으로 구성</li>
+          <li>복합식별자 : 둘 이상의 속성</li>
+        </ul>
+      </li>
+      <li>대체 여부
+        <ul>
+          <li>본질식별자 : 업무에 의해 만들어지는 식별자</li>
+          <li>인조식별자 : 원조식별자가 복잡한 구성을 가지고 있어 인위적으로 만든 식별자</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>주식별자 지정 고려사항
+    <ul>
+      <li>엔터티내의 모든 인스턴스들이 유일하게 구분되어야 한다.</li>
+      <li>속성의 수는 유일성을 만족하는 최소의 수가 되어야 한다.</li>
+      <li>주식별자의 값은 자주 변하지 않는 것이어야 한다.</li>
+      <li>지정이 되면 반드시 값이 들어와야 한다.</li>
+      <li>명칭,내역등과 같이 이름으로 기술되는 것들은 가능하면 주식별자로 지정하지 않는다.</li>
+      <li>자주 이용되는 속성을 주식별자로 지정한다.</li>
+      <li>복합으로 주식별자를 구성할  경우 너무 많은 속성을 포함하지 않도록 한다.</li>
+    </ul>
+  </li>
+  <li>주식별자의 특성
+    <ul>
+      <li>유일성</li>
+      <li>최소성</li>
+      <li>불변성</li>
+      <li>존재성</li>
+    </ul>
+  </li>
+  <li>
+    <p>식별자관계 비식별자 관계 비교</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>식별자관계</th>
+          <th>비식별자관계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>목적</td>
+          <td>강한 연결관계</td>
+          <td>약한 연결관계</td>
+        </tr>
+        <tr>
+          <td>자식 주식별자 영향</td>
+          <td>자식 주식별자의 구성에 포함됨</td>
+          <td>자식 일반 속성에 포함됨</td>
+        </tr>
+        <tr>
+          <td>표기법</td>
+          <td>실선 표현</td>
+          <td>점선 표현</td>
+        </tr>
+        <tr>
+          <td>연결 고려사항</td>
+          <td>
+<ul>
+  <li>반드시 부모엔터티 종속                    - 자식주식별자구성에 부모주식별자포함 필요                                             -상속받은 주식별자속성을 타엔터티에 이전 필요</li>
+</ul>
+</td>
+          <td>-약한 종속관계                                              -자식 주식별자구성은 독립적으로 구성    -자식 주식별자구성에 부모 주식별자 부분필요                                                     -상속받은 주식별자속성을 타 엔터티에 차단 필요                                                    -부모쪽의 관계참여가 선택관계</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="2-2장-데이터-모델과-성능">2. 2장 데이터 모델과 성능</h2>
+
+<h3 id="1-성능-데이터-모델링의-개요">1) 성능 데이터 모델링의 개요</h3>
+
+<ul>
+  <li>성능데이터모델링 : 데이터베이스 성능향상을 목적으로 설계단계의 데이터 모델링때부터 성능과 관련된 사항이 데이터 모델링에 반영될 수 있도록 하는 것이다.</li>
+  <li>데이터의 증가가 빠를 수록 성능저하에 따른 성능개선비용은 증가한다.</li>
+  <li>데이터모델은 성능을 튜닝하면서 변경이 될 수 있다.</li>
+  <li>
+    <p>분석/설계 단계에서 성능을 고려한 데이터모델링을 수행할 경우 성능저하에 따른 rework비용을 최소화 할 수 있는 기회를 가지게 된다.</p>
+  </li>
+  <li>성능 데이터 모델링 수행절차
+    <ol>
+      <li>데이터모델링을할 때 정규화를 정확하게 수행한다.</li>
+      <li>데이터베이스 용량산정을 수행한다.</li>
+      <li>데이터베이스에 발생되는 트랜잭션의 유형을 파악한다.</li>
+      <li>용량과 트랙잭션의 유행에 따라 반정규화를 수행한다.</li>
+      <li>이력모델의 조정,PK/FK조정, 슈퍼타입/서브타입 조정등을 수행한다.</li>
+      <li>성능관점에서 데이터 모델을 검증한다.</li>
+    </ol>
+  </li>
+  <li>고려사항
+    <ul>
+      <li>용량산정은 전체적인 데이터베이스에 발생되는 트랜잭션의 유형과 양을 분석하는 자료가 되므로 성능데이터 모델링을 할 때 중요한 작업이 될 수 있다.</li>
+      <li>물리적인 데이터 모델링을 할때 PK/FK 의 칼럼 순서조정, FK인덱스 생성등은 성능 향상을 위한 데이터 모델링 작업에 중요한 요소가 된다.</li>
+      <li>이력데이터는 시간에 따라 반복적으로 발생이 되기 때문에 대량데이터일 가능성이 높아 특별히 성능을 고려하여 칼럼등을 추가하도록 설계해야한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-정규화와-성능">2) 정규화와 성능</h3>
+
+<ol>
+  <li>1차 - 각 열의 데이터가 하나의 값만 가지고 있는 경우를 의미한다.</li>
+  <li>2차 - 중복되는 데이터에 대해서 다른테이블로 분리한다.</li>
+  <li>3차 - PK컬럼이 아닌 컬럼들이 서로 종속되지 않게 한다.</li>
+</ol>
+
+<h3 id="3-반정규화와-성능">3) 반정규화와 성능</h3>
+
+<ul>
+  <li>반정규화 고려사항
+    <ul>
+      <li>하나의 결과셋을 추출하기 위해 다량의 데이터를 탐색하는 처리가 반복적으로빈번하게 발생한다면 반정규화를 고려한다</li>
+      <li>집계테이블 이외에도 다양한 유형에 대하여 반정규화 테이블 적용이 필요할 수 있다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>하나의 테이블의 전체칼럼 중 자주 이용하는 집중화된 칼럼이 있을때 디스크 I/O를 줄이기 위해 해당 컬럼들을 별도로 모아놓는 반정규화 기법</p>
+  </li>
+  <li>반정규화 절차
+    <ul>
+      <li>반정규화 대상조사
+        <ul>
+          <li>범위처리빈도수 조사</li>
+          <li>대량의 범위 처리 조사</li>
+          <li>통계성 프로세스 조사</li>
+          <li>테이블 조인 개수</li>
+        </ul>
+      </li>
+      <li>다른 방법유도 검토
+        <ul>
+          <li>뷰테이블 : 지나치게 많은 조인이 걸려 데이터를 조회하는 작업이 기술적으로 어려울때 사용</li>
+          <li>클러스터링 적용 : 대량의 데이터처리나 부분처리에 의해 성능이 저하되는 경우</li>
+          <li>인덱스의 조정 : 클러스터링과 동일</li>
+          <li>응용애플리케이션 : 로직을 구사하는 방법을 변경</li>
+          <li>PK의 성격에 따라 부분적인 테이블로 분리하는 파티셔닝 기법을 적용하여 성능저하 방지</li>
+        </ul>
+      </li>
+      <li>반정규화 적용
+        <ul>
+          <li>테이블 반정규화</li>
+          <li>속성의 반정규화</li>
+          <li>관계의 반정규화</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-대량-데이터에-따른-성능">4) 대량 데이터에 따른 성능</h3>
+
+<ul>
+  <li>파티셔닝
+    <ul>
+      <li>논리적으로는 하나의 테이블이지만 물리적으로 여러개의 테이블로 분리한다.</li>
+      <li>데이터 액세스 성능 향상과 관리방법을 개선할 수 있다.</li>
+      <li>PK의 성격에 따라 분리한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-데이터베이스-구조와-성능">5) 데이터베이스 구조와 성능</h3>
+
+<ul>
+  <li>슈퍼/서브 타입 데이터 모델의 변환기술
+    <ul>
+      <li>개별로 발생되는 트랜잭션에 대해서는 개별 테이블로 구성</li>
+      <li>슈퍼타입 + 서브타입에 대해 발생되는 트랜잭션에 대해서는 슈퍼타입 + 서브타입 테이블로 구성</li>
+      <li>전체를 하나로 묶어 트랜잭션이 발생할 때는 하나의 테이블로 구성</li>
+    </ul>
+  </li>
+  <li>PK순서 결정 기준
+    <ul>
+      <li>여러개의 속성이 하나의 인덱스로 구성되어 있을 때, 앞쪽에 위치한 속성의 값이 비교자로 있어야 좋은 효율을 나타낼 수 있다.</li>
+      <li>‘=’로 들어온 조건에 해당하는 컬럼이 인덱스의 가장 앞쪽에 위치할 때 인덱스의 이용 효율성이 가장 높다고 할 수 있다.</li>
+      <li>=,BETWEEN,&lt;&gt;가 들어와야 인덱스를 이용할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="6-분산-데이터베이스와-성능">6) 분산 데이터베이스와 성능</h3>
+
+<ul>
+  <li>공통코드,기준정보등 마스터 데이터는 분산데이터베이스에 복제분산을 적용한다.</li>
+  <li>실시간 업무적 특성이 있을때 분산데이터베이스를 사용한다.</li>
+  <li>백업사이트 구성에 분산기능을 적용하여 구성한다.</li>
+  <li>
+    <p>GSI와는 반대되는 개념</p>
+  </li>
+  <li>분산데이터베이스 장단점
+    <ul>
+      <li>장점
+        <ul>
+          <li>지역 자치성,점증적 시스템용량 확장</li>
+          <li>신뢰성과 가용성</li>
+          <li>효용성과 융통성</li>
+          <li>빠른 응답 속도와 통신비용 절감</li>
+          <li>데이터의 가용성과 신뢰성 증가</li>
+          <li>시스템 규모의 적절한 조절</li>
+          <li>각 지역 사용자의 요구 수용 증대</li>
+        </ul>
+      </li>
+      <li>단점
+        <ul>
+          <li>소프트웨어 개발 비용</li>
+          <li>오류의 잠재성 증대</li>
+          <li>처리비용의 증대</li>
+          <li>설계,관리의 복잡성과 비용</li>
+          <li>불규칙한 응답 속도</li>
+          <li>통제의 어려움</li>
+          <li>데이터 무결성에 대한 위협</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="과목-2---sql-기본-및-활용">과목 2 - SQL 기본 및 활용</h1>
+
+<h2 id="1-sql-기본">1. SQL 기본</h2>
+
+<h3 id="1-관계형-데이터베이스-개요">1) 관계형 데이터베이스 개요</h3>
+
+<ul>
+  <li>As-Is : 비절차적 데이터 조작어는 사용자가 무슨데이터를 원하는 지만을 명세</li>
+  <li>To-Be: 절차적 데이터 조작어는 무슨 데이터를 원하며 어떻게 접근해야하는지 명세한다. pl/sql, t-sql등이 절차적 데이터 조작어이다.</li>
+  <li>테이블 생성의 주의사항
+    <ul>
+      <li>객체를 의미할 수 있는 적절한 이름, 가능한 단수형 사용</li>
+      <li>다른 테이블의 이름과 중복 금지</li>
+      <li>한 테이블 내 컬럼명 중복 지정 안 됨</li>
+      <li>테이블 이름을 지정하고 각 컬럼들은 괄호로 묶어 지정</li>
+      <li>각 컬럼들은 콤마로 구분, 테이블 생성문의 끝은 항상 세미콜론으로 끝남</li>
+      <li>칼럼에 대해서는 다른 테이블까지 고려하여 데이터베이스내에서는 일관성있게 사용하는 것이 좋다.</li>
+      <li>칼럼 뒤에 데이터 유형은 꼭 지정되어야 한다.</li>
+      <li>테이블,칼럼명은 반드시 문자로 시작해야한다.</li>
+      <li>사전정의예약어는 사용 할 수 없다.</li>
+      <li>A-Z,a-z,0-9,_,$,#문자만 허용된다.</li>
+    </ul>
+  </li>
+  <li>테이블 불필요 컬럼 삭제 : ALTER TABLE 테이블명 DROP COLUMN 삭제할 컬럼명;</li>
+  <li>테이블 이름 변경 : RENAME A TO A_2</li>
+  <li>
+    <p>고유키는 NULL값을 가질 수도 있다.</p>
+  </li>
+  <li>Delete(/Modify) Action
+    <ul>
+      <li>Cascade : Master 삭제시  Child 같이 삭제</li>
+      <li>Set Null : Master 삭제시 Child 해당 필드 null</li>
+      <li>Set Default: Master 삭제시 Child 해당 필드 Default 값으로 설정</li>
+      <li>Restrict: Child: 테이블에 PK값이 없는 경우만 Master삭제 허용</li>
+      <li>No Action: 참조무결성을 위반하는 삭제/수정 액션을 취하지 않음</li>
+    </ul>
+  </li>
+  <li>Insert Action
+    <ul>
+      <li>Automatic  Master 테이블에 PK가 없는 경우 Master PK를 생성 후 Child입력</li>
+      <li>Set Null: Master 테이블에 PK가 없는 경우 Child 외부키를 Null값으로 처리</li>
+      <li>Set Default : Master 테이블에 PK가 없는 경우 Child 외부키를 지정된 기본값으로 입력</li>
+      <li>Dependent : Master 테이블에 PK가 존재할때만 Child 입력 허용</li>
+      <li>No Action: 참조무결성을 위반하는 입력 액션을 취하지 않음</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-ddl">2) DDL</h3>
+
+<ul>
+  <li>Data Definition Language</li>
+  <li>테이블 구조를 정의하는데 사용되는 명령어</li>
+  <li>CREATE, ALTER, DROP,RENAME</li>
+  <li>TRUNCATE와 DROP 테이블은 로그를 남기지 않는다.</li>
+</ul>
+
+<h3 id="3-dml">3) DML</h3>
+
+<ul>
+  <li>Data Manipulation Language</li>
+  <li>데이터 조회,변형하는데 사용되는 명령어</li>
+  <li>SELECT,INSERT,UPDATE,DELETE</li>
+  <li>INSERT INTO 테이블명 VALUES (전체 컬럼을 명시해야함);</li>
+  <li>UPDATE 테이블명 SET 수정칼럼명 = 수정 할 값</li>
+  <li>SELECT [ALL DISTINCT]
+    <ul>
+      <li>ALL : DEFAULT 옵션, 중복된 데이터가 있어도 모두 출력한다.</li>
+      <li>DISTINCT : 중복된 데이터가 있는 경우 1건으로 처리해서 출력</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-tcl">4) TCL</h3>
+
+<ul>
+  <li>Transaction Control Language</li>
+  <li>트랜잭션별로 제어하는 명령어</li>
+  <li>COMMIT,ROLBACK</li>
+  <li>트랜잭션 : 데이터베이스의 논리적 연산단위로서 밀접히 관련되어 분리될 수 없는 한 개 이상의 데이터베이스 조작을 가리킨다.</li>
+  <li>트랜잭션의 특성
+    <ul>
+      <li>원자성(atomicity) : 트랜잭션에서 정의된 연산들은 모두 성공적으로 실행되던지 아니면 전혀 실행되지 않은 상태로 남아있어야 한다.</li>
+      <li>일관성(consistency) : 트랜잭션이 실행되기 전의 데이터베이스 내용이 잘못 되어 있지 않다면 트랜잭션이 실행된 이후에도 데이터베이스의 내용에 잘못이 있으면 안 된다.</li>
+      <li>고립성(isolation) : 트랜잭션이 실행되는 도중에 다른 트랜잭션의 영향을 받아 잘못된 결과를 만들어서는 안 된다.</li>
+      <li>지속성(durability) : 트랜잭션이 성공적으로 수행되면 그 트랜잭션이 갱신한 데이터베이스의 내용이 영구적으로 저장된다.</li>
+    </ul>
+  </li>
+  <li>트랜잭션에 대한 격리성이 낮은 경우 발생할 수 있는 문제
+    <ul>
+      <li>Dirty Read:  다른 트랜잭션에 의해 수정되었지만 아직 커밋되지 않은 데이터를 읽는 것</li>
+      <li>Non-Repeatable Read: 같은 쿼리를 두번 수행했는데, 그 사이에 다른 트랜잭션이 값을 수정 또는 삭제하는 바람에 두 쿼리 결과가 다르게 나타나는 현상</li>
+      <li>Phantom Read: 같은 쿼리를 두번 수행했는데 첫 쿼리에서 없던 유령 레코드가 두번째 쿼리에서 나타나는 현상</li>
+    </ul>
+  </li>
+  <li>저장점(SAVE POINT) 를 정의하면 트랜잭션에 포함된 전체작업을 롤백하는 것이 아니라 현 시점에서 SAVEPOINT까지 트랜잭션의 일부만 롤백할 수 있다.</li>
+</ul>
+
+<h3 id="dcl">*DCL</h3>
+
+<ul>
+  <li>Data Control Language</li>
+  <li>데이터 베이스 접근권한을 주고 수거하는 명령어</li>
+  <li>GRANT,REVOKE</li>
+</ul>
+
+<ol>
+  <li>DROP
+    <ol>
+      <li>DDL</li>
+      <li>롤백 불가능</li>
+      <li>AUTO COMMIT</li>
+      <li>테이블 사용했는 STORAGE를 모두 RELEASE</li>
+      <li>테이블 정의 자체를 완전히 삭제</li>
+    </ol>
+  </li>
+  <li>TRUNCATE
+    <ol>
+      <li>DDL(일부 DML성격)</li>
+      <li>롤백 불가능</li>
+      <li>AUTO COMMIT</li>
+      <li>테이블이 사용했던 STORAGE 중 최초 테이블 생성시 할당된 STORAGE만 남기고 RELEASE</li>
+      <li>테이블을 최초 생성된 초기상태로 만듬</li>
+    </ol>
+  </li>
+  <li>DELETE
+    <ol>
+      <li>DML</li>
+      <li>COMMIT 이전 롤백가능</li>
+      <li>사용자 COMMIT</li>
+      <li>데이터를 모두 DELETE해도 사용했던 STORAGE는 RELEASE되지 않음</li>
+      <li>데이터만 삭제</li>
+      <li>로그를 남김</li>
+    </ol>
+  </li>
+  <li>ORACLE
+    <ol>
+      <li>DDL 문장 수행 후 자동으로 COMMIT</li>
+    </ol>
+  </li>
+  <li>SQL SERVER
+    <ol>
+      <li>DDL 문장 수행 후 자동 COMMIT을 수행하지 않는다.</li>
+      <li>CREATE TABLE 문장도 트랜잭션의 범주에 포함 된다.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="5-where-절">5) WHERE 절</h3>
+
+<hr>
+
+<h3 id="6-함수">6) 함수</h3>
+
+<ul>
+  <li>CASE
+    <ul>
+      <li>CASE WHEN EMP_NO = ‘100’ THEN ‘200’ ELSE ‘300’</li>
+      <li>CASE EMP_NO WHEN ‘100’ THEN ‘200’ ELSE ‘300’은 같은 값을 출력한다.</li>
+    </ul>
+  </li>
+  <li>NULL 의 특성
+    <ol>
+      <li>0 또는 공백과 다르다.</li>
+      <li>테이블 생성시 NOT NULL, PRIMARY KEY로 정의 되지 않은 모든 데이터 유형은 널값을 포함할 수 있다.</li>
+      <li>UNIQUE, FK도 NULL값을 가질 수 있다.</li>
+      <li>결과 값을 NULL이 아닌 다른 값을 얻고자 할 때 NVL/ISNULL을 사용한다.</li>
+      <li>NULL 관련 함수
+        <ol>
+          <li>NVL(표현식1,표현식2),ISNULL(표현식1,표현식2) : 표현식1이 NULL이면 표현식2를 출력해라</li>
+          <li>NULLIF(표현식1,표현식2) : 표현식1과 2가 같으면 NULL을 , 다르면 표현식1을 리턴해라.</li>
+          <li>COALESCE(표현식1,2,….) : 임의의 N개 표현식에서 NULL이 아닌 최초의 표현식을 나타낸다,모든 표현식이 NULL이면 NULL을 리턴한다.</li>
+        </ol>
+      </li>
+      <li>NULL 포함 연산은 모두 NULL을 반환한다.</li>
+      <li>NULL 은 AVG,SUM 연산 대상에서 제외된다.</li>
+    </ol>
+  </li>
+  <li>집계함수
+    <ol>
+      <li>COUNT(*) NULL값을 포함한 행의 수를 출력</li>
+      <li>COUNT(표현식) NULL값을 제외한 행의 수 출력</li>
+      <li>SUM</li>
+      <li>AVG</li>
+      <li>MAX</li>
+      <li>MIN</li>
+      <li>STDDEV</li>
+      <li>VARIAN</li>
+    </ol>
+  </li>
+  <li>연산
+    <ol>
+      <li>분모가 0이면 에러발생</li>
+      <li>분모가 NULL이면 값도 NULL</li>
+      <li>분자가 0이면 0</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="7-group-by-having-절">7) GROUP BY, HAVING 절</h3>
+
+<ul>
+  <li>특성
+    <ul>
+      <li>GROUP BY절을 통해 소그룹별 기준을 정하고, SELECT절에 집계 함수를 사용한다.</li>
+      <li>집계함수의 통계 정보는 NULL값을 가진 행을 제외하고 수행</li>
+      <li>GROUP BY절에는 ALIAS 명을 사용할 수 없음</li>
+      <li>집계함수는 WHERE절에는 올 수 없고, HAVING을 사용해야한다.(GROUP BY절보다 WHERE절이 먼저 수행되기 때문이다.)</li>
+      <li>WHERE절은 전체 데이터를 GROUP으로 나누기 전에 행들을 먼저 제거시킨다.</li>
+      <li>GROUP BY절에 의한 소그룹별로 만들어진 집계 데이터 중 HAVING절에서 제한 조건을 두어 조건에 만족하는 내용만 출력한다.</li>
+      <li>GROUP BY 절 뒤에 HAVING이 위치해야한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="8-order-by-절">8) ORDER BY 절</h3>
+
+<ul>
+  <li>ASC 오름차순 /  기본값</li>
+  <li>DESC 내림차순</li>
+  <li>ORDER BY 칼럼이나 표현식</li>
+  <li>ORACLE은 행기반 DATABASE이기때문에 데이터를 액세스할때 행 전체 칼럼을 메모리에 로드한다. 이와 같은 특성때문에 SELECT절에 기술되지 않은 컬럼으로도 정렬이 가능하다. 단,인라인뷰로 테이블컬럼을 지정하였을 경우에는 불가능하다.</li>
+  <li>ORACLE에서는 NULL값을 가장 큰 값으로 간주한다.</li>
+  <li>SQL SERVER에서는 NULL값을 가장 작은 값으로 간주한다.</li>
+  <li>원래 컬럼명 대신,ALIAS명이나 컬럼순서를 나타내는 정수를 혼용해서 사용 가능하다.</li>
+  <li>
+    <p>GROUP BY절을 사용하는 경우 ORDER BY절에 집계함수를 사용할 수 있다.</p>
+  </li>
+  <li>SELECT 문장 실행 순서
+    <ul>
+      <li>FROM</li>
+      <li>WHERE</li>
+      <li>GROUP BY</li>
+      <li>HAVING</li>
+      <li>SELECT</li>
+      <li>ORDER BY</li>
+    </ul>
+  </li>
+  <li>TOP(N)
+    <ul>
+      <li>높은 수를 가진 행을 N개까지 출력</li>
+      <li>WITH TIES 구문 + ORDER BY 를 넣으면 해당하는 값이 동일한 경우 함께 출력할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="9-join">9) JOIN</h3>
+
+<ul>
+  <li>EQUI JOIN
+    <ul>
+      <li>WHERE절에 JOIN조건을 넣는다.</li>
+      <li>ANSI/ISO SQL 표준 조인 문장은 ON절에 JOIN조건을 넣는다.</li>
+      <li>JOIN에 관여하는 테이블 간의 컬럼 값들이 정확하게 일치하는 경우에만 사용한다.</li>
+      <li>“=”연산자에 의해서만 수행되며, 그외의 연산자를 사용하는 경우는 모두 NON EQUI JOIN이다</li>
+      <li>대부분 NON EQUI JOIN을 수행할 수 있지만 때로는 설걔상의 이유로 수행이 불가능한 경우도 있다.</li>
+      <li>어떤 경우에는 PK와 FK의 관걔가 없어도 논리적인 값들의 연관만으로 JOIN성립이 가능하다.</li>
+    </ul>
+  </li>
+  <li>DBMS 옵티마이저는 FROM 절에 나열된 테이블 2개를 짝을 지어 JOIN을 수행한다.</li>
+</ul>
+
+<h2 id="2-sql-활용">2. SQL 활용</h2>
+
+<h3 id="1-표준-조인">1) 표준 조인</h3>
+
+<ul>
+  <li>순수관계 연산자 :  SELECT, PROJECT, JOIN,DIVIDE</li>
+  <li>INNER JOIN : JOIN조건에서 동일한 값이 있는 행만 반환한다.</li>
+  <li>ANSI/ISO SQL에서 표시하는 FROM절의 JOIN 형태 : INNER JOIN, NATURAL JOIN,USING 조건절,ON 조건절,CROSS JOIN,OUTER JOIN(LEFT,RIGHT,FULL)</li>
+  <li>USING 조건절을 이용한 EQUI JOIN/ NATURAL JOIN은 ALIAS,테이블 접두사 이름을 붙일 수 없다.</li>
+  <li>JOIN 조건이 없으면 CATISIAN PRODUCT (카티시안곱)이 발생한다. CROSS JOIN을 사용하고 결과는 양쪽 집합의 M*N건의 데이터 조합이 발생한다.</li>
+  <li>LEFT OUTER JOIN : 조인 수행시 먼저 표기된 좌측테이블에 해당하는 데이터를 먼저 읽은 후 나중 표기된 우측 테이블에서 JOIN 대상 데이터를 읽어온다. JOIN칼럼에서 같은 값이 없는 경우 우측 테이블에서 가져오는 칼럼들은 NULL값으로 채운다.</li>
+  <li>FULL OUTER JOIN: RIGHT + LEFT OUTER JOIN의 합집합</li>
+  <li>ORACLE에서는 (+) 기호를 사용하여 OUTER JOIN 구문을 처리할 수 있다. 이를 ㅇANSI문장으로 변경하려면 INNER쪽 테이블에 조건절을 ON절에 함께 위치시켜야한다.</li>
+</ul>
+
+<h3 id="2-집합-연산자">2) 집합 연산자</h3>
+
+<ol>
+  <li>UNION : 합집합, 중복된 행은 하나의 행으로 만든다.</li>
+  <li>UNION ALL : 합집합,중복된 행도 그대로 중복표시</li>
+  <li>INTERSECT: 교집합, 중복된 행은 하나의 행으로 만든다.</li>
+  <li>EXCEPT: 앞의 SQL문의 결과에서 뒤의 SQL문의 결과에 대한 차집합, 중복된 행은 하나의 행으로 만든다. NOT IN, NOT EXISTS로 대체 가능하다.</li>
+  <li>PRODUCT 연산 = CROSS JOIN</li>
+</ol>
+
+<h3 id="3-계층형-질의와-셀프-조인">3) 계층형 질의와 셀프 조인</h3>
+
+<ul>
+  <li>START WITH 계층 구조 전개의 시작 위치를 지정함</li>
+  <li>ORDER SIBLINGS BY : 형제 노드(동일 LEVEL)사이에서 정렬수행</li>
+  <li>START WITH 부서코드=120
+    PRIOR 상위부서코드 = 부서코드</li>
+</ul>
+
+<p>120의 상위 부서코드는 누구냐</p>
+
+<p>START WITH 부서코드=120</p>
+
+<p>PRIOR 부서코드 = 상위부서코드</p>
+
+<p>120을 상위부서코드로 하는 애들은 누구냐</p>
+
+<ul>
+  <li>SQL SERVER에서의 계층형 질의문은 CTE를 재귀 호출함으로써 계층구조를 전개한다.</li>
+  <li>셀프조인은 식별을 위해 테이블 별칭을 사용해야한다.</li>
+  <li>한 테이블 내에서 두 칼럼이 연관관계가 있을때 셀프조인을 사용한다.</li>
+</ul>
+
+<h3 id="4-서브쿼리">4) 서브쿼리</h3>
+
+<ol>
+  <li>서브쿼리를 괄호로 감싸서 사용한다.</li>
+  <li>서브쿼리는 단일 행 또는 복수행 비교 연산자와 함께 사용가능하다.</li>
+  <li>서브쿼리에서는 ORDER BY를 사용할 수 없다.</li>
+  <li>연관 서브쿼리는 서브쿼리가 메인쿼리 컬럼을 포함하고 있는 형태이다.</li>
+  <li>다중컬럼 서브쿼리는 SQL SERVER에서 지원하지 않는다.</li>
+  <li>다중행 서브쿼리 비교연산자는 단일행 서브쿼리의 비교 연산자로도 사용이 가능하다.</li>
+  <li>비연관 서브쿼리는 주로 메인쿼리에 값을 제공하기 위한 목적으로 사용된다.</li>
+</ol>
+
+<ul>
+  <li>서브쿼리 분류
+    <ul>
+      <li>단일행 서브쿼리 (&lt;,&gt;등의 연산자 사용)</li>
+      <li>다중행서브쿼리 (IN,ALL,ANY,SOME,EXISTS 비교 연산자 사용)</li>
+      <li>다중칼럼서브쿼리</li>
+    </ul>
+  </li>
+  <li>스칼라서브쿼리 : SELECT절에 오는 서브쿼리로 결과값으로 1행만 반환한다.</li>
+  <li>FROM절에 오는 서브쿼리는 인라인뷰,동적뷰이다.  SQL문이 실행될때만 임시적으로 생성되는 동적인 뷰이기 때문에 데이터베이스에 해당 정보가 저장되지 않는다.</li>
+  <li>뷰
+    <ul>
+      <li>단지 정의만을 가지고 있으며, 실행 시점에 질의를 재작성하여 수행한다.</li>
+      <li>실제 데이터를 저장하고 있는 뷰를 생성하는 기능을 지원하는 DBMS도 있다.</li>
+      <li>뷰사용의 장점
+        <ul>
+          <li>독립성: 테이블 구조가 변경되어도 뷰를 사용하는 응용프로그램은 변경하지 않아도 된다.</li>
+          <li>편리성: 복잡한 질의를 뷰로 생성함으로써 관련 질의를 단순하게 작성할 수 있다.</li>
+          <li>보안성: 숨기고 싶은 정보가 존재한다면 뷰를 생성하여 처리할 수 있다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-그룹-함수">5) 그룹 함수</h3>
+
+<ol>
+  <li>GROUPING <strong>소계와 합계로 집계되어 출력된 행을 구분하는 함수</strong>
+</li>
+  <li>ROLLUP : 계층 구조를 가진 SUB TOTAL, 함수의 인자로 주어진 컬럼의 순서에 따라 다른 결과를 추출하게 된다.</li>
+  <li>CUBE: 인자로 주어진 컬럼의 결합 가능한 모든 조합에 대해서 집계를 수행한다.</li>
+  <li>GROUPING SETS:</li>
+</ol>
+
+<h3 id="6-윈도우-함수">6) 윈도우 함수</h3>
+
+<ol>
+  <li>RANK :동일값은 동일순위 부여 중간순위 비어둠</li>
+  <li>DENSE_RANK: 동일순위 부여, 중간순위를 비우지 않음</li>
+  <li>ROW_NUMBER: 동일값에 대해서도 유일한 순위부여</li>
+  <li>LAG : 파티션별 윈도우에서 이전의 행값을 가져올 수 있다.</li>
+  <li>LEAD: 파티션별 윈도우에서 이후의 행값을 가져올 수 있다.</li>
+</ol>
+
+<h3 id="7-dcl">7) DCL</h3>
+
+<ul>
+  <li>GRANT DML ON 테이블 TO 유저이름</li>
+  <li>REVOKE</li>
+  <li>ROLE : 사용자와 권한 사이에서 중개역할을 수행한다. 다양한 권한을 그룹으로 묶어 관리한다.</li>
+</ul>
+
+<h3 id="8-절차형-sql">8) 절차형 SQL</h3>
+
+<ul>
+  <li>PL/SQL의 특징
+    <ul>
+      <li>블록구조로 되어있어 각 기능별로 모듈화가가 가능하다.</li>
+      <li>변수,상수들을 선언하여 SQL문장간 값을 교환한다 ,WHERE절의 조건등으로 대입할 수있다.</li>
+      <li>IF,LOOP등의 절차형언어를 사용하여 절차적인 프로그램이 가능하도록 한다.</li>
+      <li>DBMS 정의 에러나 사용자 정의 에러를 정의하여 사용할 수 있다.</li>
+      <li>ORACLE에 내장되어 있으므로 ORACLE과 PL/SQL 을 지원하는 어떤 서버로도 프로그램을 옮길 수 있다.</li>
+      <li>응용 프로그램의 성능을 향상시킨다.</li>
+      <li>블록 전부를 서버로 보내기 때문에 통신량을 줄일 수 있다.</li>
+      <li>프로시저,사용자 정의함수,트리거 객체를 작성할 수 있다.</li>
+      <li>프로시저 내부에 작성된 절차적 코드는 PL/SQL 엔진이 처리하고 일반적인 SQL문장은 SQL실행기가 처리한다.</li>
+      <li>동적 SQL 또는 DDL문장을 실행할 때, EXECUTE IMMEDIATE를 사용하여야한다.</li>
+    </ul>
+  </li>
+  <li>저장모듈(Stored Module)
+    <ul>
+      <li>SQL문장을데이터 베이스 서버에 저장하여 사용자와 애플리케이션 사이에서 공유할 수 있도록 만든 일종의 SQL 컴포넌트 프로그램</li>
+      <li>독립적으로 실행되거나 다른 프로그램으로부터 실행될 수 있다.</li>
+      <li>ORACLE의 저장모듈 : PROCEDURE, USER DEFINED FUNCTION,TRIGGER</li>
+    </ul>
+  </li>
+  <li>TRIGGER(트리거)
+    <ul>
+      <li>특정한 테이블에 DML문이 수행되었을 때, 데이터베이스에서 자동으로 동작하도록 작성된 저장프로그램</li>
+      <li>프로시저와 달리 COMMIT,ROLLBACK과 같은 TCL을 사용할 수 없다.</li>
+    </ul>
+  </li>
+  <li>프로시저와 트리거의 차이점
+    <ul>
+      <li>CREATE PROCEDURE / TRIGGER 문법사용</li>
+      <li>트리거는 커밋,롤백 실행</li>
+      <li>프로시저는 EXECUTE명령어로 실행</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="3-sql-최적화-기본-원리">3. SQL 최적화 기본 원리</h2>
+
+<h3 id="1-옵티마이저와-실행계획">1) 옵티마이저와 실행계획</h3>
+
+<ul>
+  <li>비용기반 옵티마이저 CBO(Cost Based Optimizer) : 테이블 및 인덱스등의  통계정보를 활용하여 sql문을 실행하는데 소요될 처리시간 및 cpu,i/o 자원량등을 계산하여 가장 효율적일 것으로 예상되는 실행계획을 선택하는 옵티마이저</li>
+  <li>규칙기반 옵티마이저
+    <ul>
+      <li>rowid를 활용하여 테이블을 액세스하는 방법이 가장 높은 순위를 가지고, 전체 테이블 스캔이 제일 낮은 우선 순위를 가진다.</li>
+      <li>적절한 인덱스가 존재하면 항상 인덱스를 사용하려고 한다.</li>
+    </ul>
+  </li>
+  <li>실행계획 : sql처리를 위한 실행 절차와 방법을 표현,성능적인 측면도 표현이 가능하다.
+    <ul>
+      <li>실행계획을 통해 알 수 있는 정보
+        <ul>
+          <li>조인기법</li>
+          <li>액세스기법</li>
+          <li>최적화정보</li>
+          <li>질의처리 예상 비용</li>
+          <li>조인 순서</li>
+          <li>연산</li>
+        </ul>
+      </li>
+      <li>실행순서
+        <ul>
+          <li>위에서 아래로, 안에서 밖으로 읽는다.</li>
+        </ul>
+      </li>
+      <li>sql 처리흐름도 : 실행계획을 시각적으로 표현, 액세스 기법이 표현된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-인덱스-기본">2) 인덱스 기본</h3>
+
+<ul>
+  <li>기본 인덱스(primary key)는 unique &amp; not null의 제약조건을 가진다.</li>
+  <li>대량의 데이터를 조회하는 경우 인덱스를 이용하는 것보다 테이블 전체 스캔 방식 조회가 빠를 수도 있다.</li>
+  <li>보조인덱스는 unique 인덱스가 아니라면 중복 데이터가 입력 가능하다.</li>
+  <li>자주 변경되는 index는 성능에 좋지 않은 영향을 끼치므로 인덱스 후보로 적절하지 않다.</li>
+  <li>인덱스는 조회만을 위한 오브젝트이며 삽입,삭제,갱신의 경우 부하를 가중시킨다. *인덱스를 구성하는 컬럼이외의 데이터가 삽입될때는 인덱스로 인한 부하가 발생하지 않는다.</li>
+  <li>대량의 데이터를 삽일할때는 모든 인덱스를 제거하고, 삽입이 끝난 후에 다시 인덱스를 생성하는 것이 좋다.</li>
+  <li>Balance Tree는 관계형 데이터베이스에서 가장 많이 사용되는 인덱스구조이다.</li>
+  <li>인덱스 범위스캔은 결과가 없으면 한건도 반환하지 않을 수 있다.</li>
+  <li>인덱스를 구성하는 컬럼들의 순서는 데이터 조회시 성능적인 관점에서 매우 중요한 역할을 한다.</li>
+</ul>
+
+<ol>
+  <li>B-TREE 인덱스 :
+    <ol>
+      <li>브랜치,리프 블록으로 구성, 브랜치 블록은 분기를 목적으로 하고 리프블록은 인덱스를 구성하는 컬럼의 값으로 정렬된다.</li>
+      <li>일반적으로 OLTP시스템 환경에서 가장 많이 사용된다.</li>
+      <li>테이블 내의 데이터 중 10%이하의 데이터를 검색할때 유리하다.</li>
+      <li>일치 및 범위검색에 적절한 구조이다.</li>
+    </ol>
+  </li>
+  <li>BITMAP 인덱스 : 하나의 인덱스 키 엔트리가 많은 행에 대한 포인터를 저장하고 있는 구조이며, 시스템에서 사용될 질의를 시스템 구현시에 모두 알 수 없는 경우인 DW,AD-HOC질의 환경을 위해 설계되었다.</li>
+  <li>CLUSTERED 인덱스:
+    <ol>
+      <li>인덱스의 리프페이지가 곧 데이터 페이지이며 리프페이지의 모든 데이터는 인덱스 키 컬럼 순으로 물리적으로 정렬되어 저장된다.</li>
+      <li>oracle의 lot와 유사하다.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="3-조인-수행-원리">3) 조인 수행 원리</h3>
+
+<ol>
+  <li>NL JOIN(Nested Loop Join)
+    <ol>
+      <li>랜덤 액세스 방식으로 데이터를 읽는다.</li>
+      <li>자연 조인이 효율적일때 유용하다.</li>
+      <li>DRIVING TABLE의 조인 데이터양이 큰 영향을 준다.</li>
+      <li>유니크 인덱스를 활용하여 수행시간이 적게 걸리는 소량테이블을 온라인 조회하는 경우 유용하다.</li>
+      <li>선택도가 낮은(결과행의 수가 적은) 테이블이 선행테이블로 선택되는 것이 일반적으로 유리하다.</li>
+    </ol>
+  </li>
+  <li>HASH JOIN
+    <ol>
+      <li>SORT MERGE JOIN에서 데이터가 너무 커서 소트부하가 심할때 유용하다.</li>
+      <li>해쉬함수를 이용하여 조인을 수행하기 때문에 EQUI JOIN에서만 동작한다.</li>
+      <li>조인칼럼의 인덱스가 존재하지않아도 사용할 수 있다.</li>
+      <li>자연조인이 비효율적일때 사용가능</li>
+      <li>자연조인시 드라이빙 집합쪽으로 조인 액세스량이 많이 랜덤 액세스 부하가 심할때 사용</li>
+      <li>선택도가 낮은(결과행의 수가 적은) 테이블이 선행테이블로 선택되는 것이 일반적으로 유리하다.</li>
+    </ol>
+  </li>
+  <li>SORT MERGE JOIN
+    <ol>
+      <li>조인 컬럼을 기준으로 데이터를 정렬하여 조인을 수행한다.</li>
+      <li>스캔방식으로 데이터를 읽는다.</li>
+      <li>랜덤액세스로 NLJOIN에서 부담되던 넓은 범위의 데이터를 처리할 때 사용되던 조인기법이지만 정렬할 데이터가 많아 메모리에서 모든 정렬작업으로 수행하기 어려운 경우에는 임시영역을 사용하기 때문에 성능이 떨어질 수 있다.</li>
+      <li>NON-EQUI JOIN조건에서도 사용한다.</li>
+      <li>DRIVING TABLE의 개념이 중요하지 않다.</li>
+      <li>NL조인이 비효율적일때 사용할 수 있다.ㅈㅈ</li>
+      <li>조인조건의 인덱스의 유무에 영향받지 않는다.</li>
+    </ol>
+  </li>
+</ol>
+
+<ul>
+  <li>DW등의 데이터 집계 업무에서 많이 사용되는 조인 기법은 HASH JOIN또는 SORT MERGE JOIN이다.</li>
+  <li>EXISTS / IN 절은 SEMI JOIN으로 나타난다.  반대는 ANTI</li>
+  <li>HASH JOIN은 SORT MERGE JOIN보다 일반적으로 더 우수한 성능을 보이지만 JOIN대상 테이블이 JOIN KEY컬럼으로 정렬되어 있을때는 SORT MERGE JOIN이 더 우수한 성능을 낼 수도 있다.</li>
+  <li>HASH,SORT MERGE JOIN은 조인 칼럼의 인덱스가 없어도 사용가능하다, 메모리에 적재할 수 있는 크기보다 더 커지면 임시영역을 사용한다.</li>
+  <li>세개의 조인은 모두 조인에 성공하면 결과를 추출버퍼에 넣는다.</li>
+</ul>
+
+<p>HASH ANTI JOIN / HASH SEMI JOIN / NESTED LOOP SEMI JOIN  / NESTED LOOP ANTI JOIN</p>
+
+<p><a href="https://hoon93.tistory.com/46">오라클 NL Join, Sort Merge Join, Hash Join 특징 총정리</a></p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html" title="CS - 3. 배열">CS - 3. 배열</a><a class="next" href="/node.js/2022/04/04/node.js-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%A0%95%EB%A6%AC.html" title="node.js 로 crud페이지 만들기">node.js 로 crud페이지 만들기</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html" title="node.js 로 crud페이지 만들기">tikitaka 채팅 페이지 프로젝트</a></li>
+<li><a class="post-link" href="/project/2021/09/04/alljobgo%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html" title="node.js 로 crud페이지 만들기">all-job-go 프로젝트</a></li>
+<li><a class="post-link" href="/javascript/2021/11/11/jquery,ajax.html" title="node.js 로 crud페이지 만들기">jquery,ajax</a></li>
+<li><a class="post-link" href="/react/2022/01/04/ReactDOM.html" title="node.js 로 crud페이지 만들기">React DOM</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

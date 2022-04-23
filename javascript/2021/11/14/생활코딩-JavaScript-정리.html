@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>생활코딩 JavaScript 정리 | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="생활코딩 JavaScript 정리">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="canonical" href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">
+<meta property="og:url" content="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-11-14T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="생활코딩 JavaScript 정리">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"BlogPosting","url":"/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html","headline":"생활코딩 JavaScript 정리","dateModified":"2021-11-14T00:00:00+00:00","datePublished":"2021-11-14T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">생활코딩 JavaScript 정리</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-11-14T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Nov 14, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+  </p>
+<div class="post-tags"><a class="post-tag" href="/tags.html#javaScript">#javaScript</a></div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p><img src="https://user-images.githubusercontent.com/83413364/142727325-9cb72c16-86b5-4440-93a8-57301bd35178.png" alt="js"></p>
+
+<p>Document 문서 전체를 의미</p>
+
+<p>HTMLDocument</p>
+
+<p>Text 태그안의 텍스트</p>
+
+<p>Comment 주석</p>
+
+<p>Attr 속성</p>
+
+<hr>
+
+<h1 id="1html에서-javascript-로드하기">1.HTML에서 javaScript 로드하기</h1>
+
+<ol>
+  <li>
+    <p>inline 방식</p>
+
+    <h1></h1>
+    <p>과 같은 태그 안에 자바스크립트를 기술하는 방식</p>
+
+    <p>정보와 제어가 섞여 있음, 비추천</p>
+  </li>
+  <li>
+    <p>script 방식</p>
+
+    <script>태그를 넣어 작성하는 방식, html태그와 js코드를 분리할 수 있다.
+    
+
+</script>
+  </li>
+  <li>
+    <p>외부파일로 분리</p>
+
+    <p>js를 별도의 파일로 분리한다. 재활용성 높음, 전송량의 경량화</p>
+  </li>
+  <li>
+    <p>script 태그의 위치</p>
+
+    <p>head위에 위치시킬 수 있으나, window.onload = function(){}안에 작성해야한다.</p>
+
+    <p>웹브라우저의 모든 구성요소에 대한 로드가 끝났을 때, 브라우저에 의해 호출되는 함수임</p>
+
+    <p>script 파일은 head 태그 보다 페이지의 하단에 위치시키는 것이 더 좋은 방법이다.</p>
+  </li>
+</ol>
+
+<h1 id="2object-model">2.Object Model</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>JSC</td>
+      <td>DOM</td>
+      <td>BOM</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>자바스크립트로 제어하기 위해서, 객체를 만든다.</p>
+
+<p>브라우저에서 html문서의 각각의 태그를 객체로 만들어 놓는다.</p>
+
+<p>객체를 자바스크립트로 제어할 수 있다.</p>
+
+<p>document.getElementsByTagName(‘img’)</p>
+
+<p>img태그를 배열 형태로 모두 가져옴</p>
+
+<p>리턴 형태는 배열이 된다.</p>
+
+<h3 id="01window">01)window</h3>
+
+<p>전역객체, window, frame을 제어하기 위한 객체</p>
+
+<p>document property에 접근 가능하다.</p>
+
+<h3 id="02javascript-core">02)JavaScript Core</h3>
+
+<p>브라우저, 노드 js와 같은 스크립트를 제어할 수 있다.</p>
+
+<p>자바스크립트 자체 객체인 Object, Array, Function 을 사용할 수 있다.</p>
+
+<h3 id="03domdocument-object-model">03)DOM(Document Object Model)</h3>
+
+<p>document가 하는일 - html태그를 제어하는 역할을 한다.</p>
+
+<p>문서를 제어한다.</p>
+
+<hr>
+
+<h1 id="3bom">3.BOM</h1>
+
+<h3 id="bombrowser-object-model">BOM(Browser Object Model)</h3>
+
+<p>window객체의 property에 저장되어 있다.</p>
+
+<p>현재 웹브라우저의 페이지 리로드, 경고창 등을 담당한다.</p>
+
+<p>브라우저를 제어함</p>
+
+<p>BOM(Browser Object Model)이란 웹브라우저의 창이나 프래임을 추상화해서 프로그래밍적으로 제어할 수 있도록 제공하는 수단이다. BOM은 전역객체인 Window의 프로퍼티와 메소드들을 통해서 제어할 수 있다. 따라서 BOM에 대한 수업은 Window 객체의 프로퍼티와 메소드의 사용법을 배우는 것이라고 해도 과언이 아닐 것이다. 본 토픽의 하위 수업에서는 Window 객체의 사용법을 알아볼 것이다.</p>
+
+<p>window. ** 로 접근한다.</p>
+
+<hr>
+
+<h1 id="4document-객체">4.Document 객체</h1>
+
+<hr>
+
+<h1 id="5text-객체">5.Text 객체</h1>
+
+<ul>
+  <li>document.getElementById : 리턴 데이터 타입은 HTMLLIELement</li>
+  <li>document.getElementsByTagName : 리턴 데이터 타입은 HTMLCollection</li>
+</ul>
+
+<p>즉 실행결과가 하나인 경우 HTMLLIELement, 복수인 경우 HTMLCollection을 리턴하고 있다</p>
+
+<hr>
+
+<h1 id="6jquery">6.Jquery</h1>
+
+<p>유사배열로 리턴한다.</p>
+
+<p>for(var i=0; i&lt;li.length; i++){</p>
+
+<p>console.log(li[i]);</p>
+
+<p>}</p>
+
+<p>li는 object</p>
+
+<p>li[i] HTMLLIElement이다. &gt; 제이쿼리 객체가 아니라 DOM 객체임</p>
+
+<p>따라서 제이쿼리 메소드 .css를 사용할 수 없다.</p>
+
+<p>사용하려면 $() 제이쿼리 함수에 감싸서 사용하면 된다.</p>
+
+<p>$(‘‘li”)</p>
+
+<p>map을 통한 조회</p>
+
+<p>map을 통해 모든 엘리먼트 실행가능하다.</p>
+
+<p>li,map(function(index,elem){</p>
+
+<p>console.log(index,elem);</p>
+
+<p>$(elem).css(‘color’, ‘red’);</p>
+
+<p>})</p>
+
+<p>index가 몇번째값</p>
+
+<p>elem가 모든 엘리먼트값을 호출한다.</p>
+
+<p>elem는 DOM객체이기 때문에 $()감싸서 사용해준다.</p>
+
+<hr>
+
+<h1 id="7element-객체">7.Element 객체</h1>
+
+<ol>
+  <li>모든HTML태그는 HTMLElement에 속한다. style과 같은 속성을 제어 할 수 있다.</li>
+  <li>
+    <p>html, xml,svg와 같은 다양한 언어 형식들이 존재하기 때문에 html은 HTMLElement로 구별한다.</p>
+
+    <p>style같은 property사용 가능하다.</p>
+  </li>
+  <li>식별자, 조회, 속성 기능이 있다.</li>
+</ol>
+
+<h3 id="식별자"><strong>식별자</strong></h3>
+
+<p>문서내에서 특정한 엘리먼트를 식별하기 위한 용도로 사용되는 API</p>
+
+<ul>
+  <li>Element.classList</li>
+  <li>Element.className</li>
+  <li>Element.id</li>
+  <li>Element.tagName</li>
+</ul>
+
+<h3 id="조회"><strong>조회</strong></h3>
+
+<p>엘리먼트의 하위 엘리먼트를 조회하는 API</p>
+
+<ul>
+  <li>Element.getElementsByClassName</li>
+  <li>Element.getElementsByTagName</li>
+  <li>Element.querySelector</li>
+  <li>Element.querySelectorAll</li>
+</ul>
+
+<h3 id="속성"><strong>속성</strong></h3>
+
+<p>엘리먼트의 속성을 알아내고 변경하는 API</p>
+
+<ul>
+  <li>Element.getAttribute(name)</li>
+  <li>Element.setAttribute(name, value)</li>
+  <li>Element.hasAttribute(name);</li>
+  <li>Element.removeAttribute(name);</li>
+</ul>
+
+<h2 id="식별자-api">식별자 API</h2>
+
+<ol>
+  <li>document.getElementById(‘id’).tagName : 값 변경 불가</li>
+  <li>document.getElementById(‘id’).id :값 변경 가능</li>
+  <li>document.getElementById(‘id’).className :값 변경가능</li>
+  <li>document.getElementById(‘id’).classList
+    <ul>
+      <li>유사배열 형태를 리턴하는데 class= “a b”이면 길이 두개, classList[0] 은 a , classList[1]은 b가 나오게 된다.</li>
+      <li>classList.add를 통해 추가 가능하다.</li>
+      <li>classList.toggle로 값을 추가했다가, 없앴다가가 가능함</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="조회-api">조회 API</h2>
+
+<ol>
+  <li>Element도 getElementBy 메소드를 가지고 있다., 조회의 범위를 좁히고자 한다면 getElementBy*로 조회한다.</li>
+  <li>document.getElementsBy* 는 문서전체를 대상으로 조회해서 적용한다.  Element의 하위 메소드  getElementById*를 하면,  Element 가 가지고 있는 하위 메소드만 찾아 적용한다.</li>
+</ol>
+
+<h2 id="속성-api">속성 API</h2>
+
+<p>-<a class="" href=""></a> 의 태그 안에 있는 id, class 등등 속성을 조회하고, 추가, 삭제등의 변경이 가능한 api이다.</p>
+
+<ol>
+  <li>Element.getAttribute(name)</li>
+  <li>Element.setAttribute(name, value)</li>
+  <li>Element.hasAttribute(name);</li>
+  <li>Element.removeAttribute(name);</li>
+</ol>
+
+<p><strong>속성과 프로퍼티</strong></p>
+
+<ul>
+  <li>속성방식</li>
+</ul>
+
+<p>target.setAttribute(‘class’, ‘’)</p>
+
+<ul>
+  <li>프로퍼티 방식</li>
+</ul>
+
+<p>target.ClassName = ‘’</p>
+
+<h2 id="jquery-속성-제어-api">jQuery 속성 제어 API</h2>
+
+<ul>
+  <li>jquery에서는 attr을 통해 속성을 제어할 수 있다.</li>
+  <li>attr</li>
+  <li>removeAttr</li>
+</ul>
+
+<p><strong>attribute 와 property</strong></p>
+
+<p>jquery에서는 attribute를 attr, property는 prop로 사용한다.</p>
+
+<p>각각 href를 조회 했을 때,</p>
+
+<p>attr은 ex) ./demo.html</p>
+
+<p>prop은 전체주소를 리턴한다. ex) <a href="http://localhost/jQuery_attribute_api/demo.html">http://localhost/jQuery_attribute_api/demo.html</a></p>
+
+<p>제이쿼리를 통해, prop의 값으로 property의 제약을 보완해준다.</p>
+
+<h2 id="jquery-조회-범위-제한">JQuery 조회 범위 제한</h2>
+
+<ol>
+  <li>
+<strong>selector context</strong>
+    <ol>
+      <li>$(“선택 인자1”, “선택인자2”).css 로 명시하면 선택인자2하위의 선택인자1만 속성 적용</li>
+      <li>$(“선택인자1 선택인자2”) 도 사용가능</li>
+    </ol>
+  </li>
+  <li>
+<strong>.find()</strong>
+    <ol>
+      <li>$(“선택인자1.”).find(“선택인자2”).css 로도 적용이 가능하다. 체인이 가능하기 때문이다.</li>
+    </ol>
+  </li>
+</ol>
+
+<hr>
+
+<h1 id="8node-객체">8.Node 객체</h1>
+
+<p>가장 상위의 객체이다. Node 객체를 통해 모든 객체에서 사용 가능하다. 각각의 관계들을 유추할 수 있어 프로그래밍적으로 유용하게 사용할 수 있다.</p>
+
+<ol>
+  <li>관계
+    <ul>
+      <li>Node.childNodes</li>
+      <li>Node.firstChild</li>
+      <li>Node.lastChild</li>
+      <li>Node.nextSibling</li>
+      <li>Node.previousSibling 현재 li Element의 이전 형제</li>
+      <li>Node.contains()</li>
+      <li>Node.hasChildNodes()</li>
+      <li>Node.parentNode</li>
+    </ul>
+  </li>
+  <li>노드의 종류
+    <ul>
+      <li>Node.nodeType : 값이 Text인지 document인지 등의 타입을 알려줌</li>
+      <li>Node.nodeName:</li>
+    </ul>
+  </li>
+  <li>값
+    <ul>
+      <li>Node.nodeValue</li>
+      <li>Node.textContent</li>
+    </ul>
+  </li>
+  <li>자식관리
+    <ul>
+      <li>Node.appendChild()</li>
+      <li>Node.removeChild()</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="01node-관계-api">01)Node 관계 API</h3>
+
+<p><strong>공백,줄바꿈 문자도 child로 취급함 (*text객체도 포함하기 때문이다.)</strong></p>
+
+<ol>
+  <li>Node.childNodes
+    <ol>
+      <li>childNodes로 자식들을 조회가능하다.</li>
+      <li>유사배열로 반환한다.</li>
+      <li>전체적으로 속성을 지정하고자 할때, text엘리먼트가 있으면 전체 지정이 되지 않는다.</li>
+    </ol>
+  </li>
+  <li>Node.firstChild</li>
+  <li>Node.lastChild</li>
+  <li>Node.nextSibling
+    <ol>
+      <li>지정한 Element의 다음 형제</li>
+    </ol>
+  </li>
+  <li>Node.previousSibling
+    <ol>
+      <li>지정한 Element의 이전 형제</li>
+    </ol>
+  </li>
+  <li>Node.contains()</li>
+  <li>Node.hasChildNodes()</li>
+</ol>
+
+<h3 id="02노드-종류-api">02)노드 종류 API</h3>
+
+<p>노드 작업을 하게 되면 현재 선택된 노드가 어떤 타입인지를 판단해야 하는 경우가 있다. 이런 경우에 사용할 수 있는 API가 nodeType, nodeName이다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(var name in Node){
+   console.log(name, Node[name]);
+}
+</code></pre></div></div>
+
+<p>위를 통해 노드 종류를 조회할 수 있다.</p>
+
+<ol>
+  <li>Node.nodeType
+    <ol>
+      <li>노드 타입을 의미한다. 번호로 출력된다.</li>
+    </ol>
+  </li>
+  <li>Node.nodeName
+    <ol>
+      <li>노드의 이름 (태그명을 의미한다.)</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="03노드-변경-api">03)노드 변경 API</h3>
+
+<ol>
+  <li>노드 추가
+    <ol>
+      <li>appendChild(child) - 노드의 마지막 자식으로 주어진 엘리먼트 추가</li>
+      <li>insertBefore(new Element, referenceElement) -두번째 인자 앞에 엘리먼트 추가</li>
+      <li>노드를 추가하기 위해서 추가 엘리먼트를 생성해야 한다. document객체의 기능을 사용하여 추가해야한다.
+        <ol>
+          <li>document.createElement(tagname) - &lt;li&gt;와 같은 태그</li>
+          <li>document.createTextNode(data) - 텍스트 데이터</li>
+        </ol>
+      </li>
+    </ol>
+
+    <p>순서 createElement로 태그 생성 &gt; .createTextNode로 텍스트 데이터 추가 &gt; appendChild로 태그 안에 텍스트데이터 넣기 &gt; appendChild로 html에 추가 해주기</p>
+  </li>
+  <li>노드 제거
+    <ol>
+      <li>removeChild(child)
+        <ol>
+          <li>부모 노드에서, 자식 노드를 삭제해야 <l>데이터&lt;/태그&gt;가 삭제된다.</l>
+</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>노드 바꾸기
+    <ol>
+      <li>replaceChild(newChild, oldChild)</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="04jquery-노드-변경-api">04)jQuery 노드 변경 API</h3>
+
+<ol>
+  <li>추가
+    <ol>
+      <li>관련 메소드 before, prepend, content, append, after</li>
+    </ol>
+  </li>
+  <li>제거
+    <ol>
+      <li>remove - 선택 엘리먼트를 제거</li>
+      <li>empty - 선택된 엘리먼트의 텍스트 노드를 제거</li>
+    </ol>
+  </li>
+  <li>바꾸기
+    <ol>
+      <li>replaceAll - 변경내용 먼저 작성 $(‘<a>test</a>’).replaceAll(‘#target’);</li>
+      <li>replaceWith - 제어대상 먼저 지정 $(‘#target’).replacewith(‘<a>test</a>’)</li>
+    </ol>
+  </li>
+  <li>복사
+    <ol>
+      <li>clone() 후 replaceAll()</li>
+    </ol>
+  </li>
+  <li>이동
+    <ol>
+      <li>$().append($())를 통해 이동 효과를 낼 수 있다.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="05문자열로-노드-제어">05)문자열로 노드 제어</h3>
+
+<ol>
+  <li>
+<strong>innerHTML</strong>
+    <ol>
+      <li>지정한 엘리먼트의 하위 엘리먼트를 알 수 있다.(태그 포함)</li>
+      <li>자식 노드의 값을 읽어 올 수도 있고, 변경할 수도 있다.</li>
+    </ol>
+  </li>
+  <li>outerHTML
+    <ol>
+      <li>지정한 엘리먼트를 포함한 엘리먼트를 알 수 있다.</li>
+    </ol>
+  </li>
+  <li>innerText, outerText
+    <ol>
+      <li>태그를 제외한 , 텍스트만 알 수 있다. 텍스트만 변경 가능하다.</li>
+    </ol>
+  </li>
+  <li>insertAdjacentHTML()
+    <ol>
+      <li>가질 수 있는 인자.  beforebegin, afterbegin, beforeend,afterend</li>
+    </ol>
+  </li>
+</ol>
+
+<hr>
+
+<h1 id="9document-객체">9.Document 객체</h1>
+
+<p>Document</p>
+
+<table>
+  <tbody>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+
+<p>HTMLDocument</p>
+
+<p>Node가 가진, 메소드 사용 가능.</p>
+
+<p>document.childnode로 문서 전체 읽기 가능</p>
+
+<ol>
+  <li>노드 생성 API
+    <ol>
+      <li>createElement()</li>
+      <li>createTextNode()</li>
+    </ol>
+  </li>
+  <li>문서정보 API
+    <ol>
+      <li>title</li>
+      <li>URL</li>
+      <li>referrer</li>
+      <li>lastModified</li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="10text-객체">10.Text 객체</h1>
+
+<p>text 객체</p>
+<p>는 Element, 'text객체'가 text
+
+DOM에서는 공백이나 줄바꿈도 텍스트 노드가 된다.
+
+1.값
+
+1. data
+2. nodeValue
+1. 조작
+    1. appendData()
+    2. deleteData()
+    3. insertData()
+    4. replaceData()
+    5. subStringData()
+2. 생성
+    1. document.createTextNode()
+
+### 01) 값 API
+
+### 02) 조작 API
+
+---
+
+# 11.문서의 기하학적 특성
+
+---
+
+# 12.이벤트
+
+### 등록방법
+
+### inline
+
+### 프로퍼티 리스터
+
+### addEventListener()
+
+### 이벤트 전파(버블링과 캡처링)
+
+### 기본동작의 취소
+
+### 이벤트타입
+
+1. 폼
+2. 문서로딩
+3. 마우스
+
+### JQuery 이벤트
+
+on API 사용법
+
+---
+
+# 13.네트워크 통신
+
+### AJAX
+
+- 웹브라우저와 웹서버가 내부적으로 데이터 통신을 하여, 로딩없이 데이터를 전달 받는다.
+- 사용 API : XMLHttpRequest
+- XMLHttpRequest:
+    
+    ```java
+    open(''GET/POST', '페이지주소');
+    send():
+    ```
+    
+
+```java
+</p>
+<p>time : <span id="time"></span></p>
+<input type="button" id="execute" value="execute">
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './time.php');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            document.querySelector('#time').innerHTML = xhr.responseText;
+        }
+    }
+    xhr.send(); 
+}); 
+</script>
+```
+
+ readystate =4 모든 통신이 끝난 상태
+
+status =200 통신이 성공한 상태
+
+status 404 500이면 오류페이지
+
+- POST방식
+    
+    정보를 post로 전달해서 알맞은 데이터를 가져온다.
+    
+
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/javascript/2021/11/11/jquery,ajax.html" title="jquery,ajax">jquery,ajax</a><a class="next" href="/react/2022/01/04/ReactDOM.html" title="React DOM">React DOM</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/2021/09/29/%EA%B0%9C%EB%85%90-Linux-vi-%EC%97%90%EB%94%94%ED%84%B0.html" title="React DOM">[개념] linux vi 에디터</a></li>
+<li><a class="post-link" href="/project/2022/01/12/tikitaka%EC%B1%84%ED%8C%85.html" title="React DOM">tikitaka 채팅 페이지 프로젝트</a></li>
+<li><a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html" title="React DOM">java 생성자를 이용한 TV예제</a></li>
+<li><a class="post-link" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html" title="React DOM">DBMS의 이해</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

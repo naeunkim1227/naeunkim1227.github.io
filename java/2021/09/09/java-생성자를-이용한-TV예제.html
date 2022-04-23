@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>java 생성자를 이용한 TV예제 | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="java 생성자를 이용한 TV예제">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="post 2021-09-09">
+<meta property="og:description" content="post 2021-09-09">
+<link rel="canonical" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+<meta property="og:url" content="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-09T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="java 생성자를 이용한 TV예제">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html"},"description":"post 2021-09-09","@type":"BlogPosting","url":"/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html","headline":"java 생성자를 이용한 TV예제","dateModified":"2021-09-09T00:00:00+00:00","datePublished":"2021-09-09T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">java 생성자를 이용한 TV예제</h1>
+  <h2 class="post-subtitle">java</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-09-09T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Sep 09, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a><a class="post-tag" href="/tags.html#%EC%8B%A4%EC%8A%B5%EC%98%88%EC%A0%9C">#실습예제</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p><strong>post 2021-09-09</strong></p>
+
+<p>생성자에 대한 활용 기술이 조금 부족하다고 생각하여 실습예제를 분석해 보았다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">package</span> <span class="nn">tv</span><span class="o">;</span>
+
+<span class="kd">public</span>  <span class="kd">class</span> <span class="nc">WatchTV</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span> <span class="nc">String</span><span class="o">[]</span> <span class="n">args</span> <span class="o">)</span> <span class="o">{</span>
+       <span class="no">TV</span> <span class="n">tv</span> <span class="o">=</span> <span class="k">new</span> <span class="no">TV</span><span class="o">(</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>  	
+        
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>	
+        
+        <span class="n">tv</span><span class="o">.</span><span class="na">power</span><span class="o">(</span> <span class="kc">true</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">volume</span><span class="o">(</span> <span class="mi">120</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>		          
+        
+        <span class="n">tv</span><span class="o">.</span><span class="na">volume</span><span class="o">(</span> <span class="kc">false</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>
+        
+        <span class="n">tv</span><span class="o">.</span><span class="na">channel</span><span class="o">(</span> <span class="mi">0</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>		          
+        
+        <span class="n">tv</span><span class="o">.</span><span class="na">channel</span><span class="o">(</span> <span class="kc">true</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">channel</span><span class="o">(</span> <span class="kc">true</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">channel</span><span class="o">(</span> <span class="kc">true</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>
+
+        <span class="n">tv</span><span class="o">.</span><span class="na">power</span><span class="o">(</span> <span class="kc">false</span> <span class="o">);</span>
+        <span class="n">tv</span><span class="o">.</span><span class="na">status</span><span class="o">();</span>      		          
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+</code></pre></div></div>
+
+<p>tv객체를 초기화 할 생성자가 필요하며, tv의 현재 상태를 출력하는 status메소드
+음량,채널,전원을 조정하는 volume,channel,power 메소드가 필요하다. 
+이를 작성하는 자바파일을 만들어 준다.</p>
+
+<p>volume은 1~100까지 조절가능하다. 
+channel은 1~255까지이다. 1보다 작은 값을 입력했을 경우, 255채널로이동한다. 255보다 큰 값을 입력했을 경우, 1채널로 이동한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">package</span> <span class="nn">tv</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TV</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="n">power</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">volume</span><span class="o">;</span> <span class="c1">//0~100</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">channel</span><span class="o">;</span> <span class="c1">//1~255</span>
+	
+	
+	<span class="kd">public</span> <span class="nf">TV</span><span class="o">(</span><span class="kt">int</span> <span class="n">channel</span><span class="o">,</span> <span class="kt">int</span> <span class="n">volume</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">power</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">channel</span> <span class="o">=</span> <span class="n">channel</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">volume</span> <span class="o">=</span> <span class="n">volume</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">power</span> <span class="o">=</span> <span class="n">power</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">status</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"TV [power="</span> <span class="o">+</span> <span class="o">(</span><span class="n">power</span><span class="o">?</span> <span class="s">"on"</span> <span class="o">:</span> <span class="s">"off"</span><span class="o">)</span>  <span class="o">+</span> <span class="s">", volume="</span> <span class="o">+</span> <span class="n">volume</span> <span class="o">+</span> <span class="s">", channel="</span> <span class="o">+</span> <span class="n">channel</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">power</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">on</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">power</span> <span class="o">=</span> <span class="n">on</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">channel</span><span class="o">(</span><span class="kt">int</span> <span class="n">channel</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span><span class="o">(!</span><span class="n">power</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+		
+		<span class="k">if</span><span class="o">(</span><span class="n">channel</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">255</span><span class="o">;</span> 
+		<span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">channel</span><span class="o">&gt;</span><span class="mi">255</span><span class="o">){</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;}</span>
+			
+		<span class="k">this</span><span class="o">.</span><span class="na">channel</span> <span class="o">=</span> <span class="n">channel</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">channel</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">up</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">channel</span><span class="o">(</span><span class="n">channel</span> <span class="o">+</span> <span class="o">(</span><span class="n">up</span><span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">));</span>
+		
+	<span class="o">}</span>
+	
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">volume</span><span class="o">(</span><span class="kt">int</span> <span class="n">volume</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span><span class="o">(!</span><span class="n">power</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+		
+		<span class="k">if</span><span class="o">(</span><span class="n">volume</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">volume</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">volume</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
+			<span class="n">volume</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">volume</span> <span class="o">=</span> <span class="n">volume</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">volume</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">up</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">volume</span><span class="o">(</span><span class="n">volume</span> <span class="o">+</span> <span class="o">(</span><span class="n">up</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">));</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPower</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">power</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getChannel</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">channel</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVolume</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">volume</span><span class="o">;</span>
+	<span class="o">}</span>
+		
+
+<span class="o">}</span>
+
+
+</code></pre></div></div>
+
+<h3 id="코드-뜯어보기">코드 뜯어보기</h3>
+
+<ol>
+  <li>생성자
+```
+public TV(int channel, int volume, boolean power) {
+     this.channel = channel;
+     this.volume = volume;
+     this.power = power;
+ }</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+watchTV java 파일에서 생성자로 채널,볼률,전원을 초기화하는 생성자를 호출했다. 이에 맞게 생성자를 생성해준다.
+
+
+
+2. status 메소드
+
+```java
+
+	public void status() {
+		System.out.println("TV [power=" + (power? "on" : "off")  + ", volume=" + volume + ", channel=" + channel + "]");
+	}
+
+</code></pre></div></div>
+
+<p>상태를 보여주는 status 메소드이다.
+현재 tv의 상태를 출력한다.</p>
+
+<ol>
+  <li>power 메소드</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">power</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">on</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">power</span> <span class="o">=</span> <span class="n">on</span><span class="o">;</span>
+	<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>boolean타입으로 인자를 받는다. power메소드가 호출 될 경우</p>
+
+<ol>
+  <li>channel 메소드</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">channel</span><span class="o">(</span><span class="kt">int</span> <span class="n">channel</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span><span class="o">(!</span><span class="n">power</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+		
+		<span class="k">if</span><span class="o">(</span><span class="n">channel</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">255</span><span class="o">;</span> 
+		<span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">channel</span><span class="o">&gt;</span><span class="mi">255</span><span class="o">){</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;}</span>
+			
+		<span class="k">this</span><span class="o">.</span><span class="na">channel</span> <span class="o">=</span> <span class="n">channel</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">channel</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">up</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">channel</span><span class="o">(</span><span class="n">channel</span> <span class="o">+</span> <span class="o">(</span><span class="n">up</span><span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">));</span>
+		
+	<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>전원이 커져 있지 않을 경우 작동하지 않도록 if문으로 return한다.
+1보다 작은 값을 입력했을 경우, 255채널로이동한다. 255보다 큰 값을 입력했을 경우, 1채널로 이동하는 것을 if문으로 작성했다.</p>
+
+<p>그리고 boolean타입 up을 인자로 받는다. true일경우 up</p>
+
+<p>channel(channel + (up? 1: -1)); 구문은 위의 channel(int channel)메소드를 호출하는데, 원래의 channel 값 + 삼항연산자로 up이면 +1을 해라로 구현했다.</p>
+
+<p>volume도 비슷한 방식으로 구현한다.</p>
+
+<h4 id="정리">정리</h4>
+
+<p>생성자는 초기화를 위해 사용한다.</p>
+
+<p>channel(channel + (up? 1: -1));
+삼항연산자를 통해 값을 변경하고 다시 channel메소드를 호출하는 방법을 통해 메소드에 다양한 방식으로 접근할 수 있음을 알게되었다. 
+자주 활용할 수 있을 거 같다.</p>
+
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/github/2021/09/09/maven-project,module%EC%9D%84-github%EC%97%90-%EC%98%AC%EB%A6%AC%EA%B3%A0,-eclipse%EC%97%90-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0.html" title="github에 maven project 만들기, eclipse 내려받기">github에 maven project 만들기, eclipse 내려받기...</a><a class="next" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html" title="java 기본 api">java 기본 api</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/linux/2021/09/28/%EA%B0%9C%EB%85%90-Linux-%EA%B8%B0%EB%B3%B8%EA%B4%80%EB%A6%AC%EB%AA%85%EB%A0%B9%EC%96%B4.html" title="java 기본 api">Linux 기본관리 명령어</a></li>
+<li><a class="post-link" href="/javascript/2021/11/14/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-JavaScript-%EC%A0%95%EB%A6%AC.html" title="java 기본 api">생활코딩 JavaScript 정리</a></li>
+<li><a class="post-link" href="/spring/2021/10/28/xml%ED%8C%8C%EC%9D%BC-java%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.html" title="java 기본 api">spring xml파일 java로 변경하기</a></li>
+<li><a class="post-link" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html" title="java 기본 api">spring IoC Container</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Linux 내부구조 | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="Linux 내부구조">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Linux 내부구조">
+<meta property="og:description" content="Linux 내부구조">
+<link rel="canonical" href="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+<meta property="og:url" content="/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-30T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Linux 내부구조">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html"},"description":"Linux 내부구조","@type":"BlogPosting","url":"/linux/2021/09/30/%EA%B0%9C%EB%85%90-Linux-%EB%82%B4%EB%B6%80%EA%B5%AC%EC%A1%B0.html","headline":"Linux 내부구조","dateModified":"2021-09-30T00:00:00+00:00","datePublished":"2021-09-30T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Linux 내부구조</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-09-30T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Sep 30, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#Linux">#Linux</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h1 id="linux-내부구조">Linux 내부구조</h1>
+
+<h2 id="1리눅스-파일시스템">1.리눅스 파일시스템</h2>
+
+<h3 id="1파일시스템">1)파일시스템</h3>
+
+<ol>
+  <li>운영체제에서는 커널이미지, 시스템 실행과 관련된 시스템 파일 그리고 유틸리티 파일들을 제공한다.</li>
+  <li>사용자의 데이터의 저장을 위해 사용됨</li>
+  <li>디렉터리 안에 디렉터리를 저장할 수 있는 구조</li>
+  <li>루트 디렉터리 : 장치의 메인 디렉토리
+    <ol>
+      <li>여러장치를 사용하면 루트 디렉터리 구분에 문제가 생긴다.</li>
+      <li>유닉스 계열에서는 통합형 파일시스템을 사용한다.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="2가상파일시스템vfs">2)가상파일시스템(VFS)</h3>
+
+<ul>
+  <li>유닉스는 디스크,터미널, 네트워크 카드등 모든 주변 장치들을 파일로 취급한다. 디스크상의 파일 시스템 외에도 다양한 기능의 특수 파일 시스템이 존재하는데 리눅스에서는 이러한 다양한 파일 시스템들을 하나의 파일 시스템처럼 사용할 수 있도록 가상 파일 시스템이라는 구조를 사용한다.</li>
+  <li>모든 파일 시스템을 하나의 파일 시스템으로 보이게 하는 계층이라 할 수 있다.</li>
+  <li>주요 특수 파일 시스템
+    <ul>
+      <li>procfs : 커널 및 커널 모듈 정보를 참조하거나, 설정 변경을 위한 파일 시스템, /proc에 마운트</li>
+      <li>syssfs : 시스템에 접속된 디바이스 정보를 참조하거나, 설정 변경을 위한 파일 시스템 , /sys 에 마운트</li>
+      <li>devfs : 물리 디바이스에 액세스 하기 위한 디바이스 파일을 배치하는 파일 시스템 , /dev 에 마운트</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3리눅스-디렉터리-구조">3)리눅스 디렉터리 구조</h3>
+
+<p><img src="https://user-images.githubusercontent.com/83413364/135374998-a91e25a9-6fc3-4ff3-b4c0-98bf5aed0c9e.png" alt="리눅스 디렉터리 구조"></p>
+
+<ul>
+  <li>리눅스 배포판은 FHS 표준에 따르도록 권장한다.</li>
+  <li>각각의 디렉터리는 그에 맞는 용도가 있다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>/ 루트</p>
+
+    <p>: 모든 파티션, 디렉터리가 루트 디렉터리 아래에 존재한다.</p>
+  </li>
+  <li>
+    <p>bin</p>
+
+    <p>:사용자가 실행 할 수 있는 명령어가 있음</p>
+  </li>
+  <li>
+    <p>sbin</p>
+
+    <p>:시스템 관리자가 사용할 수 있는 명령어들이 들어 있다. 시스템 수정, 복구에 관한 명령어들이 있으며, 보안에 신경을 써야한다.</p>
+  </li>
+  <li>
+    <p>boot</p>
+
+    <p>:부트로더와 부팅에 관련된 파일들</p>
+  </li>
+  <li>
+    <p>home</p>
+
+    <p>:유저들의 홈디렉터리가 하위 디렉토리로 존재하게 된다.</p>
+  </li>
+  <li>
+    <p>dev</p>
+
+    <p>:디바이스 파일들이 있다. 시스템의 모든 장치가 파일로 표현되어 있는데 udev라는 데몬이 이곳의 장치 파일을 관리한다.</p>
+  </li>
+  <li>
+    <p>etc</p>
+
+    <p>:시스템 혹은 각종 프로그램들의 환경설정 파일들이 위치한다. 시스템 관리에서 이곳의 파일들을 주로 수정하게 된다. 백업해두는 것이 좋다.</p>
+  </li>
+  <li>
+    <p>lib</p>
+
+    <p>:시스템의 프로그램이 실행 할 때 필요한 공유 라이브러리 들이 들어 있다. 변경,삭제하지 않는 것이 좋다.</p>
+  </li>
+  <li>
+    <p>mnt</p>
+
+    <p>:마운트를 위한 임시 디렉토리가 위치한다.</p>
+  </li>
+  <li>
+    <p>root</p>
+
+    <p>:root계정의 홈 디렉터리이다. root 홈 디렉터리는 root만 접근 할 수 있다.</p>
+  </li>
+  <li>
+    <p>var</p>
+
+    <p>:log파일등 수시로 업데이트되는 파일들이 위치한다. 시스템 운영에 필요한 파일들도 위치하기 때문에 수정과 삭제에 주의</p>
+  </li>
+  <li>
+    <p>proc</p>
+
+    <p>:실행중인 프로세스 정보와 cpu,메모리등의 시스템 정보가 가상파일로 저장되어 있다.</p>
+  </li>
+  <li>
+    <p>/usr/bin</p>
+
+    <p>:응용 프로그램들의 실행파일들이 위치</p>
+  </li>
+  <li>
+    <p>/usr/sbin</p>
+
+    <p>:시스템 관리를 위한 명령어</p>
+  </li>
+  <li>
+    <p>/usr/include</p>
+
+    <p>:시스템, 네트워크 프로그래밍을 위한 C헤더파일</p>
+  </li>
+  <li>
+    <p>/usr/lib</p>
+
+    <p>:/usr/bin , /usr/sbin 에서 있는 실행 파일들을 위한 라이브러리들이 위치</p>
+  </li>
+  <li>
+    <p>tmp</p>
+
+    <p>:임시로 파일을 만들고 삭제하는 공간</p>
+  </li>
+  <li>
+    <p>lost+found</p>
+
+    <p>:부팅시 파일 시스템에 문제가 생길 경우 fsck명령어로 복구 할때 사용하는 디렉터리</p>
+  </li>
+</ol>
+
+<h2 id="2프로세스">2.프로세스</h2>
+
+<h3 id="1프로세스">1)프로세스</h3>
+
+<ul>
+  <li>유닉스는 시분할 시스템으로 여러 개의 프로그램을 동시에 실행한다.(멀티태스킹)</li>
+  <li>컴퓨터 내에서 실행 중인 프로그램을 프로세스(process) 또는 태스크(Task)라고 한다.</li>
+  <li>여러 프로세스가 동시에 실행되는 것을 멀티프로세스라 한다.</li>
+</ul>
+
+<h3 id="2프로세스-자료구조">2)프로세스 자료구조</h3>
+
+<h3 id="3프로세스-관리-명령어">3)프로세스 관리 명령어</h3>
+
+<ol>
+  <li>ps [옵션]
+    <ul>
+      <li>옵션</li>
+      <li>ㅣ : 자세한 형태의 정보를 출력한다.</li>
+      <li>a : 다른 사용자들의 프로세스도 보여준다.</li>
+      <li>u : 프로세스의 사용자 이름과 시작 시가능 출력한다.</li>
+      <li>x : 터미널과 연결되지 않은 프로세스도 보여준다.</li>
+      <li>e : 환경을 보여준다.</li>
+      <li>f : 프로세스의 정보를 한 둘로 자세히 출력한다.</li>
+      <li>r : 현재 실행중인 프로세스들을 표시한다.</li>
+      <li>j : 작업 중심의 형태로 출력한다.</li>
+      <li>c : 커널 task_struct 구조체 형태로 보여준다.</li>
+    </ul>
+
+    <p>보통 <strong>–aux</strong>  또는 <strong>–ef</strong> 옵션을 사용해서 프로세스 상태를 확인한다.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>ps -ef 시 나오는 용어 해석
+    <ul>
+      <li>
+<strong>USER:</strong> 프로세스 소유자의 계정</li>
+      <li>
+<strong>PID:</strong> 프로세스를 구분하는 프로세스 아이디</li>
+      <li>
+<strong>PPID:</strong>  부모 프로세스 PID</li>
+      <li>
+<strong>STIME</strong>: 프로세스 시작 시간</li>
+      <li>
+<strong>TTY:</strong> 프로세스의 표준 입출력을 담당하는 터미널</li>
+      <li>
+<strong>TIME:</strong> 프로세스의 CPU 점유시간</li>
+      <li>
+<strong>CMD:</strong>실행 명령어</li>
+    </ul>
+  </li>
+  <li>현재 실행되는 프로세스의 정보는 /proc 디렉토리를 통해서 확인 할 수 있다.</li>
+  <li>실행중인 프로세스에 대한 정보는 /proc 디렉토리안의 pid로 되어 있는 디렉토리에 존재하고 있으며 status 파일을 통해 확인 할 수 있다.</li>
+  <li>ps &gt; pid 확인 &gt; cat /proc/pid번호/status
+    <ol>
+      <li>pstree</li>
+    </ol>
+    <ul>
+      <li>프로세스정보를 트리형태로 보여준다.</li>
+      <li>pstree [옵션]
+        <ul>
+          <li>n : PID 순으로 정렬</li>
+          <li>p : 프로세스 명 + PID
+            <ol>
+              <li>top</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>프로세스의 cpu, 메모리 사용량등 전반적인 상황을 실시간으로 모니터링 한다.</li>
+      <li>top [옵션]
+        <ul>
+          <li>d 시간: 화면 갱신 시간 지정</li>
+          <li>c : 명령행 전체를 보여준다</li>
+          <li>q : 화면으 계속 갱신한다.</li>
+        </ul>
+      </li>
+      <li>top명령 실행후 단축키
+        <ul>
+          <li>M: 메모리 사용량 순으로 정렬</li>
+          <li>P: CPU 사용량 순으로 정렬</li>
+          <li>T:  실행시간이 긴 순서로 정렬</li>
+          <li>R: 정렬의 순서 변경
+            <ol>
+              <li>kill</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>지정한 프로세스에게 시그널을 보낸다.</li>
+      <li>kill [옵션] pid</li>
+      <li>옵션 명령어
+        <ul>
+          <li>l : 시그널 목록을 보여준다.</li>
+          <li>c : 명령행 전체를 보여준다</li>
+          <li>q : 화면을 계속 갱신한다.</li>
+          <li>1 : 애플리케이션 재초기화</li>
+          <li>3: 애플리케이션 정상종료</li>
+          <li>6: 프로그램 중단 알리고, 닫힘</li>
+          <li>9: 강제 애플리케이션 종료</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="3메모리관리">3.메모리관리</h2>
+
+<ol>
+  <li>free
+    <ul>
+      <li>시스템의 메모리 정보 출력</li>
+      <li>free  [옵션]</li>
+      <li>옵션명령어
+        <ul>
+          <li>b : 바이트 단위 표시</li>
+          <li>k : Kb 단위로 표시</li>
+          <li>m : Mb 단위로 표시</li>
+          <li>t : 총합을 표시</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/db/2021/09/30/DB-%EC%95%95%EC%B6%95%EB%90%9C-%ED%8C%8C%EC%9D%BC,%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%EB%84%A3%EA%B3%A0-%EC%9B%8C%ED%81%AC%EB%B2%A4%EC%B9%98%EB%A1%9C-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0.html" title="DB 압축된 파일,리눅스에 넣고 워크벤치로 작업하기">DB 압축된 파일,리눅스에 넣고 워크벤치로 작업하기...</a><a class="next" href="/db/2021/10/01/%EA%B0%9C%EB%85%90-RDBMS%EC%9D%98-%EC%9D%B4%ED%95%B4.html" title="DBMS의 이해">DBMS의 이해</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/algorithm/2022/02/09/1.%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0.html" title="DBMS의 이해">프로그래머스 코딩테스트</a></li>
+<li><a class="post-link" href="/react/2022/01/04/webpack.html" title="DBMS의 이해">webpack basic</a></li>
+<li><a class="post-link" href="/spring-boot/2021/11/01/spring-boot-%EA%B8%B0%EC%B4%88.html" title="DBMS의 이해">spring-boot 설정</a></li>
+<li><a class="post-link" href="/spring/2021/10/17/%EA%B0%9C%EB%85%90-spring-%EC%9D%B4%EB%9E%80.html" title="DBMS의 이해">spring 이란</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

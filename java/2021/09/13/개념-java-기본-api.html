@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>java 기본 api | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="java 기본 api">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="post 2021-09-13">
+<meta property="og:description" content="post 2021-09-13">
+<link rel="canonical" href="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+<meta property="og:url" content="/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="java 기본 api">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html"},"description":"post 2021-09-13","@type":"BlogPosting","url":"/java/2021/09/13/%EA%B0%9C%EB%85%90-java-%EA%B8%B0%EB%B3%B8-api.html","headline":"java 기본 api","dateModified":"2021-09-13T00:00:00+00:00","datePublished":"2021-09-13T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">java 기본 api</h1>
+  <h2 class="post-subtitle">java</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-09-13T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Sep 13, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#java">#java</a><a class="post-tag" href="/tags.html#%EA%B0%9C%EB%85%90">#개념</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p><strong>post 2021-09-13</strong></p>
+
+<h2 id="01언어와-시스템-api">01.언어와 시스템 API</h2>
+
+<ol>
+  <li>
+    <p>개요</p>
+
+    <p>:자바 프로그램에서 가장 많이 사용되는 패키지</p>
+
+    <p>import를 사용하지 않아도 자동으로 포함</p>
+  </li>
+</ol>
+
+<p>Object</p>
+
+<ol>
+  <li>String</li>
+  <li>StringBuffer : 자기 자신을 먼저 리턴한다. 체인 방식으로 추가하기에 좋다.</li>
+  <li>Boolean</li>
+  <li>Character</li>
+  <li>Number » short,Integer,Long,Float,Double,Byte</li>
+</ol>
+
+<hr>
+
+<ol>
+  <li>Object 클래스
+    <ol>
+      <li>모든 클래스의 최상위 클래스</li>
+      <li>getclass() : reflection 객체가 만들어 졌을때 참조했던 클래스 정보를 반환한다.</li>
+      <li><code class="language-plaintext highlighter-rouge">Class klass = p.getClass();  Class타입으로 선언하면, 여러 함수들이 있다...klass.</code></li>
+      <li>hashCode() : 정수값으로 만드는 것, 두 객체가 같은 객체인지 확인하는 Method이다.</li>
+      <li>equals() :
+        <ol>
+          <li>두 객체가 같은 객체인지 확인한다. 2개의 객체가 가리키는 곳이 동일한 메모리 주소일 경우에만 동일한 객체</li>
+          <li>String 형식의 경우, 객체가 달라도equals를 오버라이딩해서 안의 내용을 보기 때문에 같다는 결과를 도출한다.</li>
+        </ol>
+      </li>
+      <li>tostring()
+        <ol>
+          <li>getClass() + “@” + hashcode() (클래스명@16진수해시코드)</li>
+          <li>메소드를 오버라이딩하여 사용한다.</li>
+        </ol>
+      </li>
+    </ol>
+
+    <hr>
+
+    <p><a href="https://www.notion.so/Hashcode-equals-0460bcf1627848f0878da9215fe616f8">Hashcode와 equals 메소드</a></p>
+  </li>
+</ol>
+
+<hr>
+
+<ol>
+  <li>String 클래스
+    <ol>
+      <li>문자(Character)</li>
+      <li>문자열(String)클래스
+        <ul>
+          <li>문자열 상수 “” 로 둘러싸인 문자열 &gt; 한번 만들어진 String 객체는 변경 불가능 하다.</li>
+        </ul>
+      </li>
+      <li>특수문자 표현
+        <ul>
+          <li>\t : tab</li>
+          <li>\r : carrige return</li>
+          <li>\b : beep</li>
+          <li>\n : newline 개행</li>
+        </ul>
+      </li>
+      <li>String method들
+        <ul>
+          <li>length(); 길이 반환</li>
+          <li>charAt(); 특정 번수의 문자 반환</li>
+          <li>indexOf(“ab”); ab가 몇번째에 있는지 반환,없으면 -1반환</li>
+          <li>substring(3); 3번째 인덱스부터 끝값 가져오기</li>
+          <li>trim() 양쪽 공백 지우기</li>
+          <li>replaceAll(“a”,”b”) a를 b로 바꾸기</li>
+          <li>split(“,”) ,로 분리하기</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>StringBuffer 클래스
+    <ol>
+      <li>String 객체가 한번 만들어진 문자열을 수정할 수 없는 것과 달리  StringBuffer객체는 수정가능하다.</li>
+      <li>가변크기의 버퍼</li>
+      <li>
+        <p>String Buffer와 String Builder의 차이점</p>
+
+        <p>가장 큰 차이점은 <strong>동기화의 유무</strong>로써 <strong>StringBuffer</strong>는 동기화 키워드를 지원하여 <strong>멀티쓰레드 환경에서 안전하다는 점(thread-safe)</strong> 입니다.  참고로 <strong>String</strong>도 <strong>**불변성을 가지기때문에 마찬가지로  </strong>멀티쓰레드 환경에서의 안정성(thread-safe)**을 가지고 있습니다.</p>
+
+        <p>반대로 <strong>StringBuilder</strong>는 <strong>동기화를 지원하지 않기</strong>때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만 동기화를 고려하지 않는 만큼 <strong>단일쓰레드에서의 성능은 StringBuffer 보다 뛰어납니다</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>Wrapper 클래스
+    <ol>
+      <li>8개의 기본 데이터형을 객체형식으로 다루기 위한 클래스들의 통칭</li>
+      <li>어떤 클래스는 객체만을 다루기때문에 기본데이터형을 쓸 수 없다, 이를 위해 wrapper클래스를 사용한다.</li>
+      <li>Byte ,Short,Integer, Double, Long, Character, Float, Boolean
+        <ol>
+          <li>Integer : parseInt 로 String 타입을 int로 변경가능</li>
+        </ol>
+      </li>
+      <li>Boxing, Unboxing &gt; jdk1.5 부터 자동 박싱, 언박싱</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="02유틸리티api">02.유틸리티API</h2>
+
+<ol>
+  <li>개요
+    <ul>
+      <li>: 자바프로그램에서 필요로하는 편리한 기능들을 모아 둔 클래스들의 패키지</li>
+      <li>클래스 이름 앞에 패키지 이름을 사용하지 않았다면, import를 명시적으로 해야하는 패키지</li>
+      <li>Object &gt; Date, Calender, Collection Framework,Formatter</li>
+    </ul>
+  </li>
+  <li>Date 클래스 : 날짜와 시간에 관한 정보를 표현</li>
+  <li>Calender 클래스 :  getInstanse() 메소드를 통해,</li>
+  <li>Formatter 클래스</li>
+</ol>
+
+<h2 id="03콜렉션프레임워크자료구조">03.콜렉션프레임워크(자료구조)</h2>
+
+<ol>
+  <li>개요
+    <ol>
+      <li>데이터를 저장하는 클래스들을 표준화한 설계</li>
+      <li>다수의 데이터를 쉽게 처리할 수 있는 방법을 제공하는 클래스로 구성</li>
+      <li>컬렉션 프레임워크의 핵심 인터페이스
+        <ol>
+          <li>set - 순서를 유지하지 않는 데이터의 집합, 데이터의 중복을 허용하지 않는다. (순서x,중복x)
+            <ul>
+              <li>종류: HashSet,TreeSet</li>
+              <li>메소드
+                <ul>
+                  <li>추가:add</li>
+                  <li>검색:contains,isEmpty,iterator,size</li>
+                  <li>삭제:remove,clear</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>List - 순서가 있는 데이터의 집합, 데이터의 중복을 허용한다.
+            <ul>
+              <li>종류:ArrayList,LinkedList,Stack,Vector</li>
+              <li>메서드
+                <ul>
+                  <li>추가: add,set</li>
+                  <li>검색:size,get,contains,isempty</li>
+                  <li>삭제:clear,remove</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Map - 키와 값의 쌍으로 이루어진 데이터의 집합
+            <ul>
+              <li>종류:HashMap,TreeMap,Hashtable,Properties</li>
+              <li>메서드
+                <ul>
+                  <li>추가: put</li>
+                  <li>검색: contains,Entryset,get,isEmpty,keySet,size,values</li>
+                  <li>삭제:clear,remove</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Vector
+    <ul>
+      <li>객체만 저장할 수 있음</li>
+      <li>다른 타입의 객체를 섞어서 저장할 수 있음.</li>
+    </ul>
+  </li>
+  <li>Linked List
+    <ul>
+      <li>링크로 연결된 노드의 집합</li>
+      <li>index를 통한 참조접근은 불가능</li>
+    </ul>
+  </li>
+  <li>Array List
+    <ul>
+      <li>벡터는 동기화된 삽입,삭제 동작을 제공하지만 리스트는 삽입과 삭제가 동기화 되어있지 않음, 외부적인 동기화가 필요하다.</li>
+    </ul>
+  </li>
+  <li>Stack
+    <ul>
+      <li>여러개의 데이터 항목들이 일정한 순서로 나열된 자료구조</li>
+      <li>한쪽 끝에서만 새로운 항목을 삽입하거나 기존의 항목을 제거할 수 있다.</li>
+      <li>Last in First out 구조이다.</li>
+      <li>메소드 : push(). pop(),peek(),empty()</li>
+    </ul>
+  </li>
+  <li>Queue
+    <ol>
+      <li>리스트와 유사한 자료구조</li>
+      <li>First int First out구조</li>
+      <li>메소드:offer,poll,peek</li>
+    </ol>
+  </li>
+  <li>Hashtable
+    <ul>
+      <li>맵인터페이스를 다루는 자료구조</li>
+      <li>키와 값의 쌍을 저장</li>
+      <li>메소드: put,get.isEmpty.containskey</li>
+    </ul>
+  </li>
+  <li>Hashset
+    <ul>
+      <li>자료구조에 포함된 자료의 순서나 키에 상관없이 자료 전체를 하나의 셋으로 관리할 수 있도록 해주는 자료구조</li>
+      <li>메소드: add,remove,contains</li>
+    </ul>
+  </li>
+  <li>Enumeration &amp;  Iterator
+    <ul>
+      <li>Enumeration</li>
+      <li>Iterator</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="04스트림과-io">04.스트림과 IO</h2>
+
+<ol>
+  <li>I/O : 프로그램</li>
+</ol>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html" title="java 생성자를 이용한 TV예제">java 생성자를 이용한 TV예제</a><a class="next" href="/java/2021/09/13/java-%EB%8F%99%EC%A0%84%EA%B5%90%ED%99%98%EA%B8%B0-%EB%AC%B8%EC%A0%9C.html" title="java 동전교환기 문제">java 동전교환기 문제</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/java/2021/09/09/java-%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-TV%EC%98%88%EC%A0%9C.html" title="java 동전교환기 문제">java 생성자를 이용한 TV예제</a></li>
+<li><a class="post-link" href="/db/2022/03/12/SQLD%EC%9D%B4%EB%A1%A0-%EC%A0%95%EB%A6%AC.html" title="java 동전교환기 문제">SQLD 이론 정리</a></li>
+<li><a class="post-link" href="/java/2021/09/07/%EA%B0%9C%EB%85%90-java-01.%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.html" title="java 동전교환기 문제">java 객체지향 프로그래밍</a></li>
+<li><a class="post-link" href="/cs/2022/03/03/3.%EB%B0%B0%EC%97%B4.html" title="java 동전교환기 문제">CS - 3. 배열</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

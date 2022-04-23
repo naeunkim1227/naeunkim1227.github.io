@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>spring Interceptor | 슬기로운 코딩생활</title>
+<meta name="generator" content="Jekyll v4.2.0">
+<meta property="og:title" content="spring Interceptor">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="01.인터셉터란">
+<meta property="og:description" content="01.인터셉터란">
+<link rel="canonical" href="/spring/2021/10/22/Interceptor.html">
+<meta property="og:url" content="/spring/2021/10/22/Interceptor.html">
+<meta property="og:site_name" content="슬기로운 코딩생활">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-10-22T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="spring Interceptor">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"GitHub User"},"mainEntityOfPage":{"@type":"WebPage","@id":"/spring/2021/10/22/Interceptor.html"},"description":"01.인터셉터란","@type":"BlogPosting","url":"/spring/2021/10/22/Interceptor.html","headline":"spring Interceptor","dateModified":"2021-10-22T00:00:00+00:00","datePublished":"2021-10-22T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="슬기로운 코딩생활">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="슬기로운 코딩생활" src="" onerror="this.style.display='none'">
+  슬기로운 코딩생활
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">spring Interceptor</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2021-10-22T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Oct 22, 2021
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 9 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#spring">#spring</a><a class="post-tag" href="/tags.html#Interceptor">#Interceptor</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h1 id="01인터셉터란">01.인터셉터란</h1>
+
+<ol>
+  <li>Spring에서 HTTP Request와  HTTP Response를  Controller 앞과 뒤에서 가로채는역할을 한다.</li>
+  <li>Servlet의 앞과 뒤에서 HTTP Request와  HTTP Response를 가로채는 필터와 유사하다.</li>
+  <li>Interceptor를 구현하기 위해서는 HandlerInterceptor 인터페이스를 구현하여야 한다</li>
+  <li>인증과 관련된 부분을 인터셉터가 수행한다.</li>
+  <li>보안관련 처리</li>
+  <li>인증 관련이디 prehandler메소드를 자주 사용하게 된다.</li>
+</ol>
+
+<h2 id="구조">구조</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>encoding Filter
+tomcat
+dispatcher servlet 
+interceptor가  가로채는 구간
+Web Application Context
+controller - handler 
+interceptor가  가로채는 구간
+Root Application Context
+service
+DB
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/83413364/138861875-d2bbba00-8607-41ab-9900-f71d5a4c94fd.png" alt="Untitled"></p>
+
+<p>필터와의 차이점</p>
+
+<ol>
+  <li>호출 시점
+    <ul>
+      <li>filter는 dispathcher servlet이 실행되기 전, interceptor는 실행 후</li>
+    </ul>
+  </li>
+  <li>설정위치
+    <ul>
+      <li>filter는 web.xml, interceptor는 spring-servlet</li>
+    </ul>
+  </li>
+  <li>구현 방식
+    <ul>
+      <li>interceptor는 클래스 구현이 필요하다. filter는 태그 삽입만해도 실행 가능</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="interceptor클래스-구현-전-handlerinterceptor에-대한-이해가-필요하다">interceptor클래스 구현 전, HandlerInterceptor에 대한 이해가 필요하다.</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.hellospring.interceptor</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerInterceptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.ModelAndView</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyInterceptor01</span> <span class="kd">implements</span> <span class="nc">HandlerInterceptor</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">handler</span><span class="o">)</span>
+			<span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"MyInterceptor01.preHandle() call"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="c1">//true로 하면 아래 메소드 모두실행</span>
+		<span class="c1">//false인 경우 prehandle만 실행</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">postHandle</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">handler</span><span class="o">,</span>
+			<span class="nc">ModelAndView</span> <span class="n">modelAndView</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"MyInterceptor01.postHandle() call"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterCompletion</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">handler</span><span class="o">,</span> <span class="nc">Exception</span> <span class="n">ex</span><span class="o">)</span>
+			<span class="c1">//뷰 리절브가 끝난 다음 한번더 실행한다.</span>
+			<span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"MyInterceptor01.afterCompletion() calll"</span><span class="o">);</span>
+
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>PreHandle</strong></p>
+
+<p>컨트롤러로 가기전에 실행된다.</p>
+
+<p>true일 경우 실행, false면 멈춘다.</p>
+
+<p>Object handler는 핸들러 매핑이 찾은 컨트롤러 클래스 객체이다…</p>
+
+<h1 id="02구현실습">02.구현실습</h1>
+
+<h2 id="1-interceptor-구현하기">1) Interceptor 구현하기</h2>
+
+<p>어노테이션 @Auth로 인터셉터 실행이 가능하다. (인증 받고 true 반환하면 메소드 실행하라)</p>
+
+<h3 id="1spring-servletxml">1.spring-servlet.xml</h3>
+
+<p>인터셉터를 거칠, url 매핑해주기</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Interceptors --&gt;</span>
+	<span class="nt">&lt;mvc:interceptors&gt;</span>
+		<span class="nt">&lt;mvc:interceptor&gt;</span>
+			<span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">"/user/auth"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"com.douzone.mysite.security.LoginInterceptor"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/mvc:interceptor&gt;</span>
+		<span class="nt">&lt;mvc:interceptor&gt;</span>
+			<span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">"/user/logout"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"com.douzone.mysite.security.LogoutInterceptor"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/mvc:interceptor&gt;</span>
+		<span class="nt">&lt;mvc:interceptor&gt;</span>
+			<span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">"/**"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/user/auth"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/user/logout"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/assets/**"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"com.douzone.mysite.security.AuthInterceptor"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/mvc:interceptor&gt;</span>
+	<span class="nt">&lt;/mvc:interceptors&gt;</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url에 /user/auth가 입력되면, 컨트롤러로 이동해 로직을 수행하기 전에
+
+com.douzone.mysite.security.LoginInterceptor 클래스로 가게된다.
+
+&lt;mvc:annotation-driven&lt;/mvc:annotation-driven&gt;을 사용하게 되면 메서드 마다 매핑 명시 해주기.
+
+안하면 메소드 이름으로 알아서 매핑하게 된다. 
+
+&lt;mvc:mapping path=""&gt; 로 적힌 url로 들어가면
+
+&lt;bean class=""&gt;에 지정한 인터셉터를 수행하게 된다. 
+
+&lt;mvc:exclude-mapping path=""/&gt;를 통해 인터셉터를 수행하지 않을 url을 지정할 수 있다.
+
+</code></pre></div></div>
+
+<h3 id="2-comdouzonemysitesecuritylogininterceptor-클래스">2. com.douzone.mysite.security.LoginInterceptor 클래스</h3>
+
+<p>extends HandlerInterceptorAdapter</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.mysite.security</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.handler.HandlerInterceptorAdapter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.service.UserService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.vo.UserVo</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginInterceptor</span> <span class="kd">extends</span> <span class="nc">HandlerInterceptorAdapter</span><span class="o">{</span>
+	
+	<span class="nd">@Autowired</span>
+	<span class="nc">UserService</span> <span class="n">userService</span><span class="o">;</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">handler</span><span class="o">)</span>
+			<span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">String</span> <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"email"</span><span class="o">);</span>
+		<span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"password"</span><span class="o">);</span>
+
+		<span class="c1">//UserVo authUser =  new UserService().getuser(email, password);</span>
+		<span class="c1">//new 로 선언해주면 안 된다. &gt; new 로 선언해버리면 새로운 객체 생성 &gt; 레포지토리가 null값이 떠서 , null예외 발생함</span>
+		<span class="c1">//autowired를 통해 주입이 가능하다.</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"LoginInterceptor 실행"</span><span class="o">);</span>
+		<span class="nc">UserVo</span> <span class="n">authUser</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">getUser</span><span class="o">(</span><span class="n">email</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">authUser</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"result"</span><span class="o">,</span> <span class="s">"fail"</span><span class="o">);</span>
+			<span class="n">request</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">"/WEB-INF/views/user/login.jsp"</span><span class="o">).</span>
+			<span class="n">forward</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+			
+			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//session 처리</span>
+		<span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+		<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"authUser"</span><span class="o">,</span> <span class="n">authUser</span><span class="o">);</span>
+		
+		<span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">());</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>파라미터로 email, password를 가져온다. DB에서 값을 확인하는 메소드를 실행한 후, authUser로 저장하는데, 값이 없을 경우 회원이 아닌 경우이므로, login페이지로 보내준다. return false로 이후의 코드가 실행 되지 않게 한다.</li>
+  <li>세션 처리를 한다. 세션에 authUser를 저장하고 메인으로 이동한다.</li>
+</ol>
+
+<h2 id="03authinterceptor-구현하기">03.AuthInterceptor 구현하기</h2>
+
+<h3 id="1spring-servlet에-url-매핑하기">1.spring-servlet에 url 매핑하기</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;mvc:interceptor&gt;</span>
+			<span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">"/**"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/user/auth"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/user/logout"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">"/assets/**"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"com.douzone.mysite.security.AuthInterceptor"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/mvc:interceptor&gt;</span>
+</code></pre></div></div>
+
+<p>login , logout interceptor를 제외한 다른 메소드에 적용할 authInterceptor 구현</p>
+
+<p>exclude로 제외할 페이지 선택 가능하다. ex) assets에 있는 css는 interceptor거칠 필요없음</p>
+
+<p>include로 포함할 url 선택가능</p>
+
+<p>AuthInterceptor : 모든 핸들러에 관한 인증 체크를 하는 것</p>
+
+<p>@auth 가 없으면 그냥 실행 시킨다.  있을 경우 인증이 필요하다고 처리하여 AuthInterceptor 를 실행한다.</p>
+
+<h3 id="2authclass">2.Auth.class</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.mysite.security</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.lang.annotation.ElementType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Retention</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.RetentionPolicy</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Target</span><span class="o">;</span>
+
+<span class="nd">@Target</span><span class="o">({</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">,</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">})</span>
+<span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">Auth</span> <span class="o">{</span>
+
+	<span class="c1">//@interface로 명시하면 어노테이션으로 사용가능</span>
+	<span class="c1">//Target으로 어디에 쓸건지 명시한다.</span>
+	<span class="c1">//ElementType.METHOD 메소드 위에 @auth 사용 가능,ElementType.TYPE 클래스 위에 @auth 사용가능</span>
+	<span class="c1">//컨트롤러에 있는 모든 메소드가 인증이 필요하다고 할때 클래스 위에 @Auth 선언한다.</span>
+	<span class="c1">//실행시까지 붙어있어라... RetentionPolicy.RUNTIME</span>
+	
+	
+	<span class="c1">//롤을 준다. 디폴트값 유저</span>
+	<span class="c1">//public String value() default "USER";</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">role</span><span class="o">()</span> <span class="k">default</span> <span class="s">"USER"</span><span class="o">;</span>
+		
+	<span class="c1">//public boolean test() default false;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="3authinterceptorclass">3.AuthInterceptor.class</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.douzone.mysite.security</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.web.method.HandlerMethod</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.ModelAndView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.handler.HandlerInterceptorAdapter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.douzone.mysite.vo.UserVo</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthInterceptor</span> <span class="kd">extends</span> <span class="nc">HandlerInterceptorAdapter</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span>
+			<span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> 
+			<span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> 
+			<span class="nc">Object</span> <span class="n">handler</span><span class="o">)</span>
+			<span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		
+			<span class="c1">//업로드 이미지에서 exclude를 하지 않는 이유는 handler가 알아서..뭐..타입을...분류해줘서 라고..한다..정확하지 않다..</span>
+			
+		<span class="c1">//1.handler 종류 확인</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">handler</span> <span class="k">instanceof</span> <span class="nc">HandlerMethod</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+			<span class="c1">//컨트롤러가 아니면, 이미지등의 다른 데이터일 경우 제어</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//2. casting</span>
+		<span class="nc">HandlerMethod</span> <span class="n">handlerMethod</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HandlerMethod</span><span class="o">)</span><span class="n">handler</span><span class="o">;</span>
+		
+		<span class="c1">//3. Handelr Method의 @Auth 정보 받아오기</span>
+		<span class="nc">Auth</span> <span class="n">auth</span> <span class="o">=</span> <span class="n">handlerMethod</span><span class="o">.</span><span class="na">getMethodAnnotation</span><span class="o">(</span><span class="nc">Auth</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+		
+		<span class="c1">//4. Handelr Method에 @Auth가 없으면, Type에 있는지 확인</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">auth</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="c1">//과제</span>
+			
+			<span class="c1">//클래스에 @Auth가 선언되어있는지 확인</span>
+			<span class="n">auth</span> <span class="o">=</span> <span class="n">handlerMethod</span><span class="o">.</span><span class="na">getBeanType</span><span class="o">().</span><span class="na">getAnnotation</span><span class="o">(</span><span class="nc">Auth</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+			
+		<span class="o">}</span>
+		
+		<span class="c1">//5. Type과 Method에 @Auth가 적용이 안되어 있는 경우</span>
+		<span class="c1">//인증이 필요없는 경우</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">auth</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		
+		<span class="c1">//6. @Auth가 적용이 되어 있기 때문에 인증(Authenfication) 여부 확인</span>
+		<span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">session</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="c1">//세션 없을경우 로그인 창으로 보내기</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/user/login"</span><span class="o">);</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="nc">UserVo</span> <span class="n">authUser</span> <span class="o">=</span> <span class="o">(</span><span class="nc">UserVo</span><span class="o">)</span><span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"authUser"</span><span class="o">);</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">authUser</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/user/login"</span><span class="o">);</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//7. 권한(Authorization) 체크를 위해서 @Auth의 rolw가져오기("USER", "ADMIN")</span>
+		<span class="nc">String</span> <span class="n">role</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="na">role</span><span class="o">();</span>
+		
+		
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"----------------"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">role</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">authUser</span><span class="o">.</span><span class="na">getRole</span><span class="o">());</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"----------------"</span><span class="o">);</span>
+		<span class="c1">//로그인한 유저가 admin이면 </span>
+		
+		<span class="c1">//role을 뺏더니 ADMIN이다 그럼 admin페이지로 보내고 user면 user 페이지로 보내기</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">role</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">authUser</span><span class="o">.</span><span class="na">getRole</span><span class="o">())</span> <span class="o">||</span> <span class="n">authUser</span><span class="o">.</span><span class="na">getRole</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"ADMIN"</span><span class="o">)){</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//8.권한 체크</span>
+		<span class="c1">//과제....</span>
+		<span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">());</span>
+		
+		
+		<span class="c1">//여기서 컨트롤러로 보내면 안돼서 false</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>핸들러 종류 확인</li>
+  <li>핸들러 &gt; 핸들러 메소드로 캐스팅</li>
+  <li>클래스에 @Auth 어노테이션이 선언되어 있는지 확인하기 위해 어노테이션 가져오기</li>
+  <li>메소드위에 @Auth가 없다면 클래스 위에는 있는지 가져오기</li>
+  <li>@Auth가 없다 &gt; 인증이 필요 없다. 통과 시킨다. return true</li>
+  <li>세션 가져오기  &gt; 세션이 없으면 로그인 페이지로 이동시키기</li>
+  <li>authUser 값 가져오기 &gt; 없으면 로그인페이지</li>
+  <li>권한 체크를 위해 auth의 role을 가져온다.</li>
+  <li>authUser에 있는 role과 auth의 role을 비교해서  같으면 페이지로 보내고, 다르면 안 보낸다. 단, admin은 모든 페이지에 접근 가능하니 명시해준다.</li>
+</ol>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html" title="spring 자세히 알아보기">spring 자세히 알아보기</a><a class="next" href="/spring/2021/10/26/%EA%B0%9C%EB%85%90-Ioc-Container.html" title="spring IoC Container">spring IoC Container</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jsp-servlet/2021/10/11/servlet%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html" title="spring IoC Container">jsp-servlet 클래스 생성하기</a></li>
+<li><a class="post-link" href="/spring/2021/10/18/%EA%B0%9C%EB%85%90-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0.html" title="spring IoC Container">spring 자세히 알아보기</a></li>
+<li><a class="post-link" href="/example/2017/12/15/table-example.html" title="spring IoC Container">Table example</a></li>
+<li><a class="post-link" href="/gitblog/2021/09/02/jekyll-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-git-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0.html" title="spring IoC Container">jekyll 사용하여 github blog 만들기</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div>Copyright © kne @GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="http://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
